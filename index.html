@@ -1,397 +1,360 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mohamed Ali Tijani | System &amp; Network Administrator</title>
-<meta name="description" content="Portfolio professionnel de Mohamed Ali Tijani : administration systèmes, réseaux, support IT et projets techniques personnels.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #f5f7fb;
-    --bg-2: #ffffff;
-    --surface: #ffffff;
-    --surface-2: #eef3f9;
-    --border: #dce4ef;
-    --text: #172b4d;
-    --muted: #5b6b82;
-    --accent: #2563eb;
-    --accent-2: #1d4ed8;
-    --radius: 14px;
-    --max: 1140px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
-  .container { width: min(var(--max), 100% - 48px); margin-inline: auto; }
-
-  /* Navigation */
-  .nav {
-    position: sticky; top: 0; z-index: 20;
-    background: rgba(5, 8, 15, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav .container {
-    display: flex; justify-content: space-between; align-items: center; height: 68px;
-  }
-  .brand { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
-  .brand span { color: var(--accent); }
-  .nav-links { display: flex; gap: 28px; }
-  .nav-links a { color: var(--muted); font-size: 0.92rem; font-weight: 500; transition: color .2s; }
-  .nav-links a:hover { color: var(--text); }
-
-  /* Layout */
-  section { padding: 104px 0; }
-  .section-head { margin-bottom: 52px; max-width: 620px; }
-  .eyebrow {
-    display: inline-block; font-size: 0.75rem; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
-    margin-bottom: 14px;
-  }
-  h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
-  .lead { color: var(--muted); margin-top: 12px; }
-
-  /* Hero */
-  .hero { padding: 120px 0 104px; background:
-    radial-gradient(700px 400px at 85% 20%, rgba(5, 150, 105, 0.2), transparent 70%),
-    var(--bg); }
-  .hero .container { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
-  .status {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.82rem; color: #b6e9ff; background: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.25); padding: 6px 14px; border-radius: 999px;
-    margin-bottom: 26px;
-  }
-  .status::before {
-    content: ""; width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
-    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
-  }
-  h1 { font-size: clamp(2.6rem, 5.4vw, 4.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
-  h1 .accent { background: linear-gradient(90deg, #6ee7b7, #34d399); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .role { margin-top: 18px; font-size: 1.12rem; font-weight: 600; color: #cfe3ff; }
-  .intro { margin-top: 20px; color: var(--muted); max-width: 540px; font-size: 1.02rem; }
-  .actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
-    border: 1px solid var(--border); transition: transform .2s, background .2s, border-color .2s;
-  }
-  .btn:hover { transform: translateY(-1px); }
-  .btn-primary { background: var(--accent-2); border-color: var(--accent-2); color: #fff; }
-  .btn-primary:hover { background: #047857; }
-  .btn-ghost { background: transparent; color: var(--text); }
-  .btn-ghost:hover { border-color: rgba(148, 170, 205, 0.4); background: var(--surface); }
-
-  .portrait { position: relative; justify-self: center; width: min(380px, 100%); }
-  .portrait::before {
-    content: ""; position: absolute; inset: -18px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(52, 211, 153, 0.22), transparent 65%);
-    z-index: 0;
-  }
-  .portrait img {
-    position: relative; z-index: 1; display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 50%;
-    object-fit: cover; object-position: 50% 22%;
-    border: 4px solid rgba(56, 189, 248, 0.6);
-    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
-  }
-
-  /* About */
-  .about { background: var(--bg-2); border-block: 1px solid var(--border); }
-  .about .container { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-  .about p { color: var(--muted); margin-bottom: 16px; }
-  .about p:last-child { margin-bottom: 0; }
-  .facts { display: grid; gap: 14px; }
-  .fact {
-    display: flex; gap: 18px; align-items: flex-start;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 22px;
-  }
-  .fact-icon {
-    flex: none; width: 42px; height: 42px; border-radius: 10px;
-    display: grid; place-items: center; font-weight: 700; font-size: 0.85rem;
-    background: rgba(56, 189, 248, 0.12); color: var(--accent);
-  }
-  .fact strong { display: block; font-size: 0.98rem; font-weight: 600; }
-  .fact span { color: var(--muted); font-size: 0.9rem; }
-
-  /* Projects */
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
-  .project {
-    display: flex; flex-direction: column;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 30px;
-    transition: transform .25s, border-color .25s, box-shadow .25s;
-  }
-  .project:hover { transform: translateY(-4px); border-color: rgba(56, 189, 248, 0.35); box-shadow: 0 20px 40px -24px rgba(56, 189, 248, 0.35); }
-  .project .tag {
-    align-self: flex-start; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.08em; color: var(--accent); background: rgba(56, 189, 248, 0.1);
-    padding: 5px 10px; border-radius: 6px; margin-bottom: 18px;
-  }
-  .project h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
-  .project p { color: var(--muted); font-size: 0.94rem; flex: 1; }
-  .chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 22px 0 22px; }
-  .chips span {
-    font-size: 0.78rem; font-weight: 500; color: #cfe3ff;
-    background: var(--surface-2); border: 1px solid var(--border);
-    padding: 4px 10px; border-radius: 6px;
-  }
-  .project .link { font-weight: 600; font-size: 0.92rem; color: var(--accent); }
-  .project .link:hover { text-decoration: underline; }
-  .project-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; }
-  .project-screenshot { width: 100%; margin-top: 22px; margin-bottom: 22px; border: 1px solid var(--border); border-radius: 10px; }
-
-  /* Skills */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
-  .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
-  .skill-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-  .skill-card h3::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  .skill-card ul { list-style: none; display: grid; gap: 12px; }
-  .skill-card li { color: var(--muted); font-size: 0.94rem; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-  .skill-card li:last-child { border-bottom: none; padding-bottom: 0; }
-
-  /* Contact */
-  .contact { background: linear-gradient(180deg, var(--bg-2), var(--bg)); border-top: 1px solid var(--border); text-align: center; }
-  .contact .section-head { margin-inline: auto; }
-  .contact-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-
-  footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.86rem; }
-  footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-
-  /* Responsive */
-  @media (max-width: 860px) {
-    .hero .container, .about .container { grid-template-columns: 1fr; gap: 48px; }
-    .portrait { order: -1; width: min(300px, 80%); }
-    .hero { padding: 72px 0; }
-    section { padding: 80px 0; }
-    .nav-links { gap: 16px; }
-    .nav-links a:nth-child(n+4) { display: none; }
-  }
-  @media (max-width: 520px) {
-    .nav-links { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; }
-  }
-
-  /* Minimal corporate visual system */
-  body { background: var(--bg); color: var(--text); }
-  .nav { background: rgba(255,255,255,.94); backdrop-filter: blur(10px); }
-  .brand span, .eyebrow, .project .link { color: #1d4ed8; }
-  .hero { background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%); }
-  .hero h1 .accent { background: none; color: #1d4ed8; -webkit-text-fill-color: #1d4ed8; }
-  .status { color: #1e40af; background: #eff6ff; border-color: #bfdbfe; }
-  .status::before { background: #2563eb; box-shadow: none; }
-  .role { color: #334155; }
-  .btn { border-radius: 8px; box-shadow: none; }
-  .btn-primary { background: #1d4ed8; border-color: #1d4ed8; }
-  .btn-primary:hover { background: #1e40af; }
-  .btn-ghost { color: #1e293b; background: #fff; border-color: #cbd5e1; }
-  .btn-ghost:hover { background: #f8fafc; border-color: #94a3b8; }
-  .portrait::before { display: none; }
-  .portrait img { border: 3px solid #dbeafe; box-shadow: 0 12px 28px rgba(15,23,42,.10); }
-  .about, .contact { background: #ffffff; border-color: #dce4ef; }
-  .fact, .project, .skill-card { background: #ffffff; border-color: #dce4ef; box-shadow: 0 2px 8px rgba(15,23,42,.035); }
-  .fact-icon { background: #eff6ff; color: #1d4ed8; }
-  .project { transition: border-color .18s ease, box-shadow .18s ease; }
-  .project:hover { transform: none; border-color: #93b4f5; box-shadow: 0 8px 22px rgba(15,23,42,.07); }
-  .project .tag { color: #1d4ed8; background: #eff6ff; }
-  .chips span { color: #334155; background: #f1f5f9; border-color: #e2e8f0; }
-  .skill-card h3::before { background: #2563eb; }
-  .contact { background: #f8fafc; }
-  @media (max-width: 520px) {
-    .nav .container { height: 60px; }
-    .hero .container { gap: 28px; }
-    .portrait { width: min(220px, 72%); }
-    .container { width: min(var(--max), 100% - 32px); }
-    .projects-grid { grid-template-columns: 1fr; }
-  }
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1f3a">
+  <title>Mohamed Ali Tijani | System &amp; Network Administrator</title>
+  <meta name="description" content="Portfolio de Mohamed Ali Tijani : projets personnels en administration systèmes, réseaux, dépannage et support informatique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0b1f3a;
+      --navy-2: #102b4e;
+      --blue: #2563eb;
+      --blue-2: #1d4ed8;
+      --cyan: #38bdf8;
+      --green: #16a36a;
+      --ink: #172b4d;
+      --muted: #607089;
+      --line: #dce5f0;
+      --paper: #f4f7fb;
+      --white: #fff;
+      --max: 1160px;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(15, 35, 65, .07);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 30; color: #eaf2ff; background: rgba(11,31,58,.97); border-bottom: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(14px); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font: 800 1rem Manrope, sans-serif; letter-spacing: -.03em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 11px; background: linear-gradient(145deg,#3b82f6,#1d4ed8); color: white; font-size: .78rem; letter-spacing: -.04em; }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a { color: #c3d1e5; font-size: .9rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-github { padding: 9px 15px; border: 1px solid rgba(191,219,254,.32); border-radius: 9px; color: white !important; }
+    section { padding: 92px 0; }
+    .hero { position: relative; overflow: hidden; padding: 82px 0 78px; color: white; background: radial-gradient(ellipse at 82% 15%,rgba(37,99,235,.32),transparent 34%), linear-gradient(125deg,#0b1f3a 0%,#102b4e 60%,#12345b 100%); }
+    .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .12; background-image: linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(90deg,transparent,black); }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #2563eb; font-size: .75rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .hero .eyebrow { color: #93c5fd; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: currentColor; border-radius: 2px; }
+    h1,h2,h3,p { margin-top: 0; }
+    h1,h2,h3 { font-family: Manrope, sans-serif; }
+    h1 { max-width: 680px; margin: 20px 0 14px; font-size: clamp(2.65rem,5.2vw,4.45rem); line-height: 1.08; letter-spacing: -.055em; font-weight: 800; }
+    h1 span { color: #75b9ff; }
+    .hero-role { margin: 0 0 16px; color: #d6e6fb; font-size: 1.14rem; font-weight: 700; }
+    .hero-copy { max-width: 610px; margin: 0; color: #bdcce0; font-size: 1.02rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 11px 18px; border-radius: 10px; font-size: .92rem; font-weight: 700; transition: transform .2s,background .2s,border-color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: #3b82f6; color: white; box-shadow: 0 8px 22px rgba(37,99,235,.25); }
+    .button-primary:hover { background: #2563eb; }
+    .button-outline { color: white; border: 1px solid rgba(219,234,254,.35); background: rgba(255,255,255,.04); }
+    .button-outline:hover { background: rgba(255,255,255,.1); }
+    .availability { display: inline-flex; align-items: center; gap: 8px; margin-top: 27px; color: #c6d5e8; font-size: .83rem; }
+    .availability i { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52,211,153,.13); }
+    .hero-visual { position: relative; min-height: 365px; display: grid; place-items: center; }
+    .portrait-frame { position: absolute; z-index: 2; right: 4%; top: 50%; width: 178px; height: 178px; transform: translateY(-50%); border: 5px solid rgba(255,255,255,.9); border-radius: 50%; overflow: hidden; box-shadow: 0 18px 50px rgba(0,0,0,.3); background: #dbeafe; }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+    .network-card { position: relative; width: 100%; max-width: 460px; min-height: 310px; padding: 22px; border: 1px solid rgba(191,219,254,.22); border-radius: 22px; background: linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045)); box-shadow: 0 28px 70px rgba(0,0,0,.18); backdrop-filter: blur(12px); }
+    .network-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 17px; border-bottom: 1px solid rgba(219,234,254,.14); }
+    .network-card-head strong { font: 700 .88rem Manrope,sans-serif; }
+    .network-card-head span { color: #a8c3e2; font-size: .72rem; }
+    .network-map { position: relative; height: 205px; margin-top: 12px; }
+    .network-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .node { position: absolute; z-index: 1; display: grid; place-items: center; width: 66px; height: 58px; border: 1px solid rgba(147,197,253,.38); border-radius: 12px; color: #e8f3ff; background: #153a64; box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+    .node b { font-size: 1.15rem; line-height: 1.1; }
+    .node small { color: #b8cde5; font-size: .59rem; }
+    .node-router { left: calc(50% - 33px); top: 6px; }
+    .node-switch { left: calc(50% - 33px); top: 128px; }
+    .node-server { left: 8%; top: 72px; }
+    .node-client { right: 8%; top: 72px; }
+    .node-dot { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #5ee0b0; box-shadow: 0 0 0 4px rgba(94,224,176,.13); }
+    .node-router .node-dot { top: -3px; right: -3px; }
+    .infra-strip { background: white; border-bottom: 1px solid var(--line); }
+    .infra-items { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 21px 0; }
+    .infra-items span { color: #53647c; font-size: .84rem; font-weight: 700; }
+    .infra-items span::before { content: "✓"; margin-right: 8px; color: var(--green); font-weight: 800; }
+    .section-heading { max-width: 690px; margin-bottom: 38px; }
+    .section-heading h2 { margin: 12px 0 10px; font-size: clamp(1.9rem,3.4vw,2.65rem); line-height: 1.18; letter-spacing: -.045em; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: start; }
+    .about-copy p { color: var(--muted); margin: 18px 0 0; }
+    .credential-list { display: grid; gap: 14px; }
+    .credential { display: flex; gap: 15px; padding: 19px; background: white; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 4px 14px rgba(15,35,65,.035); }
+    .credential-icon { flex: 0 0 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; color: #1d4ed8; background: #eff6ff; font: 800 .75rem Manrope,sans-serif; }
+    .credential strong { display: block; margin: 1px 0 4px; font: 700 .9rem Manrope,sans-serif; line-height: 1.4; }
+    .credential small { color: var(--muted); font-size: .8rem; }
+    .projects-section { background: #edf2f8; border-block: 1px solid var(--line); }
+    .project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+    .project { display: flex; flex-direction: column; overflow: hidden; background: white; border: 1px solid #dce5f0; border-radius: var(--radius); box-shadow: 0 6px 20px rgba(15,35,65,.045); transition: transform .2s,box-shadow .2s,border-color .2s; }
+    .project:hover { transform: translateY(-4px); border-color: #aac6f7; box-shadow: var(--shadow); }
+    .project-visual { position: relative; display: grid; place-items: center; min-height: 172px; padding: 18px; overflow: hidden; background: linear-gradient(135deg,#102b4e,#1d4d83); }
+    .project-visual.light { background: linear-gradient(135deg,#eaf2ff,#dbeafe); }
+    .project-visual img { max-height: 155px; width: 100%; object-fit: contain; border-radius: 8px; }
+    .project-visual .visual-label { color: #dcecff; font: 800 1.15rem Manrope,sans-serif; letter-spacing: -.03em; }
+    .project-visual.light .visual-label { color: #1e3a5f; }
+    .project-content { display: flex; flex-direction: column; flex: 1; padding: 24px; }
+    .project-category { margin-bottom: 10px; color: #2563eb; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .project h3 { margin: 0 0 9px; font-size: 1.12rem; line-height: 1.35; letter-spacing: -.025em; }
+    .project p { flex: 1; margin: 0; color: var(--muted); font-size: .9rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 20px; }
+    .tags span { padding: 5px 9px; border-radius: 6px; background: #f1f5f9; color: #45566f; font-size: .72rem; font-weight: 600; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 17px; padding-top: 15px; border-top: 1px solid #edf1f6; }
+    .project-links a { color: #1d4ed8; font-size: .85rem; font-weight: 700; }
+    .project-links a:hover { text-decoration: underline; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+    .skill-card { padding: 25px; border: 1px solid var(--line); border-radius: 15px; background: white; box-shadow: 0 5px 18px rgba(15,35,65,.035); }
+    .skill-title { display: flex; align-items: center; gap: 11px; margin-bottom: 17px; font: 800 .98rem Manrope,sans-serif; }
+    .skill-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; color: #1d4ed8; background: #eff6ff; font-size: .9rem; }
+    .skill-card ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .skill-card li { color: var(--muted); font-size: .88rem; }
+    .skill-card li::before { content: "—"; margin-right: 8px; color: #3b82f6; font-weight: 800; }
+    .contact-section { color: white; background: linear-gradient(120deg,#0b1f3a,#12345b); }
+    .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .contact-section .eyebrow { color: #93c5fd; }
+    .contact-section h2 { margin: 12px 0 8px; font-size: clamp(1.8rem,3.4vw,2.5rem); letter-spacing: -.04em; }
+    .contact-section p { max-width: 630px; margin: 0; color: #c1d0e3; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { padding: 24px 0; color: #91a1b8; background: #081a30; font-size: .8rem; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 20px; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr .8fr; gap: 25px; }
+      .portrait-frame { width: 138px; height: 138px; right: 0; }
+      .about-grid { gap: 30px; }
+      .skills-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .contact-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(var(--max),calc(100% - 32px)); }
+      .nav { min-height: 64px; }
+      .nav-links { gap: 15px; overflow-x: auto; }
+      .nav-links a { font-size: .78rem; white-space: nowrap; }
+      .nav-github { display: none; }
+      .hero { padding: 62px 0 48px; }
+      .hero-grid,.about-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 290px; }
+      .network-card { max-width: 430px; }
+      .portrait-frame { width: 118px; height: 118px; right: 4%; }
+      section { padding: 68px 0; }
+      .project-grid,.skills-grid { grid-template-columns: 1fr; }
+      .infra-items { justify-content: flex-start; gap: 10px 18px; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: .88rem; }
+      .nav-links { gap: 11px; }
+      .nav-links a { font-size: .72rem; }
+      h1 { font-size: 2.55rem; }
+      .network-card { padding: 16px; }
+      .node { width: 58px; height: 54px; }
+      .node-server { left: 1%; }
+      .node-client { right: 1%; }
+      .project-content { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="container">
-    <a class="brand" href="#accueil">Mohamed Ali<span>.</span></a>
-    <nav class="nav-links">
-      <a href="#accueil">Accueil</a>
-      <a href="#apropos">À propos</a>
-      <a href="#projets">Projets</a>
-      <a href="#competences">Compétences</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section id="accueil" class="hero">
-  <div class="container">
-    <div>
-      <span class="status">Disponible pour une opportunité</span>
-      <h1>Mohamed Ali <span class="accent">Tijani</span></h1>
-      <p class="role">System &amp; Network Administrator</p>
-      <p class="intro">Technicien supérieur en informatique de gestion (IPSET), je développe mes compétences en administration systèmes, réseaux et support IT à travers des projets personnels et des laboratoires pratiques documentés.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#projets">Voir mes projets →</a>
-        <a class="btn btn-ghost" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub</a>
-      </div>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Accueil - Mohamed Ali Tijani">
+        <span class="brand-mark">MAT</span>
+        <span>Mohamed Ali Tijani</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-github" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
     </div>
-    <div class="portrait">
-      <img src="./photo-profil.jpg" alt="Portrait professionnel de Mohamed Ali Tijani" loading="eager" decoding="async">
-    </div>
-  </div>
-</section>
+  </header>
 
-<section id="apropos" class="about">
-  <div class="container">
-    <div>
-      <span class="eyebrow">À propos</span>
-      <h2>Un profil technique, orienté terrain</h2>
-      <p style="margin-top:18px">Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers le support informatique, l'administration réseau et le développement web.</p>
-      <p>Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.</p>
-      <p>Langues : arabe (langue maternelle), anglais (excellent), français (bon).</p>
-    </div>
-    <div class="facts">
-      <div class="fact">
-        <div class="fact-icon">BTS</div>
+  <main>
+    <section id="accueil" class="hero">
+      <div class="container hero-grid">
         <div>
-          <strong>Diplôme de Technicien Supérieur en Informatique de Gestion</strong>
-          <span>Institut Pilote des Sciences Économiques et de Technologie (IPSET) · 2022 – 2024</span>
+          <span class="eyebrow">IT infrastructure · Networking · Systems</span>
+          <h1>Mohamed Ali <span>Tijani</span></h1>
+          <p class="hero-role">System &amp; Network Administrator</p>
+          <p class="hero-copy">Technicien supérieur en informatique de gestion (IPSET), je développe mes compétences en administration systèmes, réseaux et support IT à travers des projets personnels et des laboratoires pratiques documentés.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projets">Explorer mes projets <span>→</span></a>
+            <a class="button button-outline" href="https://github.com/Medalitijani" target="_blank" rel="noopener">Voir GitHub ↗</a>
+          </div>
+          <div class="availability"><i></i> Disponible pour une opportunité professionnelle</div>
+        </div>
+
+        <div class="hero-visual" aria-label="Illustration d'une architecture réseau">
+          <div class="network-card">
+            <div class="network-card-head">
+              <strong>IT infrastructure overview</strong>
+              <span>Illustration réseau</span>
+            </div>
+            <div class="network-map">
+              <svg viewBox="0 0 440 205" fill="none" aria-hidden="true">
+                <path d="M220 55 V91 M83 99 H220 V128 M357 99 H220 M220 91 V128" stroke="#7db9f5" stroke-width="2" stroke-dasharray="5 5"/>
+                <circle cx="220" cy="91" r="5" fill="#5ee0b0"/>
+                <circle cx="83" cy="99" r="4" fill="#7db9f5"/>
+                <circle cx="357" cy="99" r="4" fill="#7db9f5"/>
+              </svg>
+              <div class="node node-router"><i class="node-dot"></i><b>⌁</b><small>ROUTER</small></div>
+              <div class="node node-server"><b>▤</b><small>SERVER</small></div>
+              <div class="node node-client"><b>▣</b><small>CLIENT</small></div>
+              <div class="node node-switch"><b>▦</b><small>SWITCH</small></div>
+            </div>
+          </div>
+          <div class="portrait-frame">
+            <img src="./photo-profil.jpg" alt="Portrait professionnel de Mohamed Ali Tijani" loading="eager" decoding="async">
+          </div>
         </div>
       </div>
-      <div class="fact">
-        <div class="fact-icon">BTP</div>
+    </section>
+
+    <div class="infra-strip">
+      <div class="container infra-items">
+        <span>TCP/IP</span><span>VLANs</span><span>DHCP &amp; DNS</span><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span>
+      </div>
+    </div>
+
+    <section id="apropos">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">À propos</span>
+          <div class="section-heading">
+            <h2>Un profil technique, orienté terrain.</h2>
+          </div>
+          <p>Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers le support informatique, l'administration réseau et le développement web.</p>
+          <p>Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.</p>
+          <p>Langues : arabe (langue maternelle), anglais (excellent), français (bon).</p>
+        </div>
+        <div class="credential-list">
+          <article class="credential">
+            <div class="credential-icon">BTS</div>
+            <div><strong>Diplôme de Technicien Supérieur en Informatique de Gestion</strong><small>Institut Pilote des Sciences Économiques et de Technologie (IPSET) · 2022 – 2024</small></div>
+          </article>
+          <article class="credential">
+            <div class="credential-icon">BTP</div>
+            <div><strong>Brevet de Technicien Professionnel en Informatique de Gestion</strong><small>Institut Pilote des Sciences Économiques et de Technologie (IPSET) · 2020 – 2024</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="projects-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Projets sélectionnés</span>
+          <h2>Du travail pratique, documenté.</h2>
+          <p>Projets personnels et laboratoires techniques : découvrez les objectifs, les technologies utilisées et les éléments réalisés.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-visual"><img src="./helpdesk-dashboard.png" alt="Capture du tableau de bord de l'application Helpdesk IT" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-category">Développement web · Support IT</div>
+              <h3>Application de ticketing helpdesk</h3>
+              <p>Application de gestion des demandes IT : authentification et rôles, création et suivi des tickets, commentaires, filtres, tableau de bord et export CSV.</p>
+              <div class="tags"><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span><span>Chart.js</span><span>Jest</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener">Code source ↗</a><a href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener">Démo en ligne ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual light"><img src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Schéma de topologie du réseau de la petite entreprise" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-category">Infrastructure · Administration systèmes</div>
+              <h3>Infrastructure IT d'une petite entreprise</h3>
+              <p>Conception d'une infrastructure pour une entreprise de 20 personnes : segmentation réseau, routage, DHCP, isolation des invités et concepts Windows Server / Active Directory.</p>
+              <div class="tags"><span>Packet Tracer</span><span>VLANs</span><span>DHCP</span><span>Active Directory</span><span>PowerShell</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener">Code source ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual"><img src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Capture Wireshark montrant l'analyse de paquets DNS" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-category">Réseaux · Dépannage</div>
+              <h3>Wireshark Troubleshooting Casebook</h3>
+              <p>Études de cas de dépannage réseau et analyse de paquets autour de DHCP, DNS, ARP, ICMP et TCP, avec des observations et des explications techniques.</p>
+              <div class="tags"><span>Wireshark</span><span>DHCP</span><span>DNS</span><span>ARP</span><span>TCP/IP</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener">Code source ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual light"><img src="./northstar-homepage.png" alt="Capture d'écran du site vitrine Northstar IT" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-category">Développement web</div>
+              <h3>Northstar IT — site vitrine multilingue</h3>
+              <p>Projet personnel : site responsive et multilingue pour une marque IT fictive, réalisé en HTML, CSS et JavaScript. Les contenus et scénarios sont fictifs. Le formulaire nécessite un déploiement Netlify avec les variables d'environnement configurées ; GitHub Pages sert de prévisualisation statique.</p>
+              <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Netlify Functions</span><span>GitHub Pages</span></div>
+              <div class="project-links"><a href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener">Démo en ligne ↗</a><a href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener">Code source ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Compétences techniques</span>
+          <h2>Des bases solides, en progression.</h2>
+          <p>Domaines travaillés dans le cadre de ma formation et de mes projets personnels.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-title"><span class="skill-icon">⌘</span> Réseaux &amp; connectivité</div>
+            <ul><li>LAN, Wi-Fi et TCP/IP</li><li>VLANs, routage et adressage IP</li><li>DHCP, DNS et ARP</li><li>Analyse réseau avec Wireshark</li></ul>
+          </article>
+          <article class="skill-card">
+            <div class="skill-title"><span class="skill-icon">▣</span> Systèmes &amp; administration</div>
+            <ul><li>Dépannage Windows 10 / 11</li><li>Concepts Windows Server</li><li>Active Directory et GPO</li><li>PowerShell et automatisation (bases)</li></ul>
+          </article>
+          <article class="skill-card">
+            <div class="skill-title"><span class="skill-icon">⌁</span> Support &amp; développement</div>
+            <ul><li>Assistance et support utilisateurs</li><li>Gestion des comptes et des accès</li><li>HTML, CSS et JavaScript</li><li>Node.js, SQL, Git et GitHub</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-inner">
         <div>
-          <strong>Brevet de Technicien Professionnel en Informatique de Gestion</strong>
-          <span>Institut Pilote des Sciences Économiques et de Technologie (IPSET) · 2020 – 2024</span>
+          <span class="eyebrow">Contact</span>
+          <h2>Échangeons sur une opportunité.</h2>
+          <p>Je recherche une opportunité en support IT ou en administration réseau. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:mohamedalitijanii@gmail.com">✉ Me contacter</a>
+          <a class="button button-outline" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<section id="projets">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Projets</span>
-      <h2>Réalisations techniques</h2>
-      <p class="lead">Des projets personnels et des laboratoires pratiques, avec des configurations, des tests et une documentation technique vérifiables.</p>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Mohamed Ali Tijani · Tunis</span>
+      <span>Support IT · Réseaux · Administration systèmes</span>
     </div>
-    <div class="projects-grid">
-      <article class="project">
-        <span class="tag">Développement web</span>
-        <h3>Application de ticketing helpdesk</h3>
-        <img class="project-screenshot" src="./helpdesk-dashboard.png" alt="Capture du tableau de bord de l'application Helpdesk IT">
-        <p>Gestion de tickets IT : authentification et rôles, création et suivi, commentaires et historique, filtres, pagination, tableau de bord et export CSV.</p>
-        <div class="chips"><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span><span>Chart.js</span><span>Jest</span></div>
-        <div class="project-links">
-          <a class="link" href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener">Voir le code →</a>
-          <a class="link" href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener">Démo en ligne →</a>
-        </div>
-      </article>
-      <article class="project">
-        <span class="tag">Infrastructure IT</span>
-        <h3>Infrastructure IT d'une petite entreprise</h3>
-        <img class="project-screenshot" src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Schéma de topologie du réseau de la petite entreprise">
-        <p>Infrastructure d'une entreprise de 20 personnes : réseau, Active Directory, automatisation avec PowerShell et documentation technique.</p>
-        <div class="chips"><span>PowerShell</span><span>Active Directory</span><span>Réseau</span><span>Documentation</span></div>
-        <a class="link" href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener">Voir le code →</a>
-      </article>
-      <article class="project">
-        <span class="tag">Dépannage réseau</span>
-        <h3>Études de cas de dépannage avec Wireshark</h3>
-        <img class="project-screenshot" src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Capture Wireshark montrant l'analyse de paquets DNS">
-        <p>Analyse de cas concrets de dépannage réseau : DHCP, DNS, ARP, ICMP et TCP.</p>
-        <div class="chips"><span>Wireshark</span><span>DHCP</span><span>DNS</span><span>ARP</span><span>TCP/IP</span></div>
-        <a class="link" href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener">Voir le code →</a>
-      </article>
-      <article class="project">
-        <span class="tag">Développement web</span>
-        <h3>Northstar IT : site vitrine multilingue</h3>
-        <img class="project-screenshot" src="./northstar-homepage.png" alt="Capture d'écran du site vitrine Northstar IT">
-        <p>Projet personnel de développement web : site responsive et multilingue pour une marque IT fictive, réalisé en HTML, CSS et JavaScript. Le formulaire est relié dans le code à une fonction Netlify et à Resend ; son envoi nécessite un déploiement Netlify avec les variables d'environnement configurées. La version GitHub Pages est une prévisualisation statique. Les contenus et scénarios sont fictifs.</p>
-        <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Netlify Functions</span><span>Git</span><span>GitHub Pages</span></div>
-        <div class="project-links">
-          <a class="link" href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener">Démo en ligne →</a>
-          <a class="link" href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener">Voir le code →</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="competences" style="background: var(--bg-2); border-block: 1px solid var(--border);">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Compétences</span>
-      <h2>Mes domaines d'expertise</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Support IT</h3>
-        <ul>
-          <li>Dépannage Windows 10 / 11</li>
-          <li>Microsoft 365</li>
-          <li>Assistance et support utilisateurs</li>
-          <li>Gestion des comptes et des accès</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Réseaux & Systèmes</h3>
-        <ul>
-          <li>LAN et Wi-Fi</li>
-          <li>TCP/IP et analyse avec Wireshark</li>
-          <li>Active Directory et Entra ID (notions)</li>
-          <li>Azure et PowerShell (notions)</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Développement</h3>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>SQL</li>
-          <li>Git et GitHub</li>
-          <li>Documentation technique</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Contact</span>
-      <h2>Travaillons ensemble</h2>
-      <p class="lead">Je recherche une opportunité en support IT ou en administration réseau. N'hésitez pas à me contacter.</p>
-    </div>
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="mailto:mohamedalitijanii@gmail.com">✉ mohamedalitijanii@gmail.com</a>
-      <a class="btn btn-ghost" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <span>© 2026 Mohamed Ali Tijani · Tunis</span>
-    <span>Support IT · Réseaux · Développement web</span>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
