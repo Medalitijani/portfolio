@@ -1,4 +1,4 @@
-# Mohamed Ali Tijani — IT Support, Systems & Network Administration
+# Mohamed Ali Tijani — System & Network Administrator
 
 A personal technical portfolio presenting projects and practical labs that I have built, configured, tested, and documented while developing my skills in IT support, systems administration, networking, and web development.
 
