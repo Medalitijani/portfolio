@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f7fb">
   <title>Mohamed Ali Tijani — Technicien informatique</title>
-  <meta name="description" content="Portfolio de Mohamed Ali Tijani : administration des systèmes et réseaux, assistance informatique et projets techniques.">
+  <meta name="description" content="Portfolio hybride de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -75,6 +75,12 @@
     .skill-num{font-size:.66rem;font-weight:700;color:#a9c7ef;letter-spacing:.08em}
     .skill h3{margin:16px 0 13px;font:750 1.2rem var(--display);letter-spacing:-.03em}
     .skill ul{margin:0;padding:0;list-style:none}.skill li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.13);color:#d6dfeb;font-size:.81rem}.skill li:last-child{border:0}
+    .practice{background:#fff;border-block:1px solid var(--line)}
+    .practice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .practice-card{padding:21px;border:1px solid var(--line);border-radius:9px;background:#fbfcfe}
+    .practice-num{font-size:.62rem;font-weight:700;color:var(--blue);letter-spacing:.08em}
+    .practice-card h3{margin:13px 0 9px;font:750 1.05rem/1.25 var(--display);letter-spacing:-.025em}
+    .practice-card p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.75}
     .contact{background:#eaf0f8;padding:82px 0;border-top:1px solid var(--line)}
     .contact-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}
     .contact h2{max-width:690px;margin:13px 0 12px;font:800 clamp(2.5rem,5vw,4.4rem)/1.02 var(--display);letter-spacing:-.065em}
@@ -85,10 +91,10 @@
     .contact-actions .btn:last-child:hover{background:var(--navy);color:white;border-color:var(--navy)}
     footer{background:#101d30;color:#c5d0df;padding:24px 0;font-size:.68rem}
     .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    @media(max-width:850px){.hero-grid{grid-template-columns:1fr .8fr;gap:28px}.hero-art{min-height:390px}.portrait{height:330px}.art-backdrop{height:340px}.about-grid{gap:38px}.section-top{align-items:flex-start;flex-direction:column}.section-desc{max-width:600px}}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr .8fr;gap:28px}.hero-art{min-height:390px}.portrait{height:330px}.art-backdrop{height:340px}.about-grid{gap:38px}.section-top{align-items:flex-start;flex-direction:column}.section-desc{max-width:600px}.practice-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:650px){.wrap{width:calc(100% - 36px)}.nav{height:auto;min-height:66px}.navlinks{gap:12px;overflow:auto}.navlinks a{font-size:.7rem;white-space:nowrap}.navlinks .nav-cta{display:none}.logo{font-size:.78rem}.logo-mark{width:32px;height:32px}
     .hero{padding:58px 0 65px}.hero-grid,.about-grid{grid-template-columns:1fr;gap:22px}.hero h1{font-size:clamp(3.5rem,15vw,5rem)}.hero-art{min-height:370px;margin-top:5px}.portrait{width:255px;height:320px}.art-backdrop{width:275px;height:320px;right:9%}
-    section{padding:72px 0}.ticker-track{justify-content:flex-start;padding-left:18px}.education{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr;gap:18px}.project:nth-child(2),.project:nth-child(4){margin-top:0}.project-image{height:195px}
+    section{padding:72px 0}.ticker-track{justify-content:flex-start;padding-left:18px}.education{grid-template-columns:1fr}.practice-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr;gap:18px}.project:nth-child(2),.project:nth-child(4){margin-top:0}.project-image{height:195px}
     .skills-grid{grid-template-columns:1fr}.skill,.skill+.skill{padding:22px 0;border-left:0;border-bottom:1px solid rgba(255,255,255,.25)}.skill:last-child{border-bottom:0}.contact-grid{align-items:flex-start;flex-direction:column}.contact-actions{flex-direction:row;flex-wrap:wrap}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 
@@ -112,15 +118,15 @@
         <div>
           <div class="micro">Portfolio / 2026 — Tunis, Tunisie</div>
           <h1>Mohamed Ali<br><span class="outline">Tijani</span><span class="blue">.</span></h1>
-          <p class="hero-role">Technicien informatique — Assistance, réseaux et développement web</p>
-          <p class="hero-copy">Technicien supérieur en informatique de gestion (IPSET), je développe mes compétences en administration des systèmes et des réseaux ainsi qu'en assistance informatique, à travers des projets personnels et des travaux pratiques documentés.</p>
+          <p class="hero-role">Profil IT hybride — Support informatique · Réseaux · Systèmes · Développement web</p>
+          <p class="hero-copy">Technicien supérieur en informatique de gestion (IPSET), je relie quatre domaines complémentaires : assistance aux utilisateurs, réseaux, administration des systèmes et développement web. Mes projets pratiques montrent ma capacité à configurer, diagnostiquer, automatiser, développer et documenter des solutions informatiques.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projets">Découvrir mes projets <span>↗</span></a>
             <a class="btn btn-secondary" href="https://github.com/Medalitijani" target="_blank" rel="noopener">Mon profil GitHub ↗</a>
             <a class="btn btn-secondary" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
             <a class="btn btn-secondary" href="./cv.html" target="_blank" rel="noopener">Consulter mon CV ↗</a>
           </div>
-          <p class="hero-note"><b>●</b> À la recherche d'opportunités en assistance informatique et administration des réseaux</p>
+          <p class="hero-note"><b>●</b> Ouvert aux opportunités en support IT, réseaux, systèmes et développement web</p>
         </div>
         <div class="hero-art">
           <div class="art-backdrop"></div>
@@ -129,13 +135,13 @@
       </div>
     </section>
 
-    <div class="ticker"><div class="wrap ticker-track"><span>TCP/IP</span><span>VLAN</span><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Wireshark</span></div></div>
+    <div class="ticker"><div class="wrap ticker-track"><span>IT Support</span><span>TCP/IP</span><span>VLAN</span><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Wireshark</span><span>Node.js</span><span>SQL</span></div></div>
 
     <section class="about" id="apropos">
       <div class="wrap about-grid">
         <div>
           <div class="section-index">01 / À PROPOS</div>
-          <p class="about-statement">La technique, c'est comprendre <span>comment les choses fonctionnent</span> — et savoir les expliquer.</p>
+          <p class="about-statement">Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span></p>
         </div>
         <div class="about-text">
           <p>Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.</p>
@@ -153,7 +159,7 @@
       <div class="wrap">
         <div class="section-top">
           <div><div class="section-index">02 / SÉLECTION DE PROJETS</div><h2 class="section-title">Du concret.<br><em>Pas seulement des mots.</em></h2></div>
-          <p class="section-desc">Projets personnels et laboratoires pratiques. Chaque réalisation présente les objectifs, les outils utilisés et le travail documenté.</p>
+          <p class="section-desc">Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.</p>
         </div>
         <div class="project-grid">
           <article class="project">
@@ -200,23 +206,39 @@
       </div>
     </section>
 
+    <section class="practice" id="pratique">
+      <div class="wrap">
+        <div class="section-top">
+          <div><div class="section-index">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title">Des compétences<br><em>mises en pratique.</em></h2></div>
+          <p class="section-desc">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-card"><span class="practice-num">01 / SUPPORT IT</span><h3>Gestion des demandes</h3><p>Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.</p></article>
+          <article class="practice-card"><span class="practice-num">02 / RÉSEAUX</span><h3>Segmentation et connectivité</h3><p>Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.</p></article>
+          <article class="practice-card"><span class="practice-num">03 / DIAGNOSTIC</span><h3>Analyse de trafic</h3><p>Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.</p></article>
+          <article class="practice-card"><span class="practice-num">04 / DÉVELOPPEMENT & AUTOMATISATION</span><h3>Outils et applications</h3><p>Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="skills" id="competences">
       <div class="wrap">
         <div class="section-top">
-          <div><div class="section-index">03 / COMPÉTENCES</div><h2 class="section-title">Les outils derrière<br><em>le travail.</em></h2></div>
-          <p class="section-desc">Domaines travaillés dans le cadre de ma formation et de mes projets personnels.</p>
+          <div><div class="section-index">04 / COMPÉTENCES TECHNIQUES</div><h2 class="section-title">Les outils derrière<br><em>le travail.</em></h2></div>
+          <p class="section-desc">Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.</p>
         </div>
         <div class="skills-grid">
-          <article class="skill"><div class="skill-num">01 — RÉSEAUX</div><h3>Réseaux et dépannage</h3><ul><li>LAN, Wi-Fi et TCP/IP</li><li>VLAN, routage et adressage IP</li><li>DHCP, DNS et ARP</li><li>Analyse avec Wireshark</li></ul></article>
-          <article class="skill"><div class="skill-num">02 — INFRASTRUCTURE</div><h3>Systèmes &amp; administration</h3><ul><li>Dépannage de Windows 10 et 11</li><li>Notions de Windows Server</li><li>Active Directory et stratégies de groupe</li><li>PowerShell (bases)</li></ul></article>
-          <article class="skill"><div class="skill-num">03 — SERVICES</div><h3>Assistance et développement</h3><ul><li>Assistance aux utilisateurs</li><li>Gestion des comptes et des accès</li><li>HTML, CSS et JavaScript</li><li>Node.js, SQL, Git et GitHub</li></ul></article>
+          <article class="skill"><div class="skill-num">01 — SUPPORT</div><h3>Support informatique</h3><ul><li>Diagnostic Windows 10/11</li><li>Assistance aux utilisateurs</li><li>Gestion des tickets et des accès</li><li>Suivi et documentation</li></ul></article>
+          <article class="skill"><div class="skill-num">02 — RÉSEAUX</div><h3>Réseaux et dépannage</h3><ul><li>LAN, Wi-Fi et TCP/IP</li><li>VLAN, routage et adressage IP</li><li>DHCP, DNS et ARP</li><li>Analyse avec Wireshark</li></ul></article>
+          <article class="skill"><div class="skill-num">03 — SYSTÈMES</div><h3>Systèmes &amp; automatisation</h3><ul><li>Notions de Windows Server</li><li>Concepts Active Directory et GPO</li><li>PowerShell (bases)</li><li>Documentation d’infrastructure</li></ul></article>
+          <article class="skill"><div class="skill-num">04 — WEB</div><h3>Développement web</h3><ul><li>HTML5, CSS3 et JavaScript</li><li>Node.js et Express</li><li>SQL et SQLite</li><li>Git et GitHub</li></ul></article>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
-        <div><div class="micro">04 / CONTACT</div><h2>Un projet ou une opportunité ?<br>Parlons-en.</h2><p>Je recherche une opportunité en assistance informatique ou en administration des systèmes et des réseaux. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
+        <div><div class="micro">05 / CONTACT</div><h2>Un projet ou une opportunité ?<br>Parlons-en.</h2><p>Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
         <div class="contact-actions"><a class="btn" href="mailto:mohamedalitijanii@gmail.com">✉ Écrire un e-mail ↗</a><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">Consulter GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">Consulter LinkedIn ↗</a></div>
       </div>
     </section>
