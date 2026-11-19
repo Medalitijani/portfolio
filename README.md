@@ -1,38 +1,53 @@
-# Mohamed Ali Tijani — IT Support & Network Technician
+# Mohamed Ali Tijani — Hybrid IT Professional
 
-A personal technical portfolio presenting projects and practical labs I have built, configured, tested, and documented in IT support, networking, systems administration concepts, and web development.
+A technical portfolio presenting my practical work across **IT support, networking, systems administration, automation, and web development**.
 
 🌐 **Live portfolio:** https://medalitijani.github.io/portfolio/
 
+## Professional focus
+
+I am a Higher Technician graduate in Management Computing (IPSET, Tunisia), building a hybrid IT profile that connects user support, network troubleshooting, systems concepts, scripting, and web application development.
+
+My portfolio focuses on documented practical work: the objective, tools, implementation, test evidence, and known limitations of each project. Personal labs and prototypes are not presented as client or production deployments.
+
 ## Featured projects
 
-| Project | My work | Technologies / tools |
-|---|---|---|
-| [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) | Full-stack ticketing application: authentication, role-based permissions, ticket lifecycle, reporting, dashboard, and email notifications | Node.js, Express 5, SQLite, JavaScript, Jest |
-| [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Small-company infrastructure lab: VLAN segmentation, routing, DHCP, guest isolation, simulated Active Directory/GPO, PowerShell scripts, and support procedures | Cisco Packet Tracer, WinLab simulator, Windows 11, PowerShell |
-| [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Six packet-analysis investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and failed TCP connections | Wireshark, TCP/IP, Windows networking tools |
-| [Northstar IT — Business Website](https://github.com/Medalitijani/northstar-it-business-website) | Multilingual responsive website prototype for a fictional IT services brand; includes a contact-form frontend and a Netlify Function integration in the source | HTML5, CSS3, JavaScript, Netlify Functions, Resend |
+| Domain | Project | Practical work | Technologies / tools |
+|---|---|---|---|
+| IT Support & Service Operations | [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) | Educational ticketing prototype with authentication, role-based access, ticket lifecycle, assignment, comments, dashboard, and email integration | Node.js, Express 5, SQLite, JavaScript, Jest |
+| Networking & Infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Small-company lab with VLAN segmentation, routing, DHCP, guest isolation, Active Directory/GPO concepts, PowerShell scripts, and support documentation | Cisco Packet Tracer, Windows lab concepts, PowerShell |
+| Network Troubleshooting | [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Packet-analysis investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and failed TCP connections | Wireshark, TCP/IP, Windows networking tools |
+| Web Development | [Northstar IT — Business Website](https://github.com/Medalitijani/northstar-it-business-website) | Responsive multilingual website prototype for a fictional IT services brand, with a contact-form frontend and Netlify Function integration in the source | HTML5, CSS3, JavaScript, Netlify Functions, Resend |
 
-## How I approach these projects
+## Technical skills
 
-These are personal projects and learning labs, not client deployments. I document the objective, architecture, tools, implementation, test evidence, and known limitations of each project. Where an environment is simulated, a script was tested only in dry-run mode, or a feature needs deployment configuration, that limitation is stated in the relevant repository.
+- **IT support:** Windows troubleshooting, user assistance, account/access concepts, ticket workflows, and technical documentation.
+- **Networking:** LAN, Wi-Fi, TCP/IP, VLANs, routing, IP addressing, DHCP, DNS, ARP, and packet analysis.
+- **Systems administration:** Windows administration concepts, Windows Server fundamentals, Active Directory and Group Policy concepts.
+- **Automation:** PowerShell fundamentals, CSV-based scripting, validation, and dry-run workflows.
+- **Web development:** HTML, CSS, JavaScript, Node.js, Express, REST API concepts, SQL, and SQLite.
+- **Tools and workflow:** Wireshark, Cisco Packet Tracer, Git, GitHub, and project documentation.
 
-The projects demonstrate my practical work: planning and configuring lab environments, implementing application features, running tests, troubleshooting results, and maintaining technical documentation.
+## Practical approach
 
-## Technical focus
+Across these projects, I practice how to:
+1. Understand a support or infrastructure requirement.
+2. Plan a solution and identify the relevant technologies.
+3. Configure, develop, or simulate the solution.
+4. Test expected behavior and investigate failures.
+5. Document results, assumptions, and limitations.
 
-- IT support and incident troubleshooting
-- LAN, VLANs, DHCP, DNS, TCP/IP, routing, and access control
-- Windows administration concepts, Active Directory, and Group Policy
-- PowerShell scripting and IT automation
-- Helpdesk workflows, authentication, access control, and service operations
-- Web application development, REST APIs, databases, and deployment
+## Project scope and transparency
+
+These are personal projects, learning labs, and demonstrations—not client deployments. Network and Windows infrastructure work is performed in simulated or learning environments. The Helpdesk application is an educational prototype, not an operational service for a real organization. Some scripts are documented for review or dry-run use and have not been validated against a live production Active Directory domain. The Northstar website represents a fictional brand; its contact workflow requires the appropriate Netlify deployment configuration.
 
 ## Explore
 
 - **Portfolio:** https://medalitijani.github.io/portfolio/
+- **Online CV:** https://medalitijani.github.io/portfolio/cv.html
 - **GitHub profile:** https://github.com/Medalitijani
 - **LinkedIn:** https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/
+- **Contact:** mohamedalitijanii@gmail.com
 
 ---
 
