@@ -1,32 +1,24 @@
-# Mohamed Ali Tijani — System & Network Administrator
+# Mohamed Ali Tijani — IT Support & Network Technician
 
-A personal technical portfolio presenting projects and practical labs that I have built, configured, tested, and documented while developing my skills in IT support, systems administration, networking, and web development.
+A professional portfolio presenting practical projects in IT support, network troubleshooting, systems administration, and web application development.
 
-🌐 **Live portfolio:** https://medalitijani.github.io/portfolio/
+🌐 **Portfolio website:** https://medalitijani.github.io/portfolio/
 
 ## Featured projects
 
-| Project | My work | Technologies / tools |
+| Project | Focus | Technologies / tools |
 |---|---|---|
-| [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) | Full-stack ticketing application: authentication, role-based permissions, ticket lifecycle, reporting, dashboard, and email notifications | Node.js, Express 5, SQLite, JavaScript, Jest |
-| [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Small-company infrastructure lab: VLAN segmentation, routing, DHCP, guest isolation, simulated Active Directory/GPO, PowerShell scripts, and support procedures | Cisco Packet Tracer, WinLab simulator, Windows 11, PowerShell |
-| [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Six packet-analysis investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and failed TCP connections | Wireshark, TCP/IP, Windows networking tools |
-| [Northstar IT — Business Website](https://github.com/Medalitijani/northstar-it-business-website) | Multilingual responsive website prototype for a fictional IT services brand; includes a contact-form frontend and a Netlify Function integration in the source | HTML5, CSS3, JavaScript, Netlify Functions, Resend |
+| [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) | Ticket lifecycle, role-based access, dashboard, reporting and email notifications | Node.js, Express, SQLite, JavaScript |
+| [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Network design, VLANs, Active Directory lab, Group Policy and PowerShell automation | Cisco Packet Tracer, Windows Server concepts, PowerShell |
+| [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Packet analysis and troubleshooting across DHCP, DNS, ARP, ICMP and TCP | Wireshark, TCP/IP, Windows networking tools |
 
-## How I approach these projects
-
-These are personal projects and learning labs, not client deployments. I document the objective, architecture, tools, implementation, test evidence, and known limitations of each project. Where an environment is simulated, a script was tested only in dry-run mode, or a feature needs deployment configuration, that limitation is stated in the relevant repository.
-
-The projects demonstrate my practical work: planning and configuring lab environments, implementing application features, running tests, troubleshooting results, and maintaining technical documentation.
-
-## Technical focus
+## Technical interests
 
 - IT support and incident troubleshooting
-- LAN, VLANs, DHCP, DNS, TCP/IP, routing, and access control
-- Windows administration concepts, Active Directory, and Group Policy
+- LAN fundamentals, VLANs, DHCP, DNS and TCP/IP
+- Windows administration, Active Directory and Group Policy
 - PowerShell scripting and IT automation
-- Helpdesk workflows, authentication, access control, and service operations
-- Web application development, REST APIs, databases, and deployment
+- Helpdesk workflows, documentation and service operations
 
 ## Explore
 
@@ -36,4 +28,4 @@ The projects demonstrate my practical work: planning and configuring lab environ
 
 ---
 
-*This repository contains the source code for my personal portfolio website. Project-specific implementation details and evidence are maintained in each linked repository.*
+*This repository contains the source for the portfolio website. Visit the live site for the visual presentation and project screenshots.*
