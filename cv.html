@@ -28,10 +28,22 @@ li{margin:0 0 5px}
 .skill{margin-bottom:12px}.skill b{display:block;color:var(--navy);font-size:13px}
 @media(max-width:650px){.sheet{margin:0;padding:28px 22px;box-shadow:none}.toolbar{margin:12px 18px}.grid{grid-template-columns:1fr;gap:10px}h1{font-size:27px}}
 @media print{body{background:#fff;font-size:11pt}.toolbar{display:none}.sheet{max-width:none;margin:0;padding:12mm 14mm;box-shadow:none}.grid{grid-template-columns:225px 1fr;gap:24px}header{margin-bottom:18px}section{break-inside:avoid}.item{break-inside:avoid}@page{size:A4;margin:0}}
+
+.language-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.language-button{min-width:34px;padding:7px 9px;border:0;border-radius:5px;background:transparent;color:var(--muted);font-weight:700;cursor:pointer}
+.language-button.is-active{background:#e8f0fc;color:var(--blue)}
+.language-button:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #2459a6;outline-offset:3px}
 </style>
 </head>
 <body>
-<div class="toolbar"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button><a class="btn" href="./index.html">Retour au portfolio</a></div>
+<div class="toolbar">
+  <div class="language-switch" role="group" aria-label="Choisir la langue">
+    <button type="button" class="language-button is-active" data-language="fr" aria-pressed="true">FR</button>
+    <button type="button" class="language-button" data-language="en" aria-pressed="false">EN</button>
+  </div>
+  <button id="print-button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  <a class="btn" id="back-button" href="./index.html">Retour au portfolio</a>
+</div>
 <main class="sheet">
 <header>
 <h1>Mohamed Ali Tijani</h1>
@@ -74,5 +86,64 @@ li{margin:0 0 5px}
 </div>
 </div>
 </main>
+
+<script>
+(() => {
+  const translations = {
+    "header .role": ["Technicien supérieur en informatique de gestion · Support IT · Réseaux","Higher Technician in Management Information Technology · IT Support · Networking"],
+    "header .contact": ["Tunisie · mohamedalitijanii@gmail.com · GitHub : github.com/Medalitijani","Tunisia · mohamedalitijanii@gmail.com · GitHub: github.com/Medalitijani"],
+    "h2": ["Compétences clés","Key Skills","Langues","Languages","Atouts","Strengths","Profil professionnel","Professional Profile","Formation","Education","Expérience professionnelle","Professional Experience","Stages professionnels","Internships"],
+    ".skill b": ["Support informatique","IT Support","Réseaux","Networking","Systèmes et identité","Systems & Identity","Automatisation et développement","Automation & Development","Documentation","Documentation"],
+    ".skill .small": ["Diagnostic et dépannage, Windows 10/11, Microsoft 365","Troubleshooting, Windows 10/11, Microsoft 365","LAN / Wi-Fi, TCP/IP, tests d’équipements, notions DHCP et DNS","LAN / Wi-Fi, TCP/IP, equipment testing, DHCP and DNS fundamentals","Active Directory, Microsoft Entra ID, Windows Server (notions)","Active Directory, Microsoft Entra ID, Windows Server fundamentals","PowerShell (notions), SQL, HTML, CSS, JavaScript, Git et GitHub","PowerShell fundamentals, SQL, HTML, CSS, JavaScript, Git and GitHub","Rédaction technique, suivi et rapports","Technical writing, tracking and reporting"],
+    "aside section:nth-of-type(2) li": ["Arabe — langue maternelle","Arabic — native","Anglais — excellent","English — excellent","Français — bon","French — good"],
+    "aside section:nth-of-type(3) li": ["Résolution de problèmes","Problem-solving","Apprentissage rapide","Fast learner","Communication","Communication","Esprit d’équipe","Teamwork","Adaptabilité","Adaptability","Sens du service","Customer service"],
+    ".grid > div > section:first-child p": ["Jeune diplômé en Informatique de Gestion, orienté vers l’assistance informatique, l’administration des réseaux et le développement web. Mes projets personnels et mes stages m’ont permis de pratiquer le dépannage, les opérations réseau, les tests d’équipements et la documentation technique. Rigoureux et motivé, je souhaite développer mes compétences au sein d’une équipe informatique.","Recent Management Information Technology graduate focused on IT support, network administration and web development. Through personal projects and internships, I have gained practical experience in troubleshooting, network operations, equipment testing and technical documentation. I am methodical and motivated to further develop my skills as part of an IT team."],
+    ".grid > div > section:nth-of-type(2) .item h3": ["Diplôme de Technicien Supérieur (BTS) — Informatique de Gestion","Higher Technician Certificate (BTS) — Management Information Technology","Brevet de Technicien Professionnel (BTP) — Informatique de Gestion","Vocational Technician Certificate (BTP) — Management Information Technology"],
+    ".grid > div > section:nth-of-type(3) .item h3": ["Conseiller client — Service après-vente","Customer Service Advisor — After-Sales Service"],
+    ".grid > div > section:nth-of-type(3) .item li": ["Accueil et orientation des clients au service après-vente.","Welcomed and directed customers within the after-sales service department.","Suivi des demandes et accompagnement des clients tout au long de leur prise en charge.","Followed up on customer requests and assisted customers throughout the service process."],
+    ".grid > div > section:nth-of-type(3) > section .item h3": ["Stagiaire PFE — Support réseau","Final-Year Intern — Network Support","Stagiaire — Administration et développement web","Intern — Administration & Web Development","Stagiaire — R&amp;D / Production","Intern — R&amp;D / Production","Stagiaire — Conseiller clientèle en assurances","Intern — Insurance Customer Advisor"],
+    ".grid > div > section:nth-of-type(3) > section .item li": [
+      "Participation aux opérations réseau et suivi des interventions techniques.","Assisted with network operations and monitored technical interventions.",
+      "Tests et validation d’équipements réseau avant leur mise en service.","Tested and validated network equipment before deployment.",
+      "Documentation technique et support de premier niveau.","Prepared technical documentation and provided first-line support.",
+      "Administration du centre et gestion informatisée des dossiers des apprenants.","Supported centre administration and maintained digital learner records.",
+      "Conception, refonte et mise à jour de pages web de la plateforme.","Designed, redesigned and updated pages on the platform website.",
+      "Appui technique aux activités de recherche et développement.","Provided technical assistance to research and development activities.",
+      "Suivi des tests sur la ligne de production et signalement des anomalies.","Monitored production-line tests and reported anomalies.",
+      "Rédaction de rapports techniques de suivi.","Prepared technical monitoring reports.",
+      "Accueil et conseil des clients sur les produits d’assurance.","Welcomed customers and advised them on insurance products.",
+      "Mise à jour des dossiers, traitement des demandes et suivi des réclamations.","Updated customer files, processed requests and followed up on claims."
+    ]
+  };
+  const setLanguage = language => {
+    const en = language === "en";
+    Object.entries(translations).forEach(([selector, values]) => {
+      document.querySelectorAll(selector).forEach((element, index) => {
+        if (values[index] !== undefined) element.innerHTML = values[index + (en ? 1 : 0)];
+      });
+    });
+    document.documentElement.lang = language;
+    document.title = en ? "CV — Mohamed Ali Tijani" : "CV — Mohamed Ali Tijani";
+    document.querySelector('meta[name="description"]').content = en
+      ? "CV of Mohamed Ali Tijani — Higher Technician in Management Information Technology, IT support and networking."
+      : "CV de Mohamed Ali Tijani — Technicien supérieur en informatique de gestion, support informatique et réseaux.";
+    document.getElementById("print-button").textContent = en ? "Print / Save as PDF" : "Imprimer / Enregistrer en PDF";
+    document.getElementById("back-button").textContent = en ? "Back to portfolio" : "Retour au portfolio";
+    document.querySelector(".language-switch").setAttribute("aria-label", en ? "Choose language" : "Choisir la langue");
+    document.querySelectorAll(".language-button").forEach(button => {
+      const active = button.dataset.language === language;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+  };
+  document.querySelectorAll(".language-button").forEach(button => {
+    button.addEventListener("click", () => setLanguage(button.dataset.language));
+  });
+  let preferred = "fr";
+  try { preferred = localStorage.getItem("portfolio-language") || "fr"; } catch (_) {}
+  setLanguage(preferred === "en" ? "en" : "fr");
+})();
+</script>
 </body>
 </html>
