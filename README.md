@@ -1,4 +1,4 @@
-# Mohamed Ali Tijani — Hybrid IT Professional
+# Mohamed Ali Tijani — IT Support, Networks & Systems
 
 A technical portfolio presenting my practical work across **IT support, networking, systems administration, automation, and web development**.
 
