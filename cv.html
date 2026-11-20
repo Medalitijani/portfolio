@@ -98,7 +98,7 @@ li{margin:0 0 5px}
     "aside section:nth-of-type(2) li": ["Arabe — langue maternelle","Arabic — native","Anglais — excellent","English — excellent","Français — bon","French — good"],
     "aside section:nth-of-type(3) li": ["Résolution de problèmes","Problem-solving","Apprentissage rapide","Fast learner","Communication","Communication","Esprit d’équipe","Teamwork","Adaptabilité","Adaptability","Sens du service","Customer service"],
     ".grid > div > section:first-child p": ["Jeune diplômé en Informatique de Gestion, orienté vers l’assistance informatique, l’administration des réseaux et le développement web. Mes projets personnels et mes stages m’ont permis de pratiquer le dépannage, les opérations réseau, les tests d’équipements et la documentation technique. Rigoureux et motivé, je souhaite développer mes compétences au sein d’une équipe informatique.","Recent Management Information Technology graduate focused on IT support, network administration and web development. Through personal projects and internships, I have gained practical experience in troubleshooting, network operations, equipment testing and technical documentation. I am methodical and motivated to further develop my skills as part of an IT team."],
-    ".grid > div > section:nth-of-type(2) .item h3": ["Diplôme de Technicien Supérieur (BTS) — Informatique de Gestion","Higher Technician Certificate (BTS) — Management Information Technology","Brevet de Technicien Professionnel (BTP) — Informatique de Gestion","Vocational Technician Certificate (BTP) — Management Information Technology"],
+    ".grid > div > section:nth-of-type(2) .item h3": ["Diplôme de Technicien Supérieur (BTS) — Informatique de Gestion","Higher Technician Diploma (BTS) — Management Information Technology","Brevet de Technicien Professionnel (BTP) — Informatique de Gestion","Vocational Technician Diploma (BTP) — Management Information Technology"],
     ".grid > div > section:nth-of-type(3) .item h3": ["Conseiller client — Service après-vente","Customer Service Advisor — After-Sales Service"],
     ".grid > div > section:nth-of-type(3) > .item li": ["Accueil et orientation des clients au service après-vente.","Welcomed and directed customers within the after-sales service department.","Suivi des demandes et accompagnement des clients tout au long de leur prise en charge.","Followed up on customer requests and assisted customers throughout the service process."],
     ".grid > div > section:nth-of-type(3) > section .item h3": ["Stagiaire PFE — Support réseau","Final-Year Intern — Network Support","Stagiaire — Administration et développement web","Intern — Administration & Web Development","Stagiaire — R&amp;D / Production","Intern — R&amp;D / Production","Stagiaire — Conseiller clientèle en assurances","Intern — Insurance Customer Advisor"],
@@ -119,7 +119,7 @@ li{margin:0 0 5px}
     const en = language === "en";
     Object.entries(translations).forEach(([selector, values]) => {
       document.querySelectorAll(selector).forEach((element, index) => {
-        if (values[index] !== undefined) element.innerHTML = values[index + (en ? 1 : 0)];
+        if (values[index] !== undefined) element.innerHTML = values[index * 2 + (en ? 1 : 0)];
       });
     });
     document.documentElement.lang = language;
