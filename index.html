@@ -127,6 +127,11 @@
     .contact-actions .btn:last-child:hover{background:rgba(114,173,255,.12);border-color:rgba(114,173,255,.6)}
     footer{background:#050c16;color:#9aacc2;padding:24px 0;font-size:.67rem;border-top:1px solid var(--line)}
     .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .language-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);flex-shrink:0}
+    .language-button{min-width:34px;padding:6px 8px;border:0;border-radius:5px;background:transparent;color:var(--muted);font:700 .68rem var(--sans);cursor:pointer;transition:background .2s,color .2s}
+    .language-button:hover{color:var(--ink)}
+    .language-button.is-active{background:rgba(61,139,250,.22);color:#dceaff}
+    .language-button:focus-visible{outline:2px solid #93c5fd;outline-offset:3px}
     @media(max-width:900px){
       .hero-grid{grid-template-columns:1.1fr .9fr;gap:32px}.hero-art{min-height:390px}.portrait{height:340px}.art-backdrop{height:350px}
       .about-grid{gap:40px}.section-top{align-items:flex-start;flex-direction:column}.section-desc{max-width:620px}
@@ -160,6 +165,10 @@
       <nav class="navlinks" aria-label="Navigation principale">
         <a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#pratique">Réalisations</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
         <a class="nav-cta" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
+        <div class="language-switch" role="group" aria-label="Choose language">
+          <button type="button" class="language-button is-active" data-language="fr" aria-pressed="true">FR</button>
+          <button type="button" class="language-button" data-language="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -295,5 +304,125 @@
   </main>
 
   <footer><div class="wrap footer-inner"><span>© 2026 Mohamed Ali Tijani · Tunis</span><span>Réalisé avec curiosité et persévérance.</span></div></footer>
+
+  <script>
+    (() => {
+      const translations = {
+        "navlinks a:not(.nav-cta)": [
+          ["À propos","About"],["Projets","Projects"],["Réalisations","Practice"],["Compétences","Skills"],["Contact","Contact"]
+        ],
+        ".hero .micro": [["Portfolio / 2026 — Tunis, Tunisie","Portfolio / 2026 — Tunis, Tunisia"]],
+        ".hero-role": [["Support informatique · Réseaux · Systèmes · Développement web","IT Support · Networks · Systems · Web Development"]],
+        ".hero-copy": [["Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.","I hold a Higher Technician Certificate (BTS) in Management Information Technology from IPSET, with a particular interest in systems and network administration. Through my projects, I practise infrastructure configuration, network troubleshooting, Windows environment administration, and web tool development. I document each project and explain the technical solutions implemented."]],
+        ".hero-actions .btn": [
+          ["Découvrir mes projets <span>↗</span>","Explore my projects <span>↗</span>"],
+          ["Mon profil GitHub ↗","My GitHub profile ↗"],
+          ["Mon profil LinkedIn ↗","My LinkedIn profile ↗"],
+          ["Consulter mon CV ↗","View my CV ↗"]
+        ],
+        ".hero-note": [["<b>●</b> Ouvert aux opportunités en support IT, réseaux, systèmes et développement web","<b>●</b> Open to opportunities in IT support, networking, systems and web development"]],
+        "#apropos .section-index": [["01 / À PROPOS","01 / ABOUT"]],
+        ".about-statement": [["Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span>","Connecting users, systems and applications to <span>keep everyday IT running.</span>"]],
+        ".about-text p": [
+          ["Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.","I hold BTS and BTP qualifications in Management Information Technology and am focusing on IT support, network administration and website development."],
+          ["Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.","I take a structured, methodical approach to building personal projects and hands-on labs. I document configurations, test results and the limitations of each environment."],
+          ["Langues : arabe (langue maternelle), anglais (excellent), français (bon).","Languages: Arabic (native), English (excellent), French (good)."]
+        ],
+        ".edu-label": [["FORMATION / 01","EDUCATION / 01"],["FORMATION / 02","EDUCATION / 02"]],
+        ".edu strong": [["BTS — Informatique de Gestion","BTS — Management Information Technology"],["BTP — Informatique de Gestion","BTP — Management Information Technology"]],
+        "#projets .section-index": [["02 / SÉLECTION DE PROJETS","02 / SELECTED PROJECTS"]],
+        "#projets .section-title": [["Du concret.<br><em>Pas seulement des mots.</em>","Real work.<br><em>Beyond just words.</em>"]],
+        "#projets .section-desc": [["Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.","Four complementary areas demonstrated through documented personal projects, prototypes and hands-on labs."]],
+        ".project-type": [
+          ["Application / Assistance","Application / IT Support"],
+          ["Infrastructure / Réseaux","Infrastructure / Networking"],
+          ["Réseaux / Dépannage","Networking / Troubleshooting"],
+          ["Création de sites / Interface","Web Design / Interface"]
+        ],
+        ".project h3": [
+          ["Application de gestion des demandes d’assistance","IT Support Ticket Management Application"],
+          ["Infrastructure informatique d'une petite entreprise","Small Business IT Infrastructure"],
+          ["Carnet d’analyse et de diagnostic réseau — Wireshark","Network Analysis & Troubleshooting Casebook — Wireshark"],
+          ["Northstar informatique — site vitrine multilingue","Northstar IT — Multilingual Business Website"]
+        ],
+        ".project p": [
+          ["Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle.","An educational IT support ticketing prototype featuring authentication, user roles (user, technician, administrator), ticket creation and tracking, assignment, comments, history, a dashboard and CSV export. Built as a demonstration project, not deployed for operational use by a real organisation."],
+          ["Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle ACL bloquant l'accès des invités au serveur. Tests de connectivité documentés.","An infrastructure lab for a 20-person company: three VLANs (staff, management and guests), inter-VLAN routing, DHCP, and an ACL rule preventing guest access to the server. Connectivity tests are documented."],
+          ["Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats.","A practical traffic analysis and troubleshooting casebook covering DHCP, DNS, ARP, ICMP and TCP exchanges using Wireshark, display filters and explanations of the findings."],
+          ["Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique.","A responsive, multilingual showcase website built with HTML, CSS and JavaScript for a fictional IT brand. The contact form requires Netlify configuration; the GitHub Pages version is a static demonstration."]
+        ],
+        ".project-links a": [
+          ["Code source ↗","Source code ↗"],["Démo du prototype ↗","Prototype demo ↗"],
+          ["Code source ↗","Source code ↗"],["Code source ↗","Source code ↗"],
+          ["Voir l’application ↗","View website ↗"],["Code source ↗","Source code ↗"]
+        ],
+        "#pratique .section-index": [["03 / RÉALISATIONS PRATIQUES","03 / HANDS-ON EXPERIENCE"]],
+        "#pratique .section-title": [["Des compétences<br><em>mises en pratique.</em>","Skills<br><em>put into practice.</em>"]],
+        "#pratique .section-desc": [["Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.","Practical examples from my projects. Simulated environments and prototypes are clearly identified as such in their documentation."]],
+        ".practice-num": [
+          ["01 / SUPPORT IT","01 / IT SUPPORT"],["02 / RÉSEAUX","02 / NETWORKING"],
+          ["03 / DIAGNOSTIC","03 / TROUBLESHOOTING"],["04 / DÉVELOPPEMENT & AUTOMATISATION","04 / DEVELOPMENT & AUTOMATION"]
+        ],
+        ".practice-card h3": [
+          ["Gestion des demandes","Ticket management"],["Segmentation et connectivité","Segmentation & connectivity"],
+          ["Analyse de trafic","Traffic analysis"],["Outils et applications","Tools & applications"]
+        ],
+        ".practice-card p": [
+          ["Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.","Built a ticketing prototype with user roles, assignment, request tracking, comments and a dashboard."],
+          ["Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.","Configured a lab with VLANs, inter-VLAN routing, DHCP and access controls to isolate the guest network."],
+          ["Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.","Analysed DHCP, DNS, ARP, ICMP and TCP captures with Wireshark, display filters and packet interpretation."],
+          ["Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.","Developed websites and a Node.js/SQLite prototype, alongside documented PowerShell scripts and simulated validation where appropriate."]
+        ],
+        "#competences .section-index": [["04 / COMPÉTENCES TECHNIQUES","04 / TECHNICAL SKILLS"]],
+        "#competences .section-title": [["Les outils derrière<br><em>le travail.</em>","The tools behind<br><em>the work.</em>"]],
+        "#competences .section-desc": [["Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.","Skills developed through education and hands-on projects. Proficiency varies depending on the technology and the environments practised."]],
+        ".skill-num": [["01 — SUPPORT","01 — SUPPORT"],["02 — RÉSEAUX","02 — NETWORKING"],["03 — SYSTÈMES","03 — SYSTEMS"],["04 — WEB","04 — WEB"]],
+        ".skill h3": [["Support informatique","IT Support"],["Réseaux et dépannage","Networking & Troubleshooting"],["Systèmes &amp; automatisation","Systems &amp; Automation"],["Développement web","Web Development"]],
+        ".skill li": [
+          ["Diagnostic Windows 10/11","Windows 10/11 troubleshooting"],["Assistance aux utilisateurs","User assistance"],["Gestion des tickets et des accès","Ticket and access management"],["Suivi et documentation","Follow-up and documentation"],
+          ["LAN, Wi-Fi et TCP/IP","LAN, Wi-Fi and TCP/IP"],["VLAN, routage et adressage IP","VLANs, routing and IP addressing"],["DHCP, DNS et ARP","DHCP, DNS and ARP"],["Analyse avec Wireshark","Wireshark analysis"],
+          ["Notions de Windows Server","Windows Server fundamentals"],["Concepts Active Directory et GPO","Active Directory and Group Policy concepts"],["PowerShell (bases)","PowerShell (fundamentals)"],["Documentation d’infrastructure","Infrastructure documentation"],
+          ["HTML5, CSS3 et JavaScript","HTML5, CSS3 and JavaScript"],["Node.js et Express","Node.js and Express"],["SQL et SQLite","SQL and SQLite"],["Git et GitHub","Git and GitHub"]
+        ],
+        ".contact .micro": [["05 / CONTACT","05 / CONTACT"]],
+        ".contact h2": [["Un projet ou une opportunité ?<br>Parlons-en.","A project or an opportunity?<br>Let’s talk."]],
+        ".contact p": [["Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.","I am looking for an opportunity in a versatile IT environment, covering user support, networking, systems or web development. You can contact me by email or explore my projects on GitHub."]],
+        ".contact-actions a": [["✉ Écrire un e-mail ↗","✉ Send an email ↗"],["Consulter GitHub ↗","View GitHub ↗"],["Consulter LinkedIn ↗","View LinkedIn ↗"]],
+        ".footer-inner span": [["© 2026 Mohamed Ali Tijani · Tunis","© 2026 Mohamed Ali Tijani · Tunis"],["Réalisé avec curiosité et persévérance.","Built with curiosity and persistence."]]
+      };
+
+      const setLanguage = (language) => {
+        const index = language === "en" ? 1 : 0;
+        Object.entries(translations).forEach(([selector, values]) => {
+          document.querySelectorAll(selector).forEach((element, i) => {
+            const entry = values[i];
+            if (entry) element.innerHTML = entry[index];
+          });
+        });
+        document.documentElement.lang = language;
+        document.title = language === "en"
+          ? "Mohamed Ali Tijani — Portfolio"
+          : "Mohamed Ali Tijani — Portfolio";
+        document.querySelector('meta[name="description"]').content = language === "en"
+          ? "Portfolio of Mohamed Ali Tijani: IT support, networking, systems administration, automation and web development."
+          : "Portfolio de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.";
+        document.querySelector('.navlinks').setAttribute("aria-label", language === "en" ? "Main navigation" : "Navigation principale");
+        document.querySelectorAll(".language-button").forEach(button => {
+          const active = button.dataset.language === language;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+      };
+
+      document.querySelectorAll(".language-button").forEach(button => {
+        button.addEventListener("click", () => setLanguage(button.dataset.language));
+      });
+      let savedLanguage = "fr";
+      try { savedLanguage = localStorage.getItem("portfolio-language") || "fr"; } catch (_) {}
+      setLanguage(savedLanguage === "en" ? "en" : "fr");
+    })();
+  </script>
+
 </body>
 </html>
