@@ -333,6 +333,7 @@
         "#projets .section-index": [["02 / SÉLECTION DE PROJETS","02 / SELECTED PROJECTS"]],
         "#projets .section-title": [["Du concret.<br><em>Pas seulement des mots.</em>","Real work.<br><em>Beyond just words.</em>"]],
         "#projets .section-desc": [["Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.","Four complementary areas demonstrated through documented personal projects, prototypes and hands-on labs."]],
+        ".project-number": [["PROJET — 01","PROJECT — 01"],["PROJET — 02","PROJECT — 02"],["PROJET — 03","PROJECT — 03"],["PROJET — 04","PROJECT — 04"]],
         ".project-type": [
           ["Application / Assistance","Application / IT Support"],
           ["Infrastructure / Réseaux","Infrastructure / Networking"],
@@ -407,6 +408,7 @@
           ? "Portfolio of Mohamed Ali Tijani: IT support, networking, systems administration, automation and web development."
           : "Portfolio de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.";
         document.querySelector('.navlinks').setAttribute("aria-label", language === "en" ? "Main navigation" : "Navigation principale");
+        document.querySelector('.language-switch').setAttribute("aria-label", language === "en" ? "Choose language" : "Choisir la langue");
         document.querySelectorAll(".language-button").forEach(button => {
           const active = button.dataset.language === language;
           button.classList.toggle("is-active", active);
