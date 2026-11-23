@@ -3,428 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <title>Mohamed Ali Tijani — Portfolio</title>
+  <meta name="theme-color" content="#f5f7fb">
   <meta name="description" content="Portfolio de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.">
+  <title>Mohamed Ali Tijani — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-:root{
-      color-scheme:dark;
-      --bg:#07111f;--surface:#0c1a2b;--surface-2:#102238;--surface-3:#142b45;
-      --ink:#edf4ff;--muted:#a7b7cb;--soft:#7f94ad;--navy:#07111f;
-      --blue:#72adff;--blue-strong:#3d8bfa;--line:rgba(166,194,226,.16);
-      --max:1180px;--sans:"Inter",Arial,sans-serif;--display:"Manrope",Arial,sans-serif
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:92px}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
-    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(130,170,220,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(130,170,220,.035) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    .wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
-    .topline{height:3px;background:linear-gradient(90deg,#2563eb,#67b5ff,#2563eb)}
-    .header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .logo{display:flex;align-items:center;gap:11px;font:700 .9rem var(--display);letter-spacing:-.025em;color:var(--ink)}
-    .logo-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(114,173,255,.42);border-radius:10px;background:linear-gradient(145deg,#17375a,#0d2037);color:#b9d7ff;font:800 .68rem var(--sans);box-shadow:0 0 24px rgba(61,139,250,.12)}
-    .navlinks{display:flex;align-items:center;gap:26px}
-    .navlinks a{font-size:.78rem;font-weight:600;color:var(--muted);transition:color .2s}
-    .navlinks a:hover,.navlinks a:focus-visible{color:var(--blue)}
-    .navlinks .nav-cta{padding:10px 16px;border:1px solid rgba(114,173,255,.42);border-radius:7px;background:rgba(61,139,250,.12);color:#cfe2ff}
-    .hero{position:relative;overflow:hidden;padding:94px 0 92px;background:radial-gradient(ellipse at 78% 34%,rgba(37,99,235,.17),transparent 38%),linear-gradient(180deg,#09182a 0%,#07111f 100%);border-bottom:1px solid var(--line)}
-    .hero:after{content:"";position:absolute;width:420px;height:420px;right:-190px;top:-210px;border:1px solid rgba(114,173,255,.12);border-radius:50%;box-shadow:0 0 0 42px rgba(114,173,255,.025),0 0 0 84px rgba(114,173,255,.02);pointer-events:none}
-    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.18fr .82fr;gap:68px;align-items:center}
-    .micro{display:flex;align-items:center;gap:10px;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
-    .micro:before{content:"";width:24px;height:1px;background:var(--blue)}
-    .hero h1{margin:24px 0 20px;font:800 clamp(3.7rem,7.4vw,6.4rem)/.96 var(--display);letter-spacing:-.078em;max-width:720px;color:#f4f8ff}
-    .hero h1 .outline{-webkit-text-stroke:1.5px #a9caff;color:transparent}
-    .hero h1 .blue{color:var(--blue)}
-    .hero-role{margin:0 0 18px;font-size:1rem;font-weight:700;color:#dceaff;letter-spacing:-.02em}
-    .hero-role:before{content:"";display:inline-block;width:25px;height:2px;background:var(--blue);vertical-align:middle;margin:0 11px 4px 0}
-    .hero-copy{max-width:620px;margin:0;color:var(--muted);font-size:.94rem;line-height:1.9}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:29px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border:1px solid rgba(157,188,225,.28);border-radius:7px;font-size:.78rem;font-weight:700;transition:transform .2s,border-color .2s,background .2s,color .2s}
-    .btn:hover{transform:translateY(-2px);border-color:rgba(114,173,255,.7)}
-    .btn:focus-visible,.navlinks a:focus-visible,.project-links a:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
-    .btn-primary{background:linear-gradient(135deg,#3b82f6,#2563eb);border-color:#3b82f6;color:white;box-shadow:0 8px 24px rgba(37,99,235,.2)}
-    .btn-primary:hover{background:linear-gradient(135deg,#60a5fa,#3b82f6)}
-    .btn-secondary{background:rgba(255,255,255,.035);color:#dceaff}
-    .btn-secondary:hover{background:rgba(114,173,255,.1)}
-    .hero-note{display:flex;align-items:center;gap:8px;margin-top:23px;font-size:.72rem;color:var(--muted)}
-    .hero-note b{color:#55d6a0}
-    .hero-art{position:relative;min-height:450px;display:flex;align-items:center;justify-content:center}
-    .art-backdrop{position:absolute;width:340px;height:390px;right:3%;top:6%;border:1px solid rgba(114,173,255,.28);border-radius:18px;background:linear-gradient(145deg,rgba(39,87,143,.42),rgba(12,26,43,.3));transform:rotate(4deg)}
-    .portrait{position:relative;z-index:2;width:min(315px,78%);height:390px;overflow:hidden;background:#14263b;border:1px solid rgba(173,205,245,.35);border-radius:14px;box-shadow:0 28px 70px rgba(0,0,0,.38)}
-    .portrait:after{content:"";position:absolute;inset:0;border:7px solid rgba(7,17,31,.12);pointer-events:none}
-    .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-    .ticker{background:#0d2035;border-bottom:1px solid var(--line);overflow:hidden}
-    .ticker-track{display:flex;justify-content:space-between;gap:24px;white-space:nowrap;padding:15px 0;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d6e6fa}
-    .ticker-track span:after{content:"•";margin-left:24px;color:var(--blue)}
-    section{padding:94px 0}
-    .section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:40px}
-    .section-index{font-size:.66rem;font-weight:700;color:var(--blue);letter-spacing:.13em}
-    .section-title{max-width:760px;margin:12px 0 0;font:800 clamp(2.4rem,5vw,3.9rem)/1.06 var(--display);letter-spacing:-.067em;color:#f0f6ff}
-    .section-title em{font-style:normal;color:var(--blue)}
-    .section-desc{max-width:365px;margin:0;color:var(--muted);font-size:.83rem;line-height:1.85}
-    .about{background:linear-gradient(180deg,#0a1727,#0b192a);border-block:1px solid var(--line)}
-    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:78px}
-    .about-statement{font:750 clamp(1.8rem,3.2vw,2.65rem)/1.22 var(--display);letter-spacing:-.055em;color:#eaf3ff}
-    .about-statement span{color:var(--blue)}
-    .about-text p{margin:0 0 16px;color:var(--muted);font-size:.88rem}
-    .education{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:27px}
-    .edu{padding:17px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.025)}
-    .edu-label{font-size:.62rem;font-weight:700;color:var(--blue);letter-spacing:.1em}
-    .edu strong{display:block;margin:8px 0 5px;font-size:.85rem;line-height:1.4;color:#e8f1ff}
-    .edu small{color:var(--muted);font-size:.72rem}
-    .projects{background:#07111f}
-    .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .project{position:relative;display:flex;flex-direction:column;min-width:0;background:linear-gradient(160deg,#102238,#0c1a2b);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
-    .project:hover{transform:translateY(-4px);border-color:rgba(114,173,255,.48);box-shadow:0 18px 42px rgba(0,0,0,.24)}
-    .project:nth-child(2),.project:nth-child(4){margin-top:30px}
-    .project-image{height:225px;display:grid;place-items:center;overflow:hidden;padding:16px;background:linear-gradient(145deg,#172f4b,#0d1d31);border-bottom:1px solid var(--line)}
-    .project:nth-child(2) .project-image,.project:nth-child(3) .project-image{background:linear-gradient(145deg,#142b45,#0c1b2d)}
-    .project-image img{width:100%;height:100%;object-fit:contain}
-    .project-body{padding:22px 23px 21px;display:flex;flex-direction:column;flex:1}
-    .project-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
-    .project-type{font-size:.62rem;font-weight:700;color:#8dbdff;letter-spacing:.08em;text-transform:uppercase}
-    .project-number{font-size:.63rem;color:#7188a3}
-    .project h3{margin:0 0 10px;font:750 1.3rem/1.25 var(--display);letter-spacing:-.04em;color:#f0f6ff}
-    .project p{margin:0;color:var(--muted);font-size:.81rem;line-height:1.8}
-    .tags{display:flex;flex-wrap:wrap;gap:6px;margin:17px 0 20px}
-    .tags span{padding:5px 8px;background:rgba(132,174,226,.08);border:1px solid rgba(157,188,225,.14);border-radius:5px;font-size:.61rem;color:#b9cce3}
-    .project-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
-    .project-links a{font-size:.76rem;font-weight:700;color:#8dbdff}
-    .project-links a:hover{text-decoration:underline;text-underline-offset:4px;color:#c2ddff}
-    .skills{background:linear-gradient(145deg,#0c2036,#0a1727);color:white;border-block:1px solid var(--line)}
-    .skills .section-index{color:#9bc5ff}
-    .skills .section-title em{color:#9bc5ff}
-    .skills .section-desc{color:#aebed1}
-    .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(174,204,240,.2);border-bottom:1px solid rgba(174,204,240,.2)}
-    .skill{padding:25px 22px 28px 0}
-    .skill+.skill{padding-left:22px;border-left:1px solid rgba(174,204,240,.2)}
-    .skill-num{font-size:.64rem;font-weight:700;color:#9bc5ff;letter-spacing:.08em}
-    .skill h3{margin:16px 0 13px;font:750 1.15rem var(--display);letter-spacing:-.03em;color:#edf5ff}
-    .skill ul{margin:0;padding:0;list-style:none}
-    .skill li{padding:7px 0;border-bottom:1px solid rgba(174,204,240,.12);color:#c5d4e6;font-size:.78rem}
-    .skill li:last-child{border:0}
-    .practice{background:#0a1727;border-block:1px solid var(--line)}
-    .practice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-    .practice-card{padding:21px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#102238,#0c1a2b);transition:border-color .2s,transform .2s}
-    .practice-card:hover{border-color:rgba(114,173,255,.4);transform:translateY(-3px)}
-    .practice-num{font-size:.61rem;font-weight:700;color:#8dbdff;letter-spacing:.08em}
-    .practice-card h3{margin:13px 0 9px;font:750 1.02rem/1.3 var(--display);letter-spacing:-.025em;color:#edf5ff}
-    .practice-card p{margin:0;color:var(--muted);font-size:.76rem;line-height:1.8}
-    .contact{position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 40%,rgba(37,99,235,.18),transparent 40%),#0d2035;padding:82px 0;border-top:1px solid var(--line)}
-    .contact-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .contact h2{max-width:690px;margin:13px 0 12px;font:800 clamp(2.5rem,5vw,4.25rem)/1.04 var(--display);letter-spacing:-.065em;color:#f1f6ff}
-    .contact p{max-width:560px;margin:0;color:var(--muted);font-size:.86rem}
-    .contact-actions{display:flex;flex-direction:column;gap:10px;min-width:190px}
-    .contact-actions .btn{border-color:#3b82f6;background:#2563eb;color:white}
-    .contact-actions .btn:hover{background:#3b82f6}
-    .contact-actions .btn:last-child{background:rgba(255,255,255,.04);color:#dceaff;border-color:rgba(157,188,225,.28)}
-    .contact-actions .btn:last-child:hover{background:rgba(114,173,255,.12);border-color:rgba(114,173,255,.6)}
-    footer{background:#050c16;color:#9aacc2;padding:24px 0;font-size:.67rem;border-top:1px solid var(--line)}
-    .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .language-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);flex-shrink:0}
-    .language-button{min-width:34px;padding:6px 8px;border:0;border-radius:5px;background:transparent;color:var(--muted);font:700 .68rem var(--sans);cursor:pointer;transition:background .2s,color .2s}
-    .language-button:hover{color:var(--ink)}
-    .language-button.is-active{background:rgba(61,139,250,.22);color:#dceaff}
-    .language-button:focus-visible{outline:2px solid #93c5fd;outline-offset:3px}
-    @media(max-width:900px){
-      .hero-grid{grid-template-columns:1.1fr .9fr;gap:32px}.hero-art{min-height:390px}.portrait{height:340px}.art-backdrop{height:350px}
-      .about-grid{gap:40px}.section-top{align-items:flex-start;flex-direction:column}.section-desc{max-width:620px}
-      .practice-grid{grid-template-columns:repeat(2,1fr)}.skills-grid{grid-template-columns:repeat(2,1fr)}
-      .skill:nth-child(odd){padding-left:0;border-left:0}.skill:nth-child(even){padding-left:22px;border-left:1px solid rgba(174,204,240,.2)}
-    }
-    @media(max-width:650px){
-      .wrap{width:calc(100% - 36px)}.nav{height:auto;min-height:66px;align-items:flex-start;flex-direction:column;justify-content:center;gap:8px;padding:12px 0}
-      .navlinks{width:100%;gap:17px;overflow-x:auto;padding:2px 0 5px}.navlinks a{font-size:.68rem;white-space:nowrap}.navlinks .nav-cta{display:none}
-      .logo{font-size:.77rem}.logo-mark{width:32px;height:32px}
-      .hero{padding:58px 0 60px}.hero-grid,.about-grid{grid-template-columns:1fr;gap:20px}.hero h1{font-size:clamp(3.4rem,15vw,5rem)}
-      .hero-role{font-size:.9rem;line-height:1.6}.hero-copy{font-size:.86rem}.hero-art{min-height:350px;margin-top:2px}
-      .portrait{width:245px;height:310px}.art-backdrop{width:265px;height:315px;right:8%}
-      section{padding:70px 0}.ticker-track{justify-content:flex-start;padding-left:18px}
-      .education{grid-template-columns:1fr}.practice-grid{grid-template-columns:1fr}
-      .project-grid{grid-template-columns:1fr;gap:17px}.project:nth-child(2),.project:nth-child(4){margin-top:0}.project-image{height:195px}
-      .skills-grid{grid-template-columns:1fr}.skill,.skill+.skill{padding:21px 0;border-left:0;border-bottom:1px solid rgba(174,204,240,.2)}.skill:last-child{border-bottom:0}
-      .contact-grid{align-items:flex-start;flex-direction:column}.contact-actions{flex-direction:row;flex-wrap:wrap}.contact-actions .btn{min-width:0}
-      .section-title{font-size:clamp(2.25rem,11vw,3.2rem)}
-    }
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}
-    }
+    :root{--navy:#10233f;--navy-2:#18385f;--blue:#2864c5;--blue-2:#eaf1fc;--ink:#17263b;--muted:#64748b;--soft:#f5f7fb;--line:#e2e8f0;--white:#fff;--green:#16845d;--shadow:0 18px 50px rgba(16,35,63,.08);--max:1160px;--sans:"DM Sans",Arial,sans-serif;--display:"Manrope",Arial,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:94px}body{margin:0;background:var(--white);color:var(--ink);font:16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}.container{width:min(var(--max),calc(100% - 48px));margin:auto}.progress{position:fixed;z-index:100;inset:0 auto auto 0;width:0;height:3px;background:var(--blue)}
+    .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(226,232,240,.9)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font:800 .92rem var(--display);letter-spacing:-.035em;color:var(--navy)}.brand-mark{width:39px;height:39px;display:grid;place-items:center;border-radius:11px;background:var(--navy);color:#fff;font-size:.7rem;letter-spacing:.04em;box-shadow:0 6px 16px #10233f25}
+    .nav-right{display:flex;align-items:center;gap:24px}.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{font-size:.78rem;font-weight:700;color:#52647c;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--blue)}.nav-links .nav-cta{padding:10px 15px;border-radius:7px;background:var(--navy);color:#fff}.nav-links .nav-cta:hover{background:var(--blue);color:#fff}
+    .language{display:flex;gap:3px;padding:4px;border:1px solid var(--line);border-radius:8px;background:#fff}.language button{border:0;border-radius:5px;background:transparent;padding:5px 8px;color:var(--muted);font-size:.68rem;font-weight:800;cursor:pointer}.language button[aria-pressed=true]{background:var(--blue-2);color:var(--blue)}
+    .menu-toggle{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);cursor:pointer}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#f7f9fc 0%,#fff 57%,#eef4fc 100%);border-bottom:1px solid var(--line)}.hero:before{content:"";position:absolute;width:560px;height:560px;right:-190px;top:-240px;border:1px solid #d8e4f4;border-radius:50%;box-shadow:0 0 0 55px #e9f0fa70,0 0 0 110px #e9f0fa55}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:68px;padding:82px 0 86px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--blue);font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:25px;height:2px;background:var(--blue)}
+    h1,h2,h3,p{margin-top:0}.hero h1{max-width:690px;margin:22px 0 17px;color:var(--navy);font:800 clamp(3.6rem,7vw,6rem)/.99 var(--display);letter-spacing:-.085em}.hero h1 span{color:var(--blue)}.hero-role{margin:0 0 18px;color:var(--navy-2);font-weight:800;font-size:1rem;letter-spacing:-.02em}.hero-copy{max-width:650px;margin:0;color:#5e6e83;font-size:.94rem;line-height:1.95}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:11px 16px;border:1px solid #d6dfeb;border-radius:7px;background:#fff;color:var(--navy);font-size:.77rem;font-weight:800;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}.btn:hover{transform:translateY(-2px);border-color:#9ab6df;box-shadow:0 8px 20px #10233f12}.btn-primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px #2864c525}.btn-primary:hover{background:#1e54aa;color:#fff}.availability{display:flex;align-items:center;gap:9px;margin:22px 0 0;color:#5f7086;font-size:.74rem}.availability i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px #16845d18}
+    .portrait-wrap{position:relative;display:flex;justify-content:center;align-items:center;min-height:430px}.portrait-frame{position:relative;z-index:1;width:min(320px,82%);height:390px;padding:10px;border:1px solid #d7e2f0;border-radius:18px;background:#fff;box-shadow:0 28px 65px #10233f20;transform:rotate(1.5deg)}.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:11px}.portrait-note{position:absolute;z-index:2;left:0;bottom:45px;padding:13px 17px;border:1px solid var(--line);border-radius:9px;background:#fff;box-shadow:var(--shadow);font-size:.72rem;font-weight:800;color:var(--navy)}.portrait-note span{display:block;color:var(--muted);font-size:.64rem;font-weight:600}
+    .trustbar{border-bottom:1px solid var(--line);background:#fff}.trust-items{display:grid;grid-template-columns:repeat(4,1fr);padding:21px 0}.trust-item{padding:0 20px;border-left:1px solid var(--line)}.trust-item:first-child{padding-left:0;border:0}.trust-item strong{display:block;color:var(--navy);font:800 1.15rem var(--display);letter-spacing:-.04em}.trust-item span{color:var(--muted);font-size:.68rem}
+    section.section{padding:88px 0}.section-soft{background:var(--soft);border-block:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:35px}.section-kicker{color:var(--blue);font-size:.66rem;font-weight:800;letter-spacing:.14em}.section-title{margin:10px 0 0;color:var(--navy);font:800 clamp(2.25rem,4.6vw,3.6rem)/1.08 var(--display);letter-spacing:-.07em}.section-title em{font-style:normal;color:var(--blue)}.section-desc{max-width:410px;margin:0;color:var(--muted);font-size:.82rem;line-height:1.85}
+    .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:76px}.about-statement{max-width:430px;margin:14px 0 0;color:var(--navy);font:800 clamp(1.75rem,3.2vw,2.5rem)/1.24 var(--display);letter-spacing:-.055em}.about-statement span{color:var(--blue)}.about-copy p{margin:0 0 14px;color:#5f6f83;font-size:.87rem}.education{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.edu{padding:17px;border:1px solid var(--line);border-radius:9px;background:#fff}.edu small{display:block;color:var(--blue);font-size:.62rem;font-weight:800;letter-spacing:.09em}.edu strong{display:block;margin:7px 0 4px;color:var(--navy);font-size:.84rem}.edu span{color:var(--muted);font-size:.7rem}
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.filter{padding:9px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;color:#607087;font-size:.72rem;font-weight:800;cursor:pointer;transition:all .2s}.filter:hover{border-color:#a9bfdf;color:var(--blue)}.filter[aria-pressed=true]{border-color:var(--navy);background:var(--navy);color:#fff}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}.project{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:0 6px 22px #10233f08;transition:transform .22s,border-color .22s,box-shadow .22s}.project:hover{transform:translateY(-4px);border-color:#c4d4e9;box-shadow:var(--shadow)}.project[hidden]{display:none}.project-visual{height:218px;display:grid;place-items:center;overflow:hidden;padding:16px;background:linear-gradient(145deg,#eef3fa,#f8fafd);border-bottom:1px solid var(--line)}.project-visual img{width:100%;height:100%;object-fit:contain}.project-visual .cover{width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:16px;color:var(--blue)}.cover-mark{display:grid;place-items:center;width:78px;height:78px;border:1px solid #cbd9eb;border-radius:18px;background:#fff;font:800 1.2rem var(--display);box-shadow:0 12px 25px #10233f10}.cover-copy{max-width:180px;color:var(--navy);font:800 1rem/1.3 var(--display)}.cover-copy small{display:block;margin-top:7px;color:var(--muted);font:600 .65rem var(--sans)}
+    .project-content{display:flex;flex:1;flex-direction:column;padding:21px 22px 19px}.project-meta{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;color:var(--blue);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.project h3{margin:0 0 9px;color:var(--navy);font:800 1.16rem/1.3 var(--display);letter-spacing:-.035em}.project p{margin:0;color:#64748b;font-size:.78rem;line-height:1.8}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0 18px}.tags span{padding:5px 8px;border:1px solid #e2eaf4;border-radius:5px;background:#f7f9fc;color:#536780;font-size:.61rem;font-weight:700}.project-links{display:flex;flex-wrap:wrap;gap:17px;margin-top:auto;padding-top:13px;border-top:1px solid var(--line)}.project-links a{color:var(--blue);font-size:.73rem;font-weight:800}.project-links a:hover{text-decoration:underline;text-underline-offset:4px}
+    .practice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.practice-card{padding:20px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:transform .2s,border-color .2s}.practice-card:hover{transform:translateY(-3px);border-color:#b8cbe5}.practice-num{color:var(--blue);font-size:.62rem;font-weight:800;letter-spacing:.09em}.practice-card h3{margin:12px 0 8px;color:var(--navy);font:800 .98rem/1.35 var(--display)}.practice-card p{margin:0;color:var(--muted);font-size:.73rem;line-height:1.8}
+    .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #dce5f0;border-bottom:1px solid #dce5f0}.skill{padding:23px 20px 24px 0}.skill+.skill{padding-left:20px;border-left:1px solid #dce5f0}.skill-index{color:var(--blue);font-size:.63rem;font-weight:800;letter-spacing:.08em}.skill h3{margin:12px 0;color:var(--navy);font:800 1.05rem var(--display)}.skill ul{margin:0;padding:0;list-style:none}.skill li{padding:7px 0;border-bottom:1px solid #edf1f6;color:#5e6e83;font-size:.74rem}.skill li:last-child{border:0}
+    .github-panel{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:25px 27px;border:1px solid #d9e4f2;border-radius:12px;background:linear-gradient(110deg,#f5f8fd,#fff)}.github-copy{display:flex;align-items:center;gap:16px}.github-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:var(--navy);color:#fff;font-size:1.2rem;font-weight:800}.github-copy strong{display:block;color:var(--navy);font:800 1rem var(--display)}.github-copy span{color:var(--muted);font-size:.73rem}.github-stats{display:flex;gap:26px}.github-stat strong{display:block;color:var(--navy);font:800 1.2rem var(--display)}.github-stat span{color:var(--muted);font-size:.65rem}
+    .contact{background:var(--navy);color:#fff}.contact .section-kicker{color:#a8c9fa}.contact .section-title{color:#fff}.contact .section-title em{color:#a8c9fa}.contact .section-desc{color:#c1ccdb}.contact-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}.contact-actions{display:flex;flex-direction:column;gap:9px;min-width:190px}.contact-actions .btn{border-color:#456184;background:#1a3659;color:#fff}.contact-actions .btn-primary{border-color:#4c87e3;background:#2864c5}.contact-actions .btn:hover{border-color:#8eb5ed;background:#234b7b}
+    footer{padding:22px 0;background:#0b1b30;color:#aebbd0;font-size:.68rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer-links{display:flex;gap:16px}.footer-links a:hover{color:#fff}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    a:focus-visible,button:focus-visible{outline:3px solid #8bb5f1;outline-offset:3px}
+    @media(max-width:920px){.hero-grid{gap:30px}.about-grid{gap:38px}.section-head{align-items:flex-start;flex-direction:column}.section-desc{max-width:650px}.skills-grid{grid-template-columns:repeat(2,1fr)}.skill:nth-child(3){padding-left:0;border-left:0}.skill:nth-child(4){padding-left:20px}.practice-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.container{width:calc(100% - 36px)}.nav{height:68px}.menu-toggle{display:grid;place-items:center}.nav-right{gap:10px}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:16px 22px 20px;border-bottom:1px solid var(--line);background:#fff;box-shadow:0 18px 25px #10233f10;align-items:stretch;flex-direction:column;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 4px;border-bottom:1px solid #edf1f6}.nav-links .nav-cta{margin-top:9px;text-align:center}.language{margin-left:auto}.hero-grid{grid-template-columns:1fr;padding:57px 0 55px;gap:20px}.hero h1{font-size:clamp(3.4rem,15vw,5rem)}.hero-copy{font-size:.86rem}.portrait-wrap{min-height:340px;margin-top:0}.portrait-frame{width:245px;height:310px}.portrait-note{left:2%;bottom:22px}.trust-items{grid-template-columns:repeat(2,1fr);gap:16px}.trust-item{padding:0 10px;border:0}.trust-item:nth-child(odd){padding-left:0}.section.section{padding:67px 0}.about-grid{grid-template-columns:1fr;gap:19px}.education{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr}.project-visual{height:190px}.practice-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.skill,.skill+.skill,.skill:nth-child(4){padding:20px 0;border-left:0;border-bottom:1px solid #dce5f0}.skill:last-child{border-bottom:0}.github-panel{align-items:flex-start;flex-direction:column}.github-stats{gap:22px}.contact-grid{align-items:flex-start;flex-direction:column}.contact-actions{width:100%;flex-direction:row;flex-wrap:wrap}.contact-actions .btn{flex:1}.footer-inner{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <div class="topline"></div>
+  <div class="progress" id="scroll-progress" aria-hidden="true"></div>
   <header class="header">
-    <div class="wrap nav">
-      <a class="logo" href="#accueil"><span class="logo-mark">MAT</span><span>Mohamed Ali Tijani</span></a>
-      <nav class="navlinks" aria-label="Navigation principale">
-        <a href="#apropos">À propos</a><a href="#projets">Projets</a><a href="#pratique">Réalisations</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
-        <a class="nav-cta" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
-        <div class="language-switch" role="group" aria-label="Choose language">
-          <button type="button" class="language-button is-active" data-language="fr" aria-pressed="true">FR</button>
-          <button type="button" class="language-button" data-language="en" aria-pressed="false">EN</button>
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Mohamed Ali Tijani — accueil"><span class="brand-mark">MAT</span><span>Mohamed Ali Tijani</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" id="main-navigation" aria-label="Navigation principale">
+          <a href="#apropos" data-fr="À propos" data-en="About">À propos</a>
+          <a href="#projets" data-fr="Projets" data-en="Projects">Projets</a>
+          <a href="#pratique" data-fr="Réalisations" data-en="Practice">Réalisations</a>
+          <a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a>
+          <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+          <a class="nav-cta" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
+        </nav>
+        <div class="language" role="group" aria-label="Choisir la langue">
+          <button type="button" data-language="fr" aria-pressed="true">FR</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
         </div>
-      </nav>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero" id="accueil">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="micro">Portfolio / 2026 — Tunis, Tunisie</div>
-          <h1>Mohamed Ali<br><span class="outline">Tijani</span><span class="blue">.</span></h1>
-          <p class="hero-role">Support informatique · Réseaux · Systèmes · Développement web</p>
-          <p class="hero-copy">Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projets">Découvrir mes projets <span>↗</span></a>
-            <a class="btn btn-secondary" href="https://github.com/Medalitijani" target="_blank" rel="noopener">Mon profil GitHub ↗</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">Mon profil LinkedIn ↗</a>
-            <a class="btn btn-secondary" href="./cv.html" target="_blank" rel="noopener">Consulter mon CV ↗</a>
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow" data-fr="Portfolio / 2026 — Tunis, Tunisie" data-en="Portfolio / 2026 — Tunis, Tunisia">Portfolio / 2026 — Tunis, Tunisie</div>
+          <h1>Mohamed Ali<br>Tijani<span>.</span></h1>
+          <p class="hero-role" data-fr="Support informatique · Réseaux · Systèmes · Développement web" data-en="IT Support · Networks · Systems · Web Development">Support informatique · Réseaux · Systèmes · Développement web</p>
+          <p class="hero-copy" data-fr="Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre." data-en="I hold a Higher Technician Certificate (BTS) in Management Information Technology from IPSET, with a particular interest in systems and network administration. Through my projects, I practise infrastructure configuration, network troubleshooting, Windows environment administration, and web tool development. I document each project and explain the technical solutions implemented.">Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projets" data-fr="Découvrir mes projets ↗" data-en="Explore my projects ↗">Découvrir mes projets ↗</a>
+            <a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="./cv.html" target="_blank" rel="noopener" data-fr="Consulter mon CV ↗" data-en="View my CV ↗">Consulter mon CV ↗</a>
           </div>
-          <p class="hero-note"><b>●</b> Ouvert aux opportunités en support IT, réseaux, systèmes et développement web</p>
+          <p class="availability"><i></i><span data-fr="Ouvert aux opportunités en support IT, réseaux, systèmes et développement web" data-en="Open to opportunities in IT support, networking, systems and web development">Ouvert aux opportunités en support IT, réseaux, systèmes et développement web</span></p>
         </div>
-        <div class="hero-art">
-          <div class="art-backdrop"></div>
-          <div class="portrait"><img src="./photo-profil.jpg" alt="Portrait professionnel de Mohamed Ali Tijani" loading="eager" decoding="async"></div>
+        <div class="portrait-wrap reveal">
+          <div class="portrait-frame"><img src="./photo-profil.jpg" alt="Portrait professionnel de Mohamed Ali Tijani" fetchpriority="high"></div>
+          <div class="portrait-note"><span data-fr="Profil professionnel" data-en="Professional profile">Profil professionnel</span>IT · Networks · Systems</div>
         </div>
       </div>
     </section>
 
-    <section class="about" id="apropos">
-      <div class="wrap about-grid">
-        <div>
-          <div class="section-index">01 / À PROPOS</div>
-          <p class="about-statement">Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span></p>
+    <div class="trustbar">
+      <div class="container trust-items">
+        <div class="trust-item"><strong>IPSET</strong><span data-fr="Formation supérieure en informatique" data-en="Higher education in IT">Formation supérieure en informatique</span></div>
+        <div class="trust-item"><strong>4+</strong><span data-fr="Projets pratiques documentés" data-en="Documented practical projects">Projets pratiques documentés</span></div>
+        <div class="trust-item"><strong>5</strong><span data-fr="Domaines techniques explorés" data-en="Technical areas explored">Domaines techniques explorés</span></div>
+        <div class="trust-item"><strong>Tunis</strong><span data-fr="Tunisie · Mobilité professionnelle" data-en="Tunisia · Professional opportunities">Tunisie · Mobilité professionnelle</span></div>
+      </div>
+    </div>
+
+    <section class="section section-soft" id="apropos">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="section-kicker" data-fr="01 / À PROPOS" data-en="01 / ABOUT">01 / À PROPOS</div>
+          <p class="about-statement" data-fr="Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span>" data-en="Connecting users, systems and applications to <span>keep everyday IT running.</span>">Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span></p>
         </div>
-        <div class="about-text">
-          <p>Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.</p>
-          <p>Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.</p>
-          <p>Langues : arabe (langue maternelle), anglais (excellent), français (bon).</p>
+        <div class="about-copy reveal">
+          <p data-fr="Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web." data-en="I hold BTS and BTP qualifications in Management Information Technology and am focusing on IT support, network administration and website development.">Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.</p>
+          <p data-fr="Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement." data-en="I take a structured, methodical approach to building personal projects and hands-on labs. I document configurations, test results and the limitations of each environment.">Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.</p>
+          <p data-fr="Langues : arabe (langue maternelle), anglais (excellent), français (bon)." data-en="Languages: Arabic (native), English (excellent), French (good).">Langues : arabe (langue maternelle), anglais (excellent), français (bon).</p>
           <div class="education">
-            <div class="edu"><div class="edu-label">FORMATION / 01</div><strong>BTS — Informatique de Gestion</strong><small>IPSET · 2022 – 2024</small></div>
-            <div class="edu"><div class="edu-label">FORMATION / 02</div><strong>BTP — Informatique de Gestion</strong><small>IPSET · 2020 – 2022</small></div>
+            <div class="edu"><small data-fr="FORMATION / 01" data-en="EDUCATION / 01">FORMATION / 01</small><strong>BTS — Informatique de Gestion</strong><span>IPSET · 2022 – 2024</span></div>
+            <div class="edu"><small data-fr="FORMATION / 02" data-en="EDUCATION / 02">FORMATION / 02</small><strong>BTP — Informatique de Gestion</strong><span>IPSET · 2020 – 2022</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="projects" id="projets">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="section-index">02 / SÉLECTION DE PROJETS</div><h2 class="section-title">Du concret.<br><em>Pas seulement des mots.</em></h2></div>
-          <p class="section-desc">Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.</p>
+    <section class="section" id="projets">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker" data-fr="02 / SÉLECTION DE PROJETS" data-en="02 / SELECTED PROJECTS">02 / SÉLECTION DE PROJETS</div><h2 class="section-title" data-fr="Du concret.<br><em>Pas seulement des mots.</em>" data-en="Real work.<br><em>Beyond just words.</em>">Du concret.<br><em>Pas seulement des mots.</em></h2></div>
+          <p class="section-desc" data-fr="Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés." data-en="Four complementary areas demonstrated through documented personal projects, prototypes and hands-on labs.">Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.</p>
         </div>
-        <div class="project-grid">
-          <article class="project">
-            <div class="project-image"><img src="./helpdesk-dashboard.png" alt="Capture du tableau de bord de l'application Helpdesk informatique" loading="lazy"></div>
-            <div class="project-body">
-              <div class="project-meta"><span class="project-type">Application / Assistance</span><span class="project-number">PROJET — 01</span></div>
-              <h3>Application de gestion des demandes d’assistance</h3>
-              <p>Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle.</p>
-              <div class="tags"><span>Prototype</span><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span><span>Jest</span></div>
-              <div class="project-links"><a href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener">Code source ↗</a><a href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener">Démo du prototype ↗</a></div>
+        <div class="filters reveal" role="group" aria-label="Filtrer les projets">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true" data-fr="Tous les projets" data-en="All projects">Tous les projets</button>
+          <button class="filter" type="button" data-filter="support" aria-pressed="false" data-fr="Support IT" data-en="IT Support">Support IT</button>
+          <button class="filter" type="button" data-filter="network" aria-pressed="false" data-fr="Réseaux" data-en="Networking">Réseaux</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false" data-fr="Développement web" data-en="Web development">Développement web</button>
+        </div>
+        <div class="project-grid" id="project-grid">
+          <article class="project reveal" data-category="support">
+            <div class="project-visual"><img src="./helpdesk-dashboard.png" alt="Capture du tableau de bord de l'application Helpdesk informatique" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span data-fr="Application / Assistance" data-en="Application / IT Support">Application / Assistance</span><span>01</span></div>
+              <h3 data-fr="Application de gestion des demandes d’assistance" data-en="IT Support Ticket Management Application">Application de gestion des demandes d’assistance</h3>
+              <p data-fr="Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle." data-en="An educational IT support ticketing prototype featuring authentication, user roles (user, technician, administrator), ticket creation and tracking, assignment, comments, history, a dashboard and CSV export. Built as a demonstration project, not deployed for operational use by a real organisation.">Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle.</p>
+              <div class="tags"><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span><span>Jest</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a><a href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener" data-fr="Démo du prototype ↗" data-en="Live prototype ↗">Démo du prototype ↗</a></div>
             </div>
           </article>
-          <article class="project">
-            <div class="project-image"><img src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Schéma de topologie du réseau de la petite entreprise" loading="lazy"></div>
-            <div class="project-body">
-              <div class="project-meta"><span class="project-type">Infrastructure / Réseaux</span><span class="project-number">PROJET — 02</span></div>
-              <h3>Infrastructure informatique d'une petite entreprise</h3>
-              <p>Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle ACL bloquant l'accès des invités au serveur. Tests de connectivité documentés.</p>
+          <article class="project reveal" data-category="network">
+            <div class="project-visual"><img src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Schéma de topologie du réseau de la petite entreprise" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span data-fr="Infrastructure / Réseaux" data-en="Infrastructure / Networking">Infrastructure / Réseaux</span><span>02</span></div>
+              <h3 data-fr="Infrastructure informatique d'une petite entreprise" data-en="Small Business IT Infrastructure">Infrastructure informatique d'une petite entreprise</h3>
+              <p data-fr="Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle ACL bloquant l'accès des invités au serveur. Tests de connectivité documentés." data-en="An infrastructure lab for a 20-person company: three VLANs (staff, management and guests), inter-VLAN routing, DHCP, and an ACL rule preventing guest access to the server. Connectivity tests are documented.">Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle ACL bloquant l'accès des invités au serveur. Tests de connectivité documentés.</p>
               <div class="tags"><span>Packet Tracer</span><span>VLAN</span><span>DHCP</span><span>Active Directory</span><span>PowerShell</span></div>
-              <div class="project-links"><a href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener">Code source ↗</a></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a></div>
             </div>
           </article>
-          <article class="project">
-            <div class="project-image"><img src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Capture Wireshark montrant l'analyse de paquets DNS" loading="lazy"></div>
-            <div class="project-body">
-              <div class="project-meta"><span class="project-type">Réseaux / Dépannage</span><span class="project-number">PROJET — 03</span></div>
-              <h3>Carnet d’analyse et de diagnostic réseau — Wireshark</h3>
-              <p>Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats.</p>
+          <article class="project reveal" data-category="network">
+            <div class="project-visual"><img src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Capture Wireshark montrant l'analyse de paquets DNS" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span data-fr="Réseaux / Dépannage" data-en="Networking / Troubleshooting">Réseaux / Dépannage</span><span>03</span></div>
+              <h3 data-fr="Carnet d’analyse et de diagnostic réseau — Wireshark" data-en="Network Analysis & Troubleshooting Casebook — Wireshark">Carnet d’analyse et de diagnostic réseau — Wireshark</h3>
+              <p data-fr="Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats." data-en="A practical traffic analysis and troubleshooting casebook covering DHCP, DNS, ARP, ICMP and TCP exchanges using Wireshark, display filters and explanations of the findings.">Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats.</p>
               <div class="tags"><span>Wireshark</span><span>DHCP</span><span>DNS</span><span>ARP</span><span>TCP/IP</span></div>
-              <div class="project-links"><a href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener">Code source ↗</a></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a></div>
             </div>
           </article>
-          <article class="project">
-            <div class="project-image"><img src="./northstar-homepage.png" alt="Capture d'écran du site vitrine Northstar informatique" loading="lazy"></div>
-            <div class="project-body">
-              <div class="project-meta"><span class="project-type">Création de sites / Interface</span><span class="project-number">PROJET — 04</span></div>
-              <h3>Northstar informatique — site vitrine multilingue</h3>
-              <p>Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique.</p>
-              <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Fonctions Netlify</span><span>GitHub Pages</span></div>
-              <div class="project-links"><a href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener">Voir l’application ↗</a><a href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener">Code source ↗</a></div>
+          <article class="project reveal" data-category="web">
+            <div class="project-visual"><img src="./northstar-homepage.png" alt="Capture d'écran du site vitrine Northstar informatique" loading="lazy"></div>
+            <div class="project-content">
+              <div class="project-meta"><span data-fr="Création de sites / Interface" data-en="Web design / Interface">Création de sites / Interface</span><span>04</span></div>
+              <h3 data-fr="Northstar informatique — site vitrine multilingue" data-en="Northstar IT — Multilingual Business Website">Northstar informatique — site vitrine multilingue</h3>
+              <p data-fr="Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique." data-en="A responsive, multilingual showcase website built with HTML, CSS and JavaScript for a fictional IT brand. The contact form requires Netlify configuration; the GitHub Pages version is a static demonstration.">Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique.</p>
+              <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Netlify Functions</span><span>GitHub Pages</span></div>
+              <div class="project-links"><a href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener" data-fr="Voir l’application ↗" data-en="View website ↗">Voir l’application ↗</a><a href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a></div>
             </div>
           </article>
         </div>
+        <p id="filter-status" class="section-desc" aria-live="polite" style="margin-top:16px"></p>
       </div>
     </section>
 
-    <section class="practice" id="pratique">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="section-index">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title">Des compétences<br><em>mises en pratique.</em></h2></div>
-          <p class="section-desc">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
+    <section class="section section-soft" id="pratique">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker" data-fr="03 / RÉALISATIONS PRATIQUES" data-en="03 / HANDS-ON EXPERIENCE">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title" data-fr="Des compétences<br><em>mises en pratique.</em>" data-en="Skills<br><em>put into practice.</em>">Des compétences<br><em>mises en pratique.</em></h2></div>
+          <p class="section-desc" data-fr="Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation." data-en="Practical examples from my projects. Simulated environments and prototypes are clearly identified as such in their documentation.">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
         </div>
         <div class="practice-grid">
-          <article class="practice-card"><span class="practice-num">01 / SUPPORT IT</span><h3>Gestion des demandes</h3><p>Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.</p></article>
-          <article class="practice-card"><span class="practice-num">02 / RÉSEAUX</span><h3>Segmentation et connectivité</h3><p>Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.</p></article>
-          <article class="practice-card"><span class="practice-num">03 / DIAGNOSTIC</span><h3>Analyse de trafic</h3><p>Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.</p></article>
-          <article class="practice-card"><span class="practice-num">04 / DÉVELOPPEMENT & AUTOMATISATION</span><h3>Outils et applications</h3><p>Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.</p></article>
+          <article class="practice-card reveal"><span class="practice-num">01 / SUPPORT IT</span><h3 data-fr="Gestion des demandes" data-en="Ticket management">Gestion des demandes</h3><p data-fr="Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord." data-en="Built a ticketing prototype with user roles, assignment, request tracking, comments and a dashboard.">Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.</p></article>
+          <article class="practice-card reveal"><span class="practice-num">02 / RÉSEAUX</span><h3 data-fr="Segmentation et connectivité" data-en="Segmentation & connectivity">Segmentation et connectivité</h3><p data-fr="Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité." data-en="Configured a lab with VLANs, inter-VLAN routing, DHCP and access controls to isolate the guest network.">Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.</p></article>
+          <article class="practice-card reveal"><span class="practice-num">03 / DIAGNOSTIC</span><h3 data-fr="Analyse de trafic" data-en="Traffic analysis">Analyse de trafic</h3><p data-fr="Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges." data-en="Analysed DHCP, DNS, ARP, ICMP and TCP captures with Wireshark, display filters and packet interpretation.">Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.</p></article>
+          <article class="practice-card reveal"><span class="practice-num">04 / DÉVELOPPEMENT & AUTOMATISATION</span><h3 data-fr="Outils et applications" data-en="Tools & applications">Outils et applications</h3><p data-fr="Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire." data-en="Developed websites and a Node.js/SQLite prototype, alongside documented PowerShell scripts and simulated validation where appropriate.">Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="skills" id="competences">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="section-index">04 / COMPÉTENCES TECHNIQUES</div><h2 class="section-title">Les outils derrière<br><em>le travail.</em></h2></div>
-          <p class="section-desc">Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.</p>
+    <section class="section" id="competences">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="section-kicker" data-fr="04 / COMPÉTENCES TECHNIQUES" data-en="04 / TECHNICAL SKILLS">04 / COMPÉTENCES TECHNIQUES</div><h2 class="section-title" data-fr="Les outils derrière<br><em>le travail.</em>" data-en="The tools behind<br><em>the work.</em>">Les outils derrière<br><em>le travail.</em></h2></div>
+          <p class="section-desc" data-fr="Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués." data-en="Skills developed through education and hands-on projects. Proficiency varies depending on the technology and the environments practised.">Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.</p>
         </div>
         <div class="skills-grid">
-          <article class="skill"><div class="skill-num">01 — SUPPORT</div><h3>Support informatique</h3><ul><li>Diagnostic Windows 10/11</li><li>Assistance aux utilisateurs</li><li>Gestion des tickets et des accès</li><li>Suivi et documentation</li></ul></article>
-          <article class="skill"><div class="skill-num">02 — RÉSEAUX</div><h3>Réseaux et dépannage</h3><ul><li>LAN, Wi-Fi et TCP/IP</li><li>VLAN, routage et adressage IP</li><li>DHCP, DNS et ARP</li><li>Analyse avec Wireshark</li></ul></article>
-          <article class="skill"><div class="skill-num">03 — SYSTÈMES</div><h3>Systèmes &amp; automatisation</h3><ul><li>Notions de Windows Server</li><li>Concepts Active Directory et GPO</li><li>PowerShell (bases)</li><li>Documentation d’infrastructure</li></ul></article>
-          <article class="skill"><div class="skill-num">04 — WEB</div><h3>Développement web</h3><ul><li>HTML5, CSS3 et JavaScript</li><li>Node.js et Express</li><li>SQL et SQLite</li><li>Git et GitHub</li></ul></article>
+          <article class="skill reveal"><div class="skill-index">01 — SUPPORT</div><h3 data-fr="Support informatique" data-en="IT Support">Support informatique</h3><ul><li data-fr="Diagnostic Windows 10/11" data-en="Windows 10/11 troubleshooting">Diagnostic Windows 10/11</li><li data-fr="Assistance aux utilisateurs" data-en="User assistance">Assistance aux utilisateurs</li><li data-fr="Gestion des tickets et des accès" data-en="Ticket and access management">Gestion des tickets et des accès</li><li data-fr="Suivi et documentation" data-en="Follow-up and documentation">Suivi et documentation</li></ul></article>
+          <article class="skill reveal"><div class="skill-index">02 — RÉSEAUX</div><h3 data-fr="Réseaux et dépannage" data-en="Networking & Troubleshooting">Réseaux et dépannage</h3><ul><li>LAN, Wi-Fi et TCP/IP</li><li data-fr="VLAN, routage et adressage IP" data-en="VLANs, routing and IP addressing">VLAN, routage et adressage IP</li><li>DHCP, DNS et ARP</li><li data-fr="Analyse avec Wireshark" data-en="Wireshark analysis">Analyse avec Wireshark</li></ul></article>
+          <article class="skill reveal"><div class="skill-index">03 — SYSTÈMES</div><h3 data-fr="Systèmes & automatisation" data-en="Systems & Automation">Systèmes & automatisation</h3><ul><li data-fr="Notions de Windows Server" data-en="Windows Server fundamentals">Notions de Windows Server</li><li data-fr="Concepts Active Directory et GPO" data-en="Active Directory and Group Policy concepts">Concepts Active Directory et GPO</li><li data-fr="PowerShell (bases)" data-en="PowerShell (fundamentals)">PowerShell (bases)</li><li data-fr="Documentation d’infrastructure" data-en="Infrastructure documentation">Documentation d’infrastructure</li></ul></article>
+          <article class="skill reveal"><div class="skill-index">04 — WEB</div><h3 data-fr="Développement web" data-en="Web Development">Développement web</h3><ul><li>HTML5, CSS3 et JavaScript</li><li>Node.js et Express</li><li>SQL et SQLite</li><li>Git et GitHub</li></ul></article>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
-        <div><div class="micro">05 / CONTACT</div><h2>Un projet ou une opportunité ?<br>Parlons-en.</h2><p>Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
-        <div class="contact-actions"><a class="btn" href="mailto:mohamedalitijanii@gmail.com">✉ Écrire un e-mail ↗</a><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">Consulter GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">Consulter LinkedIn ↗</a></div>
+    <section class="section section-soft" id="github">
+      <div class="container">
+        <div class="github-panel reveal">
+          <div class="github-copy"><div class="github-icon">GH</div><div><strong data-fr="Mon activité sur GitHub" data-en="My GitHub activity">Mon activité sur GitHub</strong><span id="github-status" data-fr="Chargement des dépôts publics…" data-en="Loading public repositories…">Chargement des dépôts publics…</span></div></div>
+          <div class="github-stats"><div class="github-stat"><strong id="repo-count">—</strong><span data-fr="Dépôts publics" data-en="Public repositories">Dépôts publics</span></div><div class="github-stat"><strong id="project-count">4</strong><span data-fr="Projets présentés" data-en="Featured projects">Projets présentés</span></div></div>
+          <a class="btn btn-primary" href="https://github.com/Medalitijani" target="_blank" rel="noopener" data-fr="Voir mon GitHub ↗" data-en="Visit my GitHub ↗">Voir mon GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal"><div class="section-kicker" data-fr="05 / CONTACT" data-en="05 / CONTACT">05 / CONTACT</div><h2 class="section-title" data-fr="Un projet ou une opportunité ?<br><em>Parlons-en.</em>" data-en="A project or an opportunity?<br><em>Let’s talk.</em>">Un projet ou une opportunité ?<br><em>Parlons-en.</em></h2><p class="section-desc" data-fr="Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub." data-en="I am looking for an opportunity in a versatile IT environment, covering user support, networking, systems or web development. You can contact me by email or explore my projects on GitHub.">Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
+        <div class="contact-actions reveal"><a class="btn btn-primary" href="mailto:mohamedalitijanii@gmail.com">✉ <span data-fr="Écrire un e-mail ↗" data-en="Send an email ↗">Écrire un e-mail ↗</span></a><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
       </div>
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><span>© 2026 Mohamed Ali Tijani · Tunis</span><span>Réalisé avec curiosité et persévérance.</span></div></footer>
+  <footer><div class="container footer-inner"><span>© 2026 Mohamed Ali Tijani · Tunis</span><div class="footer-links"><a href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn</a><a href="./cv.html" data-fr="CV" data-en="Resume">CV</a></div><span data-fr="Réalisé avec curiosité et persévérance." data-en="Built with curiosity and persistence.">Réalisé avec curiosité et persévérance.</span></div></footer>
 
   <script>
     (() => {
-      const translations = {
-        "navlinks a:not(.nav-cta)": [
-          ["À propos","About"],["Projets","Projects"],["Réalisations","Practice"],["Compétences","Skills"],["Contact","Contact"]
-        ],
-        ".hero .micro": [["Portfolio / 2026 — Tunis, Tunisie","Portfolio / 2026 — Tunis, Tunisia"]],
-        ".hero-role": [["Support informatique · Réseaux · Systèmes · Développement web","IT Support · Networks · Systems · Web Development"]],
-        ".hero-copy": [["Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.","I hold a Higher Technician Certificate (BTS) in Management Information Technology from IPSET, with a particular interest in systems and network administration. Through my projects, I practise infrastructure configuration, network troubleshooting, Windows environment administration, and web tool development. I document each project and explain the technical solutions implemented."]],
-        ".hero-actions .btn": [
-          ["Découvrir mes projets <span>↗</span>","Explore my projects <span>↗</span>"],
-          ["Mon profil GitHub ↗","My GitHub profile ↗"],
-          ["Mon profil LinkedIn ↗","My LinkedIn profile ↗"],
-          ["Consulter mon CV ↗","View my CV ↗"]
-        ],
-        ".hero-note": [["<b>●</b> Ouvert aux opportunités en support IT, réseaux, systèmes et développement web","<b>●</b> Open to opportunities in IT support, networking, systems and web development"]],
-        "#apropos .section-index": [["01 / À PROPOS","01 / ABOUT"]],
-        ".about-statement": [["Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span>","Connecting users, systems and applications to <span>keep everyday IT running.</span>"]],
-        ".about-text p": [
-          ["Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.","I hold BTS and BTP qualifications in Management Information Technology and am focusing on IT support, network administration and website development."],
-          ["Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.","I take a structured, methodical approach to building personal projects and hands-on labs. I document configurations, test results and the limitations of each environment."],
-          ["Langues : arabe (langue maternelle), anglais (excellent), français (bon).","Languages: Arabic (native), English (excellent), French (good)."]
-        ],
-        ".edu-label": [["FORMATION / 01","EDUCATION / 01"],["FORMATION / 02","EDUCATION / 02"]],
-        ".edu strong": [["BTS — Informatique de Gestion","BTS — Management Information Technology"],["BTP — Informatique de Gestion","BTP — Management Information Technology"]],
-        "#projets .section-index": [["02 / SÉLECTION DE PROJETS","02 / SELECTED PROJECTS"]],
-        "#projets .section-title": [["Du concret.<br><em>Pas seulement des mots.</em>","Real work.<br><em>Beyond just words.</em>"]],
-        "#projets .section-desc": [["Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.","Four complementary areas demonstrated through documented personal projects, prototypes and hands-on labs."]],
-        ".project-number": [["PROJET — 01","PROJECT — 01"],["PROJET — 02","PROJECT — 02"],["PROJET — 03","PROJECT — 03"],["PROJET — 04","PROJECT — 04"]],
-        ".project-type": [
-          ["Application / Assistance","Application / IT Support"],
-          ["Infrastructure / Réseaux","Infrastructure / Networking"],
-          ["Réseaux / Dépannage","Networking / Troubleshooting"],
-          ["Création de sites / Interface","Web Design / Interface"]
-        ],
-        ".project h3": [
-          ["Application de gestion des demandes d’assistance","IT Support Ticket Management Application"],
-          ["Infrastructure informatique d'une petite entreprise","Small Business IT Infrastructure"],
-          ["Carnet d’analyse et de diagnostic réseau — Wireshark","Network Analysis & Troubleshooting Casebook — Wireshark"],
-          ["Northstar informatique — site vitrine multilingue","Northstar IT — Multilingual Business Website"]
-        ],
-        ".project p": [
-          ["Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle.","An educational IT support ticketing prototype featuring authentication, user roles (user, technician, administrator), ticket creation and tracking, assignment, comments, history, a dashboard and CSV export. Built as a demonstration project, not deployed for operational use by a real organisation."],
-          ["Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle ACL bloquant l'accès des invités au serveur. Tests de connectivité documentés.","An infrastructure lab for a 20-person company: three VLANs (staff, management and guests), inter-VLAN routing, DHCP, and an ACL rule preventing guest access to the server. Connectivity tests are documented."],
-          ["Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats.","A practical traffic analysis and troubleshooting casebook covering DHCP, DNS, ARP, ICMP and TCP exchanges using Wireshark, display filters and explanations of the findings."],
-          ["Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique.","A responsive, multilingual showcase website built with HTML, CSS and JavaScript for a fictional IT brand. The contact form requires Netlify configuration; the GitHub Pages version is a static demonstration."]
-        ],
-        ".project-links a": [
-          ["Code source ↗","Source code ↗"],["Démo du prototype ↗","Prototype demo ↗"],
-          ["Code source ↗","Source code ↗"],["Code source ↗","Source code ↗"],
-          ["Voir l’application ↗","View website ↗"],["Code source ↗","Source code ↗"]
-        ],
-        "#pratique .section-index": [["03 / RÉALISATIONS PRATIQUES","03 / HANDS-ON EXPERIENCE"]],
-        "#pratique .section-title": [["Des compétences<br><em>mises en pratique.</em>","Skills<br><em>put into practice.</em>"]],
-        "#pratique .section-desc": [["Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.","Practical examples from my projects. Simulated environments and prototypes are clearly identified as such in their documentation."]],
-        ".practice-num": [
-          ["01 / SUPPORT IT","01 / IT SUPPORT"],["02 / RÉSEAUX","02 / NETWORKING"],
-          ["03 / DIAGNOSTIC","03 / TROUBLESHOOTING"],["04 / DÉVELOPPEMENT & AUTOMATISATION","04 / DEVELOPMENT & AUTOMATION"]
-        ],
-        ".practice-card h3": [
-          ["Gestion des demandes","Ticket management"],["Segmentation et connectivité","Segmentation & connectivity"],
-          ["Analyse de trafic","Traffic analysis"],["Outils et applications","Tools & applications"]
-        ],
-        ".practice-card p": [
-          ["Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.","Built a ticketing prototype with user roles, assignment, request tracking, comments and a dashboard."],
-          ["Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.","Configured a lab with VLANs, inter-VLAN routing, DHCP and access controls to isolate the guest network."],
-          ["Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.","Analysed DHCP, DNS, ARP, ICMP and TCP captures with Wireshark, display filters and packet interpretation."],
-          ["Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.","Developed websites and a Node.js/SQLite prototype, alongside documented PowerShell scripts and simulated validation where appropriate."]
-        ],
-        "#competences .section-index": [["04 / COMPÉTENCES TECHNIQUES","04 / TECHNICAL SKILLS"]],
-        "#competences .section-title": [["Les outils derrière<br><em>le travail.</em>","The tools behind<br><em>the work.</em>"]],
-        "#competences .section-desc": [["Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.","Skills developed through education and hands-on projects. Proficiency varies depending on the technology and the environments practised."]],
-        ".skill-num": [["01 — SUPPORT","01 — SUPPORT"],["02 — RÉSEAUX","02 — NETWORKING"],["03 — SYSTÈMES","03 — SYSTEMS"],["04 — WEB","04 — WEB"]],
-        ".skill h3": [["Support informatique","IT Support"],["Réseaux et dépannage","Networking & Troubleshooting"],["Systèmes &amp; automatisation","Systems &amp; Automation"],["Développement web","Web Development"]],
-        ".skill li": [
-          ["Diagnostic Windows 10/11","Windows 10/11 troubleshooting"],["Assistance aux utilisateurs","User assistance"],["Gestion des tickets et des accès","Ticket and access management"],["Suivi et documentation","Follow-up and documentation"],
-          ["LAN, Wi-Fi et TCP/IP","LAN, Wi-Fi and TCP/IP"],["VLAN, routage et adressage IP","VLANs, routing and IP addressing"],["DHCP, DNS et ARP","DHCP, DNS and ARP"],["Analyse avec Wireshark","Wireshark analysis"],
-          ["Notions de Windows Server","Windows Server fundamentals"],["Concepts Active Directory et GPO","Active Directory and Group Policy concepts"],["PowerShell (bases)","PowerShell (fundamentals)"],["Documentation d’infrastructure","Infrastructure documentation"],
-          ["HTML5, CSS3 et JavaScript","HTML5, CSS3 and JavaScript"],["Node.js et Express","Node.js and Express"],["SQL et SQLite","SQL and SQLite"],["Git et GitHub","Git and GitHub"]
-        ],
-        ".contact .micro": [["05 / CONTACT","05 / CONTACT"]],
-        ".contact h2": [["Un projet ou une opportunité ?<br>Parlons-en.","A project or an opportunity?<br>Let’s talk."]],
-        ".contact p": [["Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.","I am looking for an opportunity in a versatile IT environment, covering user support, networking, systems or web development. You can contact me by email or explore my projects on GitHub."]],
-        ".contact-actions a": [["✉ Écrire un e-mail ↗","✉ Send an email ↗"],["Consulter GitHub ↗","View GitHub ↗"],["Consulter LinkedIn ↗","View LinkedIn ↗"]],
-        ".footer-inner span": [["© 2026 Mohamed Ali Tijani · Tunis","© 2026 Mohamed Ali Tijani · Tunis"],["Réalisé avec curiosité et persévérance.","Built with curiosity and persistence."]]
-      };
-
-      const setLanguage = (language) => {
-        const index = language === "en" ? 1 : 0;
-        Object.entries(translations).forEach(([selector, values]) => {
-          document.querySelectorAll(selector).forEach((element, i) => {
-            const entry = values[i];
-            if (entry) element.innerHTML = entry[index];
-          });
+      const root = document.documentElement;
+      const languageButtons = document.querySelectorAll("[data-language]");
+      const setLanguage = language => {
+        const lang = language === "en" ? "en" : "fr";
+        root.lang = lang;
+        document.querySelectorAll("[data-fr][data-en]").forEach(node => {
+          node.innerHTML = node.dataset[lang];
         });
-        document.documentElement.lang = language;
-        document.title = language === "en"
-          ? "Mohamed Ali Tijani — Portfolio"
-          : "Mohamed Ali Tijani — Portfolio";
-        document.querySelector('meta[name="description"]').content = language === "en"
+        languageButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.language === lang)));
+        const nav = document.querySelector(".nav-links");
+        nav.setAttribute("aria-label", lang === "en" ? "Main navigation" : "Navigation principale");
+        document.querySelector(".language").setAttribute("aria-label", lang === "en" ? "Choose language" : "Choisir la langue");
+        document.querySelector("#menu-toggle").setAttribute("aria-label", lang === "en" ? "Open menu" : "Ouvrir le menu");
+        document.querySelector('meta[name="description"]').content = lang === "en"
           ? "Portfolio of Mohamed Ali Tijani: IT support, networking, systems administration, automation and web development."
           : "Portfolio de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.";
-        document.querySelector('.navlinks').setAttribute("aria-label", language === "en" ? "Main navigation" : "Navigation principale");
-        document.querySelector('.language-switch').setAttribute("aria-label", language === "en" ? "Choose language" : "Choisir la langue");
-        document.querySelectorAll(".language-button").forEach(button => {
-          const active = button.dataset.language === language;
-          button.classList.toggle("is-active", active);
-          button.setAttribute("aria-pressed", String(active));
-        });
-        try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+        try { localStorage.setItem("portfolio-language", lang); } catch (_) {}
+        document.querySelector("#filter-status").textContent = document.querySelector("#filter-status").dataset[lang] || "";
       };
-
-      document.querySelectorAll(".language-button").forEach(button => {
-        button.addEventListener("click", () => setLanguage(button.dataset.language));
-      });
+      languageButtons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.language)));
       let savedLanguage = "fr";
       try { savedLanguage = localStorage.getItem("portfolio-language") || "fr"; } catch (_) {}
-      setLanguage(savedLanguage === "en" ? "en" : "fr");
+      setLanguage(savedLanguage);
+
+      const menuButton = document.querySelector("#menu-toggle");
+      const nav = document.querySelector("#main-navigation");
+      const closeMenu = () => { nav.classList.remove("open"); menuButton.setAttribute("aria-expanded","false"); document.body.classList.remove("menu-open"); };
+      menuButton.addEventListener("click", () => {
+        const open = !nav.classList.contains("open");
+        nav.classList.toggle("open", open);
+        menuButton.setAttribute("aria-expanded", String(open));
+        document.body.classList.toggle("menu-open", open);
+      });
+      nav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", event => { if (event.key === "Escape") closeMenu(); });
+
+      const filters = document.querySelectorAll("[data-filter]");
+      const projects = document.querySelectorAll(".project[data-category]");
+      const filterStatus = document.querySelector("#filter-status");
+      const applyFilter = filter => {
+        let visible = 0;
+        projects.forEach(project => {
+          const show = filter === "all" || project.dataset.category === filter;
+          project.hidden = !show;
+          if (show) visible++;
+        });
+        filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === filter)));
+        const lang = root.lang;
+        filterStatus.textContent = lang === "en" ? visible + " project(s) displayed." : visible + " projet(s) affiché(s).";
+      };
+      filters.forEach(button => button.addEventListener("click", () => applyFilter(button.dataset.filter)));
+      applyFilter("all");
+
+      const revealItems = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.12 });
+        revealItems.forEach(item => observer.observe(item));
+      } else revealItems.forEach(item => item.classList.add("visible"));
+
+      const progress = document.querySelector("#scroll-progress");
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = (scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0) + "%";
+      };
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+      if ("IntersectionObserver" in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id));
+            }
+          });
+        }, { rootMargin: "-35% 0px -55% 0px" });
+        sections.forEach(section => sectionObserver.observe(section));
+      }
+
+      const repoCount = document.querySelector("#repo-count");
+      const githubStatus = document.querySelector("#github-status");
+      const fetchRepositories = async () => {
+        try {
+          const response = await fetch("https://api.github.com/users/Medalitijani/repos?per_page=100&sort=updated", { headers: { "Accept": "application/vnd.github+json" } });
+          if (!response.ok) throw new Error("GitHub API unavailable");
+          const repositories = await response.json();
+          repoCount.textContent = repositories.length + (repositories.length === 100 ? "+" : "");
+          const lang = root.lang;
+          githubStatus.textContent = lang === "en"
+            ? "Public profile data loaded from GitHub."
+            : "Données publiques du profil chargées depuis GitHub.";
+        } catch (_) {
+          repoCount.textContent = "—";
+          githubStatus.textContent = root.lang === "en" ? "Visit GitHub to explore my repositories." : "Consultez GitHub pour explorer mes dépôts.";
+        }
+      };
+      fetchRepositories();
     })();
   </script>
-
 </body>
 </html>
