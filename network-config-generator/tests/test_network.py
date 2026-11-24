@@ -58,7 +58,7 @@ def test_capacity_error_when_base_network_is_too_small():
 def test_overlap_is_detected():
     vlans = [
         VlanPlan(name="A", vlan_id=10, subnet="10.0.0.0/24", gateway="10.0.0.1", dhcp_start="10.0.0.10", dhcp_end="10.0.0.200", required_hosts=20, usable_hosts=254, client_capacity=253, purpose="test"),
-        VlanPlan(name="B", vlan_id=20, subnet="10.0.0.0/24", gateway="10.0.0.2", dhcp_start="10.0.0.11", dhcp_end="10.0.0.201", required_hosts=20, usable_hosts=254, purpose="test"),
+        VlanPlan(name="B", vlan_id=20, subnet="10.0.0.0/24", gateway="10.0.0.2", dhcp_start="10.0.0.11", dhcp_end="10.0.0.201", required_hosts=20, usable_hosts=254, client_capacity=253, purpose="test"),
     ]
     assert any(item.code == "SUBNET_OVERLAP" for item in validate_vlan_plan(vlans))
 
