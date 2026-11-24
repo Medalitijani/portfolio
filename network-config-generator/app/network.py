@@ -17,9 +17,7 @@ def build_vlan_plan(request: NetworkRequest) -> list[VlanPlan]:
     names: list[tuple[str, int, str]] = []
 
     for index, department in enumerate(request.departments):
-        vlan_id = 10 + (index * 10)
-        if vlan_id >= 90:
-            raise ValueError("Too many departments for the reserved VLAN ID scheme.")
+        vlan_id = 10 + index  # Department VLANs use 10-21; 40, 50 and 99 are reserved.
         names.append((department, vlan_id, "Department user network"))
 
     if request.internal_server:
@@ -70,7 +68,7 @@ def validate_vlan_plan(vlans: list[VlanPlan]) -> list[ValidationFinding]:
             findings.append(ValidationFinding(severity="error", code="GATEWAY_OUTSIDE_SUBNET", message=f"{vlan.name}: gateway is outside its subnet."))
         if start not in network or end not in network or int(start) > int(end):
             findings.append(ValidationFinding(severity="error", code="INVALID_DHCP_RANGE", message=f"{vlan.name}: DHCP range is invalid for its subnet."))
-        if gateway in range(int(start), int(end) + 1):
+        if int(start) <= int(gateway) <= int(end):
             findings.append(ValidationFinding(severity="warning", code="GATEWAY_IN_DHCP_POOL", message=f"{vlan.name}: gateway falls inside the DHCP pool and should be excluded."))
     if not findings:
         findings.append(ValidationFinding(severity="success", code="STRUCTURE_VALID", message="No structural addressing conflicts were detected."))
