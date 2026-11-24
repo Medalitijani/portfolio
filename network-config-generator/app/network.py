@@ -23,7 +23,11 @@ def _allocate_vlsm(base: ipaddress.IPv4Network, segments: list[tuple[str, int, s
     cursor, limit = int(base.network_address), int(base.broadcast_address) + 1
     allocated = {}
     for name, required_hosts, _purpose in ordered:
-        prefix = max(base.prefixlen, _prefix_for_hosts(required_hosts))
+        prefix = _prefix_for_hosts(required_hosts)
+        if prefix < base.prefixlen:
+            raise ValueError(
+                f"Insufficient address space in {base}: {name} needs a subnet larger than the selected base network."
+            )
         block_size = 1 << (32 - prefix)
         start = ((cursor + block_size - 1) // block_size) * block_size
         end = start + block_size
