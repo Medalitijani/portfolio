@@ -57,7 +57,7 @@ function renderDesign(design, mode, note) {
   $("validation-caption").textContent = design.validation_passed ? "No blocking errors" : "Review blocking findings";
   $("subnet-base").textContent = "BASE " + design.request.base_network;
   $("vlan-rows").innerHTML = design.vlans.map((v) => `
-    <tr><td><span class="vlan-badge">${escapeHtml(v.vlan_id)}</span></td><td><b>${escapeHtml(v.name)}</b><small class="cell-subtitle">${escapeHtml(v.purpose || "")}</small></td><td class="mono">${escapeHtml(v.subnet)}</td><td class="mono">${escapeHtml(v.gateway)}</td><td class="mono">${escapeHtml(v.dhcp_start)} – ${escapeHtml(v.dhcp_end)}</td><td class="mono">${escapeHtml(v.required_hosts)} / ${escapeHtml(v.usable_hosts)}</td></tr>
+    <tr><td><span class="vlan-badge">${escapeHtml(v.vlan_id)}</span></td><td><b>${escapeHtml(v.name)}</b><small class="cell-subtitle">${escapeHtml(v.purpose || "")}</small></td><td class="mono">${escapeHtml(v.subnet)}</td><td class="mono">${escapeHtml(v.gateway)}</td><td class="mono">${escapeHtml(v.dhcp_start)} – ${escapeHtml(v.dhcp_end)}</td><td class="mono">${escapeHtml(v.required_hosts)} / ${escapeHtml(v.client_capacity)}</td></tr>
   `).join("");
   const findings = Array.isArray(design.findings) ? design.findings : [];
   $("finding-count").textContent = findings.length + " FINDING" + (findings.length === 1 ? "" : "S");
