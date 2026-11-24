@@ -67,7 +67,7 @@ def test_network_and_broadcast_addresses_are_rejected_for_dhcp():
     vlan = VlanPlan(
         name="Bad", vlan_id=10, subnet="192.168.1.0/29",
         gateway="192.168.1.1", dhcp_start="192.168.1.0", dhcp_end="192.168.1.7",
-        required_hosts=3, usable_hosts=5, client_capacity=5, purpose="test",
+        required_hosts=3, usable_hosts=6, client_capacity=5, purpose="test",
     )
     codes = {item.code for item in validate_vlan_plan([vlan])}
     assert "INVALID_DHCP_RANGE" in codes
@@ -90,3 +90,16 @@ def test_reserved_segment_names_are_rejected():
 def test_unknown_department_host_count_is_rejected():
     with pytest.raises(ValueError, match="unknown departments"):
         NetworkRequest(departments=["Sales"], department_host_counts={"Finance": 10})
+
+
+def test_small_base_network_can_be_subdivided_with_vlsm():
+    design = generate_design(NetworkRequest(
+        employees=20, departments=["Sales", "Finance"],
+        guest_wifi=True, internal_server=True,
+        base_network="192.168.10.0/24",
+    ))
+    base = ipaddress.ip_network("192.168.10.0/24")
+    subnets = [ipaddress.ip_network(vlan.subnet) for vlan in design.vlans]
+    assert all(subnet.subnet_of(base) for subnet in subnets)
+    assert all(not left.overlaps(right) for i, left in enumerate(subnets) for right in subnets[i + 1:])
+    assert design.validation_passed
