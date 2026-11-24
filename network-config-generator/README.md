@@ -49,6 +49,16 @@ AI_MODEL=gpt-4o-mini
 
 Never commit real credentials. If no key is configured, the app uses its local demo parser.
 
+## Render deployment
+
+A repository-level `render.yaml` blueprint is included. In Render, create a new **Blueprint** and connect this portfolio repository. Render will detect the `network-config-generator` service, build it from the project folder, and use `/api/health` as its health check.
+
+- Leave `AI_API_KEY` empty to run with the local demo parser.
+- Add a valid provider key in Render's environment settings to enable LLM-based requirement interpretation.
+- Do not place API keys in source files or commit them to GitHub.
+
+The GitHub Pages portfolio displays the project card and source code link; it does not host the Python API itself.
+
 ## API
 
 - `GET /api/health` — service health.
