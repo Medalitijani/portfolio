@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import ipaddress
+
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 
@@ -7,6 +9,7 @@ class NetworkRequest(BaseModel):
     company_name: str = Field(default="Example Company", min_length=2, max_length=80)
     employees: int = Field(default=20, ge=1, le=2000)
     departments: list[str] = Field(default_factory=lambda: ["Sales", "Finance", "Operations"], min_length=1, max_length=12)
+    department_host_counts: dict[str, int] = Field(default_factory=dict, description="Optional endpoint counts by department.")
     guest_wifi: bool = True
     internal_server: bool = True
     base_network: str = "10.20.0.0/16"
@@ -14,13 +17,15 @@ class NetworkRequest(BaseModel):
     @field_validator("departments")
     @classmethod
     def clean_departments(cls, values: list[str]) -> list[str]:
-        cleaned = []
-        seen = set()
+        cleaned, seen = [], set()
+        reserved = {"servers", "guests", "management"}
         for value in values:
             name = " ".join(value.strip().split())
             if not name:
                 continue
             key = name.casefold()
+            if key in reserved:
+                raise ValueError(f"{name} is a reserved infrastructure segment name.")
             if key not in seen:
                 cleaned.append(name[:32])
                 seen.add(key)
@@ -28,17 +33,35 @@ class NetworkRequest(BaseModel):
             raise ValueError("At least one non-empty department is required.")
         return cleaned
 
+    @field_validator("department_host_counts")
+    @classmethod
+    def clean_department_host_counts(cls, values: dict[str, int]) -> dict[str, int]:
+        cleaned = {}
+        for name, count in values.items():
+            normalized = " ".join(name.strip().split())
+            if not normalized:
+                raise ValueError("Department host-count names cannot be empty.")
+            if count < 1 or count > 2000:
+                raise ValueError(f"Host count for {normalized} must be between 1 and 2000.")
+            cleaned[normalized] = count
+        return cleaned
+
+    @model_validator(mode="after")
+    def validate_department_host_count_names(self) -> "NetworkRequest":
+        allowed = {name.casefold() for name in self.departments}
+        unknown = [name for name in self.department_host_counts if name.casefold() not in allowed]
+        if unknown:
+            raise ValueError("Host counts reference unknown departments: " + ", ".join(unknown))
+        return self
+
     @field_validator("base_network")
     @classmethod
     def validate_base_network(cls, value: str) -> str:
-        import ipaddress
         network = ipaddress.ip_network(value, strict=True)
         if network.version != 4:
             raise ValueError("Only IPv4 base networks are currently supported.")
-        if network.prefixlen > 24:
-            raise ValueError("The base network must contain at least one /24 subnet.")
-        if network.prefixlen < 16:
-            raise ValueError("For safe planning, use a base network between /16 and /24.")
+        if not 16 <= network.prefixlen <= 24:
+            raise ValueError("The base network must be between /16 and /24.")
         return str(network)
 
 
@@ -49,21 +72,23 @@ class VlanPlan(BaseModel):
     gateway: str
     dhcp_start: str
     dhcp_end: str
+    required_hosts: int = Field(ge=1)
+    usable_hosts: int = Field(ge=1)
     purpose: str
 
     @field_validator("subnet")
     @classmethod
     def validate_subnet(cls, value: str) -> str:
-        import ipaddress
         network = ipaddress.ip_network(value, strict=True)
         if network.version != 4:
             raise ValueError("Only IPv4 VLAN subnets are supported.")
+        if network.prefixlen > 30:
+            raise ValueError("VLAN subnets must provide usable IPv4 host addresses.")
         return str(network)
 
     @field_validator("gateway", "dhcp_start", "dhcp_end")
     @classmethod
     def validate_ipv4_addresses(cls, value: str) -> str:
-        import ipaddress
         address = ipaddress.ip_address(value)
         if address.version != 4:
             raise ValueError("Only IPv4 addresses are supported.")
