@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -13,14 +14,11 @@ from app.schemas import InterpretRequest, InterpretResponse, NetworkDesign, Netw
 
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent
-APP_VERSION = "1.1.0"
+APP_VERSION = "1.2.0"
 
 app = FastAPI(
     title="NetArchitect AI",
-    description=(
-        "AI-assisted network architecture planning with deterministic IPv4 "
-        "allocation, Cisco IOS configuration drafts and validation."
-    ),
+    description="AI-assisted network architecture planning with deterministic VLSM IPv4 allocation, Cisco IOS drafts and validation.",
     version=APP_VERSION,
     docs_url="/docs",
     redoc_url="/redoc",
@@ -40,19 +38,13 @@ async def health() -> dict:
 
 @app.get("/api/status")
 async def status() -> dict:
-    import os
-
     return {
         "status": "operational",
         "version": APP_VERSION,
         "ai_provider_configured": bool(os.getenv("AI_API_KEY", "").strip()),
         "capabilities": [
-            "requirements_interpretation",
-            "vlan_planning",
-            "ipv4_subnet_allocation",
-            "cisco_ios_drafts",
-            "deterministic_validation",
-            "json_export",
+            "requirements_interpretation", "vlan_planning", "vlsm_ipv4_allocation",
+            "address_capacity_planning", "cisco_ios_drafts", "deterministic_validation", "json_export",
         ],
     }
 
@@ -65,7 +57,6 @@ async def interpret(body: InterpretRequest) -> InterpretResponse:
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
     except Exception as exc:
-        # Keep implementation details out of public API responses.
         raise HTTPException(status_code=500, detail="Requirement interpretation failed. Please retry.") from exc
 
 
@@ -80,7 +71,4 @@ async def design(body: NetworkRequest) -> NetworkDesign:
 @app.post("/api/validate")
 async def validate(body: NetworkDesign) -> dict:
     findings = validate_vlan_plan(body.vlans)
-    return {
-        "passed": not any(item.severity == "error" for item in findings),
-        "findings": [item.model_dump() for item in findings],
-    }
+    return {"passed": not any(item.severity == "error" for item in findings), "findings": [item.model_dump() for item in findings]}
