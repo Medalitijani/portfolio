@@ -22,7 +22,7 @@ def test_design_endpoint():
     assert response.status_code == 200
     body = response.json()
     assert body["validation_passed"] is True
-    assert len(body["vlans"]) == 4
+    assert len(body["vlans"]) == 5
 
 
 def test_invalid_base_network_is_rejected():
