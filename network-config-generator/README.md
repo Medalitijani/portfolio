@@ -30,9 +30,9 @@ An AI-assisted network design workspace that translates business requirements in
 
 ## Addressing model
 
-1. Department endpoint counts are taken from `department_host_counts` when supplied. Otherwise, the employee count is divided evenly among departments.
+1. Department endpoint counts are taken from `department_host_counts` when supplied. The remaining employee count is divided among departments without an explicit count.
 2. Department capacity includes 20% growth headroom.
-3. Guest, server and management segments use explicit planning defaults of 50, 20 and 10 hosts respectively.
+3. Guest, server and management segments use planning defaults of 50, 20 and 10 hosts respectively. The first usable IP is reserved for the gateway, so client capacity is one less than the subnet's total usable-host count.
 4. The allocator chooses the smallest fitting subnet for each segment, allocates larger subnets first, and checks that every block fits within the base network.
 5. The first usable address is reserved as the gateway. The DHCP pool begins at the second usable address and ends at the last usable address.
 6. The router draft uses the calculated subnet mask rather than assuming every VLAN is a /24.
