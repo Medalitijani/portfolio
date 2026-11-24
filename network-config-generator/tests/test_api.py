@@ -32,7 +32,7 @@ def test_design_endpoint_includes_capacity_metadata():
     body = response.json()
     assert body["validation_passed"] is True
     assert len(body["vlans"]) == 5
-    assert all(vlan["required_hosts"] <= vlan["usable_hosts"] for vlan in body["vlans"])
+    assert all(vlan["required_hosts"] <= vlan["client_capacity"] for vlan in body["vlans"])
 
 
 def test_invalid_base_network_is_rejected():
