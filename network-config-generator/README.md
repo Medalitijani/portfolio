@@ -1,28 +1,63 @@
-# AI Network Configuration Generator
+# NetArchitect AI — Network Engineering Workspace
 
-An educational AI-assisted network design tool that converts plain-language requirements into a structured VLAN/IP plan, Cisco IOS configuration drafts, and deterministic validation findings.
+An AI-assisted network design workspace that translates business requirements into a structured VLAN architecture, VLSM-based IPv4 addressing plan, Cisco IOS configuration drafts, and deterministic validation findings.
 
-> **Scope:** This is a lab and learning tool. Generated configurations are drafts. Review them against the exact device model, IOS version, topology, and security policy before deployment. The application never connects to or configures live network equipment.
+**Live application:** https://network-config-generator-a5zu.onrender.com  
+**Portfolio source:** https://github.com/Medalitijani/portfolio/tree/main/network-config-generator
 
-## Features
+> **Engineering boundary:** This is an educational engineering project. Generated CLI is a reviewable draft, not a device-ready guarantee. The application does not connect to, configure, or verify live network equipment. Validate every design against the real topology, device model, IOS release, and security policy before use.
 
-- Interpret a plain-language brief with an optional OpenAI-compatible LLM.
-- Work without an API key using a deterministic demo parser.
-- Generate VLANs, IPv4 subnets, gateways, DHCP ranges, and Cisco IOS configuration drafts.
-- Validate subnet overlap, duplicate VLAN IDs, gateway membership, and DHCP pool boundaries.
-- Export a JSON design report and copy CLI configuration snippets.
-- Responsive browser dashboard and REST API.
+## v1.2 engineering core
+
+- **VLSM allocation:** variable-size IPv4 subnets are allocated largest-first and aligned inside the selected base network.
+- **Capacity planning:** department segments include 20% endpoint growth headroom; optional per-department endpoint counts override an even split of the employee total.
+- **Gateway and DHCP planning:** usable gateway addresses and DHCP pool boundaries are generated for each segment.
+- **Deterministic validation:** detects duplicate VLAN IDs, overlapping subnets, invalid gateways, invalid DHCP boundaries, gateway inclusion in a DHCP pool, insufficient host capacity, and low address headroom.
+- **Cisco IOS drafts:** router subinterfaces use each VLAN's actual subnet mask; switch trunk drafts explicitly limit allowed VLAN IDs.
+- **AI separation of concerns:** the optional LLM interprets natural-language requirements. Python's `ipaddress`-based engine performs addressing and validation.
+- **Export and review:** inspect the allocation table, validation findings, CLI drafts, and JSON design report in the browser workspace.
 
 ## Architecture
 
-- **FastAPI** exposes the application and API.
-- **Pydantic** validates input and response contracts.
-- **Python ipaddress** performs all subnet calculations.
-- **Jinja-free deterministic templates** generate configuration drafts from validated data.
-- **Optional LLM adapter** interprets natural-language requirements; it does not calculate subnets or approve configurations.
-- **Pytest** covers the network engine and API.
+| Component | Responsibility |
+|---|---|
+| FastAPI (`app/main.py`) | HTTP endpoints, health/status and request handling |
+| Pydantic (`app/schemas.py`) | Input/output contracts and request validation |
+| AI adapter (`app/ai.py`) | Optional natural-language requirement interpretation with demo fallback |
+| Network engine (`app/network.py`) | VLSM allocation, gateway/DHCP planning, validation and IOS draft rendering |
+| Browser UI (`app/templates`, `app/static`) | Project brief, allocation table, validation report and configuration review |
+| Pytest (`tests/`) | API and network-engine regression coverage |
 
-## Quick start
+## Addressing model
+
+1. Department endpoint counts are taken from `department_host_counts` when supplied. The remaining employee count is divided among departments without an explicit count.
+2. Department capacity includes 20% growth headroom.
+3. Guest, server and management segments use planning defaults of 50, 20 and 10 hosts respectively. The first usable IP is reserved for the gateway, so client capacity is one less than the subnet's total usable-host count.
+4. The allocator chooses the smallest fitting subnet for each segment, allocates larger subnets first, and checks that every block fits within the base network.
+5. The first usable address is reserved as the gateway. The DHCP pool begins at the second usable address and ends at the last usable address.
+6. The router draft uses the calculated subnet mask rather than assuming every VLAN is a /24.
+
+The planning defaults are assumptions, not measured device counts. Adjust them for the actual organization before using the design.
+
+### Example API request
+
+```json
+{
+  "company_name": "Example Company",
+  "employees": 100,
+  "departments": ["Sales", "Finance", "Operations"],
+  "department_host_counts": {
+    "Sales": 45,
+    "Finance": 25,
+    "Operations": 30
+  },
+  "guest_wifi": true,
+  "internal_server": true,
+  "base_network": "10.20.0.0/16"
+}
+```
+
+## Quick start (Windows PowerShell)
 
 Requires Python 3.11 or newer.
 
@@ -39,7 +74,7 @@ Open http://127.0.0.1:8000.
 
 ## Optional AI configuration
 
-Set these values in `.env` to enable an OpenAI-compatible chat-completions endpoint:
+Configure the optional OpenAI-compatible chat-completions endpoint using environment variables:
 
 ```env
 AI_API_KEY=your_api_key
@@ -47,48 +82,42 @@ AI_BASE_URL=https://api.openai.com/v1
 AI_MODEL=gpt-4o-mini
 ```
 
-Never commit real credentials. If no key is configured, the app uses its local demo parser.
+Never commit real credentials or place them in browser-side code. In Render, configure the key as a server-side secret environment variable. If no key is configured, the application uses its deterministic demo parser.
 
 ## Render deployment
 
-A repository-level `render.yaml` blueprint is included. In Render, create a new **Blueprint** and connect this portfolio repository. Render will detect the `network-config-generator` service, build it from the project folder, and use `/api/health` as its health check.
-
-- Leave `AI_API_KEY` empty to run with the local demo parser.
-- Add a valid provider key in Render's environment settings to enable LLM-based requirement interpretation.
-- Do not place API keys in source files or commit them to GitHub.
-
-The GitHub Pages portfolio displays the project card and source code link; it does not host the Python API itself.
+The deployed service runs on Render. Configure `AI_API_KEY`, `AI_BASE_URL`, and `AI_MODEL` in the service's Environment settings. The health endpoint is `/api/health`.
 
 ## API
 
-- `GET /api/health` — service health.
-- `POST /api/interpret` — interpret a text brief into structured requirements.
-- `POST /api/design` — generate a network design from structured requirements.
-- `POST /api/validate` — validate a supplied design.
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/health` | Application health and version |
+| GET | `/api/status` | Operational status and enabled capabilities (never returns the key) |
+| POST | `/api/interpret` | Convert a natural-language brief into structured requirements |
+| POST | `/api/design` | Generate VLSM plan, validation findings and IOS drafts |
+| POST | `/api/validate` | Revalidate a submitted network design |
 
-Interactive API documentation is available at `/docs`.
-
-## Example brief
-
-"Design a network for a 20-person company with Sales, Finance and Operations departments, guest Wi-Fi and one internal server."
-
-## Validation boundaries
-
-The validator checks structural consistency. It does not emulate a Cisco device, verify platform-specific command support, prove ACL effectiveness, or guarantee production security. Configuration output is intentionally labeled as a draft.
+Interactive API documentation: `/docs`.
 
 ## Tests
 
+Run from the project directory:
+
 ```powershell
-pytest
+python -m pytest -q
 ```
 
-## Roadmap
+The suite covers API contracts, VLSM allocation, non-overlapping subnet boundaries, department-specific host counts, variable subnet masks in router output, insufficient address space, invalid DHCP boundaries, gateway exclusion, and reserved segment names.
 
-- Device profiles for specific Cisco IOS families.
-- ACL policy builder with explicit allow/deny requirements.
-- Packet Tracer lab export and topology visualization.
-- Configuration diff and risk scoring.
-- Authentication and multi-user saved projects.
+## Known limitations and next engineering steps
+
+- IPv4 only; IPv6 planning is not implemented.
+- VLAN segmentation does not itself enforce guest isolation. ACL/firewall policy generation and verification are future work.
+- Device configuration templates are generic router-on-a-stick examples. Device-specific profiles and syntax validation are future work.
+- The topology is not simulated and no configuration is pushed to network devices.
+- Guest, server and management host counts are planning defaults and should become user-configurable.
+- Authentication, persistent projects, audit history and multi-user workflows are not implemented.
 
 ## Author
 
