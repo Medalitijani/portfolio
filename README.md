@@ -15,7 +15,7 @@ My portfolio focuses on documented practical work: the objective, tools, impleme
 | Domain | Project | Practical work | Technologies / tools |
 |---|---|---|---|
 | IT Support & Service Operations | [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) | Educational ticketing prototype with authentication, role-based access, ticket lifecycle, assignment, comments, dashboard, and email integration | Node.js, Express 5, SQLite, JavaScript, Jest |
-| Networking & Infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Small-company lab with VLAN segmentation, routing, DHCP, guest isolation, Active Directory/GPO concepts, PowerShell scripts, and support documentation | Cisco Packet Tracer, Windows lab concepts, PowerShell |
+| AI & Network Automation | [AI Network Configuration Generator](https://github.com/Medalitijani/portfolio/tree/main/network-config-generator) | AI-assisted requirements interpretation, VLAN and IPv4 planning, Cisco IOS configuration drafts, and deterministic validation; optional LLM with a local demo mode | Python, FastAPI, Pydantic, ipaddress, HTTPX, Pytest |\n| Networking & Infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Small-company lab with VLAN segmentation, routing, DHCP, guest isolation, Active Directory/GPO concepts, PowerShell scripts, and support documentation | Cisco Packet Tracer, Windows lab concepts, PowerShell |
 | Network Troubleshooting | [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Packet-analysis investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and failed TCP connections | Wireshark, TCP/IP, Windows networking tools |
 | Web Development | [Northstar IT — Business Website](https://github.com/Medalitijani/northstar-it-business-website) | Responsive multilingual website prototype for a fictional IT services brand, with a contact-form frontend and Netlify Function integration in the source | HTML5, CSS3, JavaScript, Netlify Functions, Resend |
 
@@ -39,7 +39,7 @@ Across these projects, I practice how to:
 
 ## Project scope and transparency
 
-These are personal projects, learning labs, and demonstrations—not client deployments. Network and Windows infrastructure work is performed in simulated or learning environments. The Helpdesk application is an educational prototype, not an operational service for a real organization. Some scripts are documented for review or dry-run use and have not been validated against a live production Active Directory domain. The Northstar website represents a fictional brand; its contact workflow requires the appropriate Netlify deployment configuration.
+The AI Network Configuration Generator is an educational prototype; generated CLI is a draft and is never pushed to live devices. LLM interpretation is optional, while IP calculations and validation are deterministic.\n\nThese are personal projects, learning labs, and demonstrations—not client deployments. Network and Windows infrastructure work is performed in simulated or learning environments. The Helpdesk application is an educational prototype, not an operational service for a real organization. Some scripts are documented for review or dry-run use and have not been validated against a live production Active Directory domain. The Northstar website represents a fictional brand; its contact workflow requires the appropriate Netlify deployment configuration.
 
 ## Explore
 
