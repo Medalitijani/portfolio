@@ -13,11 +13,17 @@ from app.schemas import InterpretRequest, InterpretResponse, NetworkDesign, Netw
 
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent
+APP_VERSION = "1.1.0"
 
 app = FastAPI(
-    title="AI Network Configuration Generator",
-    description="AI-assisted network planning with deterministic IPv4 calculations and configuration validation.",
-    version="1.0.0",
+    title="NetArchitect AI",
+    description=(
+        "AI-assisted network architecture planning with deterministic IPv4 "
+        "allocation, Cisco IOS configuration drafts and validation."
+    ),
+    version=APP_VERSION,
+    docs_url="/docs",
+    redoc_url="/redoc",
 )
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
@@ -29,7 +35,26 @@ async def home() -> HTMLResponse:
 
 @app.get("/api/health")
 async def health() -> dict:
-    return {"status": "ok", "service": "network-config-generator", "version": "1.0.0"}
+    return {"status": "ok", "service": "netarchitect-ai", "version": APP_VERSION}
+
+
+@app.get("/api/status")
+async def status() -> dict:
+    import os
+
+    return {
+        "status": "operational",
+        "version": APP_VERSION,
+        "ai_provider_configured": bool(os.getenv("AI_API_KEY", "").strip()),
+        "capabilities": [
+            "requirements_interpretation",
+            "vlan_planning",
+            "ipv4_subnet_allocation",
+            "cisco_ios_drafts",
+            "deterministic_validation",
+            "json_export",
+        ],
+    }
 
 
 @app.post("/api/interpret", response_model=InterpretResponse)
@@ -37,8 +62,11 @@ async def interpret(body: InterpretRequest) -> InterpretResponse:
     try:
         requirements, mode, note = await interpret_prompt(body.prompt)
         return InterpretResponse(requirements=requirements, interpretation_mode=mode, note=note)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
     except Exception as exc:
-        raise HTTPException(status_code=422, detail=f"Could not interpret requirements: {type(exc).__name__}") from exc
+        # Keep implementation details out of public API responses.
+        raise HTTPException(status_code=500, detail="Requirement interpretation failed. Please retry.") from exc
 
 
 @app.post("/api/design", response_model=NetworkDesign)
