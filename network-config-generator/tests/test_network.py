@@ -30,7 +30,7 @@ def test_guest_and_server_segments_are_optional():
 def test_department_host_counts_override_even_distribution():
     design = generate_design(NetworkRequest(
         employees=100, departments=["Sales", "Finance"],
-        department_host_counts={"Finance": 80, "Sales": 20},
+        department_host_counts={"Finance": 80},
         guest_wifi=False, internal_server=False,
     ))
     by_name = {v.name: v for v in design.vlans}
@@ -57,7 +57,7 @@ def test_capacity_error_when_base_network_is_too_small():
 
 def test_overlap_is_detected():
     vlans = [
-        VlanPlan(name="A", vlan_id=10, subnet="10.0.0.0/24", gateway="10.0.0.1", dhcp_start="10.0.0.10", dhcp_end="10.0.0.200", required_hosts=20, usable_hosts=254, purpose="test"),
+        VlanPlan(name="A", vlan_id=10, subnet="10.0.0.0/24", gateway="10.0.0.1", dhcp_start="10.0.0.10", dhcp_end="10.0.0.200", required_hosts=20, usable_hosts=254, client_capacity=253, purpose="test"),
         VlanPlan(name="B", vlan_id=20, subnet="10.0.0.0/24", gateway="10.0.0.2", dhcp_start="10.0.0.11", dhcp_end="10.0.0.201", required_hosts=20, usable_hosts=254, purpose="test"),
     ]
     assert any(item.code == "SUBNET_OVERLAP" for item in validate_vlan_plan(vlans))
@@ -67,7 +67,7 @@ def test_network_and_broadcast_addresses_are_rejected_for_dhcp():
     vlan = VlanPlan(
         name="Bad", vlan_id=10, subnet="192.168.1.0/29",
         gateway="192.168.1.1", dhcp_start="192.168.1.0", dhcp_end="192.168.1.7",
-        required_hosts=3, usable_hosts=6, purpose="test",
+        required_hosts=3, usable_hosts=5, client_capacity=5, purpose="test",
     )
     codes = {item.code for item in validate_vlan_plan([vlan])}
     assert "INVALID_DHCP_RANGE" in codes
@@ -77,7 +77,7 @@ def test_gateway_cannot_be_inside_dynamic_pool():
     vlan = VlanPlan(
         name="Bad", vlan_id=10, subnet="192.168.1.0/29",
         gateway="192.168.1.2", dhcp_start="192.168.1.2", dhcp_end="192.168.1.6",
-        required_hosts=3, usable_hosts=6, purpose="test",
+        required_hosts=3, usable_hosts=6, client_capacity=5, purpose="test",
     )
     assert any(item.code == "GATEWAY_IN_DHCP_POOL" for item in validate_vlan_plan([vlan]))
 
