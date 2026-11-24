@@ -95,6 +95,15 @@ class VlanPlan(BaseModel):
             raise ValueError("Only IPv4 addresses are supported.")
         return str(address)
 
+    @model_validator(mode="after")
+    def validate_capacity_metadata(self) -> "VlanPlan":
+        network = ipaddress.ip_network(self.subnet, strict=True)
+        expected_usable = network.num_addresses - 2
+        expected_client_capacity = network.num_addresses - 3
+        if self.usable_hosts != expected_usable or self.client_capacity != expected_client_capacity:
+            raise ValueError("Host-capacity metadata must match the subnet and reserve one gateway address.")
+        return self
+
 
 class ValidationFinding(BaseModel):
     severity: str
