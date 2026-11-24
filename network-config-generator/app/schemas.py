@@ -74,6 +74,7 @@ class VlanPlan(BaseModel):
     dhcp_end: str
     required_hosts: int = Field(ge=1)
     usable_hosts: int = Field(ge=1)
+    client_capacity: int = Field(ge=1, description="Usable client addresses after reserving the gateway.")
     purpose: str
 
     @field_validator("subnet")
