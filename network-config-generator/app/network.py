@@ -40,12 +40,12 @@ def _allocate_vlsm(base: ipaddress.IPv4Network, segments: list[tuple[str, int, s
 def build_vlan_plan(request: NetworkRequest) -> list[VlanPlan]:
     base = ipaddress.ip_network(request.base_network, strict=True)
     segments = []
-    default_per_department = math.ceil(request.employees / len(request.departments))
+    explicit_counts = {name.casefold(): count for name, count in request.department_host_counts.items()}
+    unassigned = sum(1 for name in request.departments if name.casefold() not in explicit_counts)
+    remaining_employees = max(0, request.employees - sum(explicit_counts.values()))
+    default_per_department = math.ceil(remaining_employees / unassigned) if unassigned else 0
     for index, department in enumerate(request.departments):
-        endpoints = next(
-            (count for name, count in request.department_host_counts.items() if name.casefold() == department.casefold()),
-            default_per_department,
-        )
+        endpoints = explicit_counts.get(department.casefold(), max(1, default_per_department))
         planned_hosts = max(2, math.ceil(endpoints * 1.2))
         segments.append((department, 10 + index, "Department user network", planned_hosts))
     if request.internal_server:
@@ -64,7 +64,7 @@ def build_vlan_plan(request: NetworkRequest) -> list[VlanPlan]:
             dhcp_start=str(subnet.network_address + 2),
             dhcp_end=str(subnet.broadcast_address - 1),
             required_hosts=required_hosts, usable_hosts=subnet.num_addresses - 2,
-            purpose=purpose,
+            client_capacity=subnet.num_addresses - 3, purpose=purpose,
         ))
     return plans
 
@@ -93,9 +93,9 @@ def validate_vlan_plan(vlans: list[VlanPlan]) -> list[ValidationFinding]:
             findings.append(ValidationFinding(severity="error", code="INVALID_DHCP_RANGE", message=f"{vlan.name}: DHCP boundaries must be ordered usable host addresses inside {network}."))
         elif int(start) <= int(gateway) <= int(end):
             findings.append(ValidationFinding(severity="error", code="GATEWAY_IN_DHCP_POOL", message=f"{vlan.name}: the gateway must be excluded from the DHCP pool."))
-        if vlan.required_hosts > vlan.usable_hosts:
-            findings.append(ValidationFinding(severity="error", code="INSUFFICIENT_HOST_CAPACITY", message=f"{vlan.name}: {vlan.required_hosts} hosts are required but only {vlan.usable_hosts} are usable."))
-        if vlan.required_hosts / vlan.usable_hosts > 0.9:
+        if vlan.required_hosts > vlan.client_capacity:
+            findings.append(ValidationFinding(severity="error", code="INSUFFICIENT_HOST_CAPACITY", message=f"{vlan.name}: {vlan.required_hosts} client addresses are required but only {vlan.client_capacity} remain after reserving the gateway."))
+        if vlan.required_hosts / vlan.client_capacity > 0.9:
             findings.append(ValidationFinding(severity="warning", code="LOW_ADDRESS_HEADROOM", message=f"{vlan.name}: address utilization exceeds 90%; consider a larger subnet."))
 
     if not findings:
@@ -146,7 +146,7 @@ def generate_design(request: NetworkRequest) -> NetworkDesign:
     findings = validate_vlan_plan(vlans)
     notes = [
         "VLSM allocation is deterministic and performed with Python's ipaddress module.",
-        "Department segments include 20% endpoint growth headroom; explicit department host counts can override the even employee split.",
+        "Department segments include 20% endpoint growth headroom; explicit department host counts override the employee total, and remaining employees are distributed across unspecified departments.",
         "Guest isolation is not enforced by VLAN creation alone; configure and test an explicit ACL or firewall policy.",
         "Cisco IOS output is a draft. Review device model, IOS version, interface names and security policy before use.",
         "Management access requires a separate administrative policy and must not be exposed to guest networks.",
