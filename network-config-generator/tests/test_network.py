@@ -103,3 +103,12 @@ def test_small_base_network_can_be_subdivided_with_vlsm():
     assert all(subnet.subnet_of(base) for subnet in subnets)
     assert all(not left.overlaps(right) for i, left in enumerate(subnets) for right in subnets[i + 1:])
     assert design.validation_passed
+
+
+def test_capacity_metadata_must_match_subnet():
+    with pytest.raises(ValueError, match="capacity metadata"):
+        VlanPlan(
+            name="Bad", vlan_id=10, subnet="192.168.1.0/29",
+            gateway="192.168.1.1", dhcp_start="192.168.1.2", dhcp_end="192.168.1.6",
+            required_hosts=3, usable_hosts=254, client_capacity=253, purpose="test",
+        )
