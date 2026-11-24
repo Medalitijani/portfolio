@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+
 from app.main import app
 
 client = TestClient(app)
@@ -8,6 +9,16 @@ def test_health_endpoint():
     response = client.get("/api/health")
     assert response.status_code == 200
     assert response.json()["status"] == "ok"
+    assert response.json()["version"] == "1.1.0"
+
+
+def test_status_endpoint_does_not_expose_api_key():
+    response = client.get("/api/status")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "operational"
+    assert "ai_provider_configured" in body
+    assert "AI_API_KEY" not in response.text
 
 
 def test_design_endpoint():
