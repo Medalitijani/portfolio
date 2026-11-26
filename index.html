@@ -245,6 +245,62 @@
 
   
 
+
+    /* MOTION UPDATE — technical editorial identity */
+    :root{
+      --navy:#10243b;--navy-2:#1b3857;--blue:#3478e5;--blue-2:#e8f1ff;
+      --ink:#17283b;--muted:#66788b;--soft:#f3f6fa;--line:#dfe7f0;
+      --white:#fff;--green:#4d9b79;--shadow:0 20px 55px rgba(16,36,59,.10);
+    }
+    body{background:#fff;color:#17283b}
+    .progress{background:linear-gradient(90deg,#3478e5,#54b8e8);height:3px}
+    .brand-mark{background:#10243b;color:#fff}
+    .nav-links a:hover,.nav-links a.active{color:#3478e5}
+    .nav-links .nav-cta{background:#10243b}
+    .nav-links .nav-cta:hover{background:#3478e5;color:#fff}
+    .hero{background:linear-gradient(115deg,#f3f7fc 0%,#fff 62%,#edf4fc 100%)}
+    .hero:before{border-color:#d5e4f6;box-shadow:0 0 0 55px #e7f0fa70,0 0 0 110px #e7f0fa45;animation:orbitDrift 18s ease-in-out infinite alternate}
+    .eyebrow,.section-kicker{color:#3478e5}
+    .eyebrow:before{background:#3478e5}
+    .hero h1{color:#10243b;animation:heroTitleIn .85s cubic-bezier(.2,.7,.2,1) both}
+    .hero h1 span{color:#3478e5}
+    .hero-role{color:#1b3857}
+    .hero-typed{display:flex;align-items:center;gap:9px;min-height:32px;margin:0 0 16px;color:#3478e5;font:800 clamp(.95rem,1.6vw,1.12rem) var(--display);letter-spacing:-.025em}
+    .hero-typed:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#3478e5;box-shadow:0 0 0 5px #3478e51a}
+    .typed-caret{display:inline-block;width:2px;height:1.1em;margin-left:2px;background:#3478e5;vertical-align:-.15em;animation:caretBlink .8s steps(2,start) infinite}
+    .btn-primary{background:#286bd0;border-color:#286bd0;color:#fff}
+    .btn-primary:hover{background:#1e55ad;border-color:#1e55ad;color:#fff}
+    .portrait-frame{box-shadow:14px 14px 0 #e5eef9;animation:portraitFloat 6s ease-in-out infinite}
+    .portrait-note{background:#10243b}
+    .trustbar{background:#10243b}
+    .trust-item strong{color:#fff}
+    .section-soft{background:#f4f7fb;border-color:#e3eaf2}
+    .section-title em,.about-statement span{color:#3478e5}
+    .filter[aria-pressed=true]{background:#10243b;border-color:#10243b}
+    .project{border-color:#e0e8f1;box-shadow:0 5px 20px rgba(16,36,59,.045)}
+    .project:hover{border-color:#b9cde7;box-shadow:0 18px 40px rgba(16,36,59,.11)}
+    .project-meta,.project-links a,.practice-num,.skill-index{color:#3478e5}
+    .tags span{background:#f1f6fc;border-color:#e2ebf5;color:#52677d}
+    .contact{background:#10243b}
+    .contact .section-kicker{color:#8ebaff}
+    .contact .section-title em{color:#9cc4ff}
+    .contact-actions .btn-primary{background:#fff;border-color:#fff;color:#10243b}
+    .contact-actions .btn-primary:hover{background:#dceaff;border-color:#dceaff;color:#10243b}
+    footer{background:#0b1928}
+    .project,.practice-card,.edu,.btn,.nav-links a{transition-timing-function:cubic-bezier(.2,.7,.2,1)}
+    .project:hover .project-visual img{transform:scale(1.025)}
+    .project-visual img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    @keyframes heroTitleIn{from{opacity:0;transform:translateY(24px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+    @keyframes caretBlink{to{visibility:hidden}}
+    @keyframes portraitFloat{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-9px) rotate(0deg)}}
+    @keyframes orbitDrift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-18px,15px,0) scale(1.035)}}
+    @media(max-width:700px){.hero-typed{font-size:.94rem;min-height:29px}.portrait-frame{animation:none}}
+    @media(prefers-reduced-motion:reduce){
+      .hero h1,.portrait-frame,.hero:before{animation:none!important}
+      .typed-caret{animation:none!important}
+      .project-visual img{transition:none!important}
+    }
+
   </style>
 </head>
 <body>
@@ -277,6 +333,8 @@
           <div class="eyebrow" data-fr="Portfolio / 2026 — Tunis, Tunisie" data-en="Portfolio / 2026 — Tunis, Tunisia">Portfolio / 2026 — Tunis, Tunisie</div>
           <h1>Mohamed Ali<br>Tijani<span>.</span></h1>
           <p class="hero-role" data-fr="Support informatique · Réseaux · Systèmes · Développement web" data-en="IT Support · Networks · Systems · Web Development">Support informatique · Réseaux · Systèmes · Développement web</p>
+
+          <p class="hero-typed" aria-live="polite"><span id="typed-title">System &amp; Network Administrator</span><span class="typed-caret" aria-hidden="true"></span></p>
           <p class="hero-copy" data-fr="Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre." data-en="I hold a Higher Technician Certificate (BTS) in Management Information Technology from IPSET, with a particular interest in systems and network administration. Through my projects, I practise infrastructure configuration, network troubleshooting, Windows environment administration, and web tool development. I document each project and explain the technical solutions implemented.">Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#projets" data-fr="Découvrir mes projets ↗" data-en="Explore my projects ↗">Découvrir mes projets ↗</a>
@@ -526,5 +584,51 @@
       fetchRepositories();
     })();
   </script>
+
+  <script>
+    (() => {
+      const target = document.getElementById("typed-title");
+      if (!target) return;
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const roles = {
+        fr: ["Administrateur systèmes & réseaux", "Technicien support informatique", "Technicien réseaux"],
+        en: ["System & Network Administrator", "IT Support Specialist", "Network Technician"]
+      };
+      let roleIndex = 0, timer = null, cancelled = false;
+      const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+      async function typeRole() {
+        while (!cancelled) {
+          const lang = document.documentElement.lang === "en" ? "en" : "fr";
+          const word = roles[lang][roleIndex % roles[lang].length];
+          target.textContent = "";
+          for (const ch of word) {
+            if (cancelled) return;
+            target.textContent += ch;
+            await pause(52);
+          }
+          await pause(1900);
+          for (let i = word.length; i >= 0; i--) {
+            if (cancelled) return;
+            target.textContent = word.slice(0, i);
+            await pause(24);
+          }
+          await pause(280);
+          roleIndex = (roleIndex + 1) % roles[lang].length;
+        }
+      }
+      if (reduced) {
+        target.textContent = roles[document.documentElement.lang === "en" ? "en" : "fr"][0];
+      } else {
+        typeRole();
+        document.querySelectorAll("[data-language]").forEach(button => {
+          button.addEventListener("click", () => {
+            roleIndex = 0;
+            target.textContent = roles[button.dataset.language === "en" ? "en" : "fr"][0];
+          });
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>
