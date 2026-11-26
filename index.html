@@ -529,6 +529,25 @@
     .contact-actions .btn:hover{transform:translateX(4px)}
     @media(prefers-reduced-motion:reduce){.hero .portrait-frame{animation:none}.project-visual img,.skill,.edu,.practice-card::after{transition:none}}
 
+
+    /* SCROLL MOTION — staggered cards and image reveals */
+    .project-grid .project.reveal:nth-child(2),
+    .practice-grid .practice-card.reveal:nth-child(2),
+    .skills-grid .skill.reveal:nth-child(2){transition-delay:.10s}
+    .project-grid .project.reveal:nth-child(3),
+    .practice-grid .practice-card.reveal:nth-child(3),
+    .skills-grid .skill.reveal:nth-child(3){transition-delay:.20s}
+    .project-grid .project.reveal:nth-child(4),
+    .practice-grid .practice-card.reveal:nth-child(4),
+    .skills-grid .skill.reveal:nth-child(4){transition-delay:.30s}
+    .education .edu.reveal:nth-child(2){transition-delay:.12s}
+    .project .project-visual{clip-path:inset(0 0 100% 0);transition:clip-path .85s cubic-bezier(.2,.75,.25,1)}
+    .project.visible .project-visual{clip-path:inset(0)}
+    .project.visible .project-visual img{animation:project-image-settle .9s cubic-bezier(.2,.75,.25,1) both}
+    @keyframes project-image-settle{from{transform:scale(1.08)}to{transform:scale(1)}}
+    .reveal.visible .section-title em{background-image:linear-gradient(#ff5a36,#ff5a36);background-repeat:no-repeat;background-position:0 100%;background-size:0 3px;animation:heading-underline .75s .18s ease-out forwards}
+    @keyframes heading-underline{to{background-size:100% 3px}}
+    @media(prefers-reduced-motion:reduce){.project .project-visual{clip-path:none}.project.visible .project-visual img{animation:none}.reveal.visible .section-title em{background-size:100% 0}}
   </style>
 </head>
 <body>
