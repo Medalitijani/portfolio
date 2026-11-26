@@ -409,7 +409,26 @@
     .portrait-frame img{filter:none !important; -webkit-filter:none !important;}
     .portrait-frame{filter:none !important; -webkit-filter:none !important;}
 
-  </style>
+  
+    /* Project gallery: compact, image-first cards inspired by editorial app showcases. */
+    .project-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
+    .project-gallery .project{border:1px solid #dedede;border-radius:3px;background:#fff;box-shadow:none;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+    .project-gallery .project:hover{transform:translateY(-5px);border-color:#999;box-shadow:0 16px 36px rgba(0,0,0,.07)}
+    .project-gallery .project-visual{display:block;width:100%;height:auto;aspect-ratio:16/9;padding:0;margin:0;overflow:hidden;background:#ededed;border:0;border-bottom:1px solid #e5e5e5}
+    .project-gallery .project-visual img{width:100%;height:100%;object-fit:cover;object-position:center;filter:none!important;-webkit-filter:none!important;transition:transform .55s ease}
+    .project-gallery .project:hover .project-visual img{filter:none!important;-webkit-filter:none!important;transform:scale(1.025)}
+    .project-gallery .project-content{padding:22px 22px 20px;gap:0}
+    .project-gallery .project h3{margin:0 0 8px;color:#171717;font:700 1.2rem/1.3 var(--display);letter-spacing:-.045em}
+    .project-gallery .project p{margin:0;color:#666;font-size:.82rem;line-height:1.75}
+    .project-stack{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:17px 0 18px;color:#555;font-size:.7rem}
+    .project-stack strong{margin-right:3px;color:#222;font-size:.72rem;font-weight:800}
+    .project-stack span{padding:4px 8px;border:1px solid #e5e5e5;border-radius:2px;background:#f7f7f7;color:#555;font-size:.65rem;font-weight:600}
+    .project-gallery .project-links{display:flex;gap:18px;margin-top:auto;padding-top:13px;border-top:1px solid #e9e9e9}
+    .project-gallery .project-links a{color:#171717;font-size:.73rem;font-weight:800;letter-spacing:.015em}
+    .project-gallery .project-links a:hover{color:#666;text-decoration:underline;text-underline-offset:4px}
+    @media(min-width:1100px){.project-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.project-gallery .project-content{padding:25px 26px 23px}}
+    @media(max-width:700px){.project-gallery{grid-template-columns:1fr;gap:20px}.project-gallery .project-visual{aspect-ratio:16/9}.project-gallery .project-content{padding:19px}.project-gallery .project h3{font-size:1.12rem}.project-stack{margin:14px 0 16px}}
+</style>
 </head>
 <body>
   <div class="progress" id="scroll-progress" aria-hidden="true"></div>
@@ -481,58 +500,58 @@
     <section class="section" id="projets">
       <div class="container">
         <div class="section-head reveal">
-          <div><div class="section-kicker" data-fr="02 / SÉLECTION DE PROJETS" data-en="02 / SELECTED PROJECTS">02 / SÉLECTION DE PROJETS</div><h2 class="section-title" data-fr="Du concret.<br><em>Pas seulement des mots.</em>" data-en="Real work.<br><em>Beyond just words.</em>">Du concret.<br><em>Pas seulement des mots.</em></h2></div>
-          <p class="section-desc" data-fr="Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés." data-en="Four complementary areas demonstrated through documented personal projects, prototypes and hands-on labs.">Quatre domaines complémentaires illustrés par des projets personnels, des prototypes et des laboratoires pratiques documentés.</p>
+          <div><div class="section-kicker" data-fr="02 / PROJETS SÉLECTIONNÉS" data-en="02 / SELECTED PROJECTS">02 / PROJETS SÉLECTIONNÉS</div><h2 class="section-title" data-fr="Une sélection de<br><em>projets concrets.</em>" data-en="A selection of<br><em>real projects.</em>">Une sélection de<br><em>projets concrets.</em></h2></div>
+          <p class="section-desc" data-fr="Des projets personnels qui illustrent mes compétences en support informatique, réseaux, systèmes et développement web." data-en="Personal projects demonstrating my skills in IT support, networking, systems and web development.">Des projets personnels qui illustrent mes compétences en support informatique, réseaux, systèmes et développement web.</p>
         </div>
         <div class="filters reveal" role="group" aria-label="Filtrer les projets">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true" data-fr="Tous les projets" data-en="All projects">Tous les projets</button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true" data-fr="Tous" data-en="All">Tous</button>
           <button class="filter" type="button" data-filter="support" aria-pressed="false" data-fr="Support IT" data-en="IT Support">Support IT</button>
           <button class="filter" type="button" data-filter="network" aria-pressed="false" data-fr="Réseaux" data-en="Networking">Réseaux</button>
           <button class="filter" type="button" data-filter="web" aria-pressed="false" data-fr="Développement web" data-en="Web development">Développement web</button>
         </div>
-        <div class="project-grid" id="project-grid">
+        <div class="project-grid project-gallery" id="project-grid">
           <article class="project reveal" data-category="support">
-            <div class="project-visual"><img src="./helpdesk-dashboard.png" alt="Capture du tableau de bord de l'application Helpdesk informatique" loading="lazy"></div>
+            <a class="project-visual" href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener" aria-label="Ouvrir la démonstration Helpdesk">
+              <img src="./helpdesk-dashboard.png" alt="Tableau de bord de l'application Helpdesk" loading="lazy">
+            </a>
             <div class="project-content">
-              <div class="project-meta"><span data-fr="Application / Support informatique" data-en="Application / IT Support">Application / Support informatique</span><span>01</span></div>
-              <h3 data-fr="Application de gestion des demandes d’assistance" data-en="IT Support Ticket Management Application">Application de gestion des demandes d’assistance</h3>
-              <p data-fr="Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle." data-en="An educational IT support ticketing prototype featuring authentication, user roles (user, technician, administrator), ticket creation and tracking, assignment, comments, history, a dashboard and CSV export. Built as a demonstration project, not deployed for operational use by a real organisation.">Prototype pédagogique de gestion des demandes d’assistance : authentification, rôles (utilisateur, technicien, administrateur), création et suivi de tickets, affectation, commentaires, historique, tableau de bord et export CSV. Conçu comme projet de démonstration, sans déploiement opérationnel pour une organisation réelle.</p>
-              <div class="tags"><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span><span>Jest</span></div>
-              <details class="case-study"><summary data-fr="Voir l’étude technique" data-en="View technical breakdown">Voir l’étude technique</summary><div class="case-study-body"><h4 data-fr="Fonctionnalités livrées" data-en="Implemented features">Fonctionnalités livrées</h4><ul><li data-fr="Authentification et mots de passe hachés" data-en="Authentication and hashed passwords">Authentification et mots de passe hachés</li><li data-fr="Rôles utilisateur, technicien et administrateur" data-en="User, technician and administrator roles">Rôles utilisateur, technicien et administrateur</li><li data-fr="Cycle de vie des tickets, affectation, commentaires et historique" data-en="Ticket lifecycle, assignment, comments and history">Cycle de vie des tickets, affectation, commentaires et historique</li><li data-fr="Tableau de bord et export CSV" data-en="Dashboard and CSV export">Tableau de bord et export CSV</li></ul><p><strong data-fr="Architecture :" data-en="Architecture:">Architecture :</strong> Node.js · Express · SQLite · express-session · bcryptjs</p><p><strong data-fr="Déploiement :" data-en="Deployment:">Déploiement :</strong> Render · <span data-fr="prototype de démonstration" data-en="demonstration prototype">prototype de démonstration</span></p></div></details>
-              <div class="project-links"><a href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a><a href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener" data-fr="Démonstration du prototype ↗" data-en="Prototype demonstration ↗">Démonstration du prototype ↗</a></div>
+              <h3 data-fr="Application Helpdesk" data-en="IT Helpdesk Application">Application Helpdesk</h3>
+              <p data-fr="Prototype de gestion des demandes IT avec authentification, rôles, suivi des tickets et tableau de bord." data-en="IT support ticketing prototype with authentication, user roles, ticket tracking and a dashboard.">Prototype de gestion des demandes IT avec authentification, rôles, suivi des tickets et tableau de bord.</p>
+              <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener">GitHub ↗</a><a href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener" data-fr="Démo ↗" data-en="Live demo ↗">Démo ↗</a></div>
             </div>
           </article>
           <article class="project reveal" data-category="network">
-            <div class="project-visual"><img src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Schéma de topologie du réseau de la petite entreprise" loading="lazy"></div>
+            <a class="project-visual" href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener" aria-label="Voir le projet Small Business IT Infrastructure sur GitHub">
+              <img src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Topologie réseau de l'infrastructure petite entreprise" loading="lazy">
+            </a>
             <div class="project-content">
-              <div class="project-meta"><span data-fr="Infrastructure / Réseaux" data-en="Infrastructure / Networking">Infrastructure / Réseaux</span><span>02</span></div>
-              <h3 data-fr="Infrastructure informatique d'une petite entreprise" data-en="Small Business IT Infrastructure">Infrastructure informatique d'une petite entreprise</h3>
-              <p data-fr="Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle de contrôle d’accès (ACL) bloquant l’accès des invités au serveur. Tests de connectivité documentés." data-en="An infrastructure lab for a 20-person company: three VLANs (staff, management and guests), inter-VLAN routing, DHCP, and an access control list (ACL) rule blocking guest access to the server. Connectivity tests are documented.">Laboratoire d'infrastructure pour une entreprise de 20 personnes : trois VLAN (personnel, administration, invités), routage inter-VLAN, DHCP et règle ACL bloquant l'accès des invités au serveur. Tests de connectivité documentés.</p>
-              <div class="tags"><span>Packet Tracer</span><span>VLAN</span><span>DHCP</span><span>Active Directory</span><span>PowerShell</span></div>
-              <details class="case-study"><summary data-fr="Voir l’étude technique" data-en="View technical breakdown">Voir l’étude technique</summary><div class="case-study-body"><h4 data-fr="Architecture réseau" data-en="Network architecture">Architecture réseau</h4><ul><li>VLAN 10 — <span data-fr="Personnel" data-en="Staff">Personnel</span></li><li>VLAN 20 — <span data-fr="Administration" data-en="Management">Administration</span></li><li>VLAN 30 — <span data-fr="Invités" data-en="Guests">Invités</span></li><li data-fr="Routage inter-VLAN et pools DHCP" data-en="Inter-VLAN routing and DHCP scopes">Routage inter-VLAN et pools DHCP</li><li data-fr="ACL : accès invité au serveur bloqué" data-en="ACL: guest-to-server access blocked">ACL : accès invité au serveur bloqué</li></ul><p><strong data-fr="Validation :" data-en="Validation:">Validation :</strong> <span data-fr="accès personnel → serveur autorisé ; invités → serveur bloqué." data-en="staff-to-server allowed; guest-to-server blocked.">accès personnel → serveur autorisé ; invités → serveur bloqué.</span></p><p><strong data-fr="Outils :" data-en="Tools:">Outils :</strong> Cisco Packet Tracer · Windows Server concepts · PowerShell</p></div></details>
-              <div class="project-links"><a href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a></div>
+              <h3 data-fr="Small Business IT Infrastructure" data-en="Small Business IT Infrastructure">Small Business IT Infrastructure</h3>
+              <p data-fr="Architecture réseau d'une entreprise de 20 personnes : VLAN, routage inter-VLAN, DHCP, ACL et concepts Windows Server." data-en="Network design for a 20-person business: VLANs, inter-VLAN routing, DHCP, ACLs and Windows Server concepts.">Architecture réseau d'une entreprise de 20 personnes : VLAN, routage inter-VLAN, DHCP, ACL et concepts Windows Server.</p>
+              <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>Packet Tracer</span><span>VLAN</span><span>DHCP</span><span>PowerShell</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener">GitHub ↗</a></div>
             </div>
           </article>
           <article class="project reveal" data-category="network">
-            <div class="project-visual"><img src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Capture Wireshark montrant l'analyse de paquets DNS" loading="lazy"></div>
+            <a class="project-visual" href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener" aria-label="Voir le Wireshark Troubleshooting Casebook sur GitHub">
+              <img src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Analyse de paquets DNS dans Wireshark" loading="lazy">
+            </a>
             <div class="project-content">
-              <div class="project-meta"><span data-fr="Réseaux / Dépannage" data-en="Networking / Troubleshooting">Réseaux / Dépannage</span><span>03</span></div>
-              <h3 data-fr="Carnet d’analyse et de diagnostic réseau — Wireshark" data-en="Network Analysis & Troubleshooting Casebook — Wireshark">Carnet d’analyse et de diagnostic réseau — Wireshark</h3>
-              <p data-fr="Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats." data-en="A practical traffic analysis and troubleshooting casebook covering DHCP, DNS, ARP, ICMP and TCP exchanges using Wireshark, display filters and explanations of the findings.">Carnet pratique d’analyse de trafic et de dépannage : observation des échanges DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et explications des résultats.</p>
-              <div class="tags"><span>Wireshark</span><span>DHCP</span><span>DNS</span><span>ARP</span><span>TCP/IP</span></div>
-              <details class="case-study"><summary data-fr="Voir l’étude technique" data-en="View technical breakdown">Voir l’étude technique</summary><div class="case-study-body"><h4 data-fr="Cas de diagnostic documentés" data-en="Documented troubleshooting cases">Cas de diagnostic documentés</h4><ul><li>DHCP — <span data-fr="découverte et attribution d’adresse" data-en="discovery and address assignment">découverte et attribution d’adresse</span></li><li>DNS — <span data-fr="requêtes et réponses" data-en="queries and responses">requêtes et réponses</span></li><li>ARP — <span data-fr="résolution d’adresse MAC" data-en="MAC address resolution">résolution d’adresse MAC</span></li><li>ICMP — <span data-fr="tests de connectivité" data-en="connectivity tests">tests de connectivité</span></li><li>TCP — <span data-fr="établissement de connexion et échanges" data-en="connection establishment and traffic">établissement de connexion et échanges</span></li></ul><p><strong data-fr="Méthode :" data-en="Method:">Méthode :</strong> <span data-fr="capture, filtre d’affichage, lecture des paquets, interprétation et conclusion." data-en="capture, display filter, packet inspection, interpretation and conclusion.">capture, filtre d’affichage, lecture des paquets, interprétation et conclusion.</span></p><p><strong data-fr="Outil :" data-en="Tool:">Outil :</strong> Wireshark · TCP/IP</p></div></details>
-              <div class="project-links"><a href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a></div>
+              <h3 data-fr="Wireshark Troubleshooting Casebook" data-en="Wireshark Troubleshooting Casebook">Wireshark Troubleshooting Casebook</h3>
+              <p data-fr="Études pratiques de diagnostic réseau à travers l'analyse des échanges DHCP, DNS, ARP, ICMP et TCP." data-en="Practical network troubleshooting cases analysing DHCP, DNS, ARP, ICMP and TCP traffic.">Études pratiques de diagnostic réseau à travers l'analyse des échanges DHCP, DNS, ARP, ICMP et TCP.</p>
+              <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>Wireshark</span><span>TCP/IP</span><span>DHCP</span><span>DNS</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener">GitHub ↗</a></div>
             </div>
           </article>
           <article class="project reveal" data-category="web">
-            <div class="project-visual"><img src="./northstar-homepage.png" alt="Capture d'écran du site vitrine Northstar informatique" loading="lazy"></div>
+            <a class="project-visual" href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener" aria-label="Voir le site Northstar IT">
+              <img src="./northstar-homepage.png" alt="Page d'accueil du site Northstar IT" loading="lazy">
+            </a>
             <div class="project-content">
-              <div class="project-meta"><span data-fr="Site web / Développement" data-en="Website / Development">Site web / Développement</span><span>04</span></div>
-              <h3 data-fr="Northstar IT — site vitrine multilingue" data-en="Northstar IT — Multilingual Business Website">Northstar IT — site vitrine multilingue</h3>
-              <p data-fr="Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique." data-en="A responsive, multilingual showcase website built with HTML, CSS and JavaScript for a fictional IT brand. The contact form requires Netlify configuration; the GitHub Pages version is a static demonstration.">Site vitrine adaptatif et multilingue conçu pour une marque informatique fictive, avec HTML, CSS et JavaScript. Le formulaire de contact nécessite une configuration Netlify ; la version GitHub Pages est une démonstration statique.</p>
-              <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Netlify Functions</span><span>GitHub Pages</span></div>
-              <details class="case-study"><summary data-fr="Voir l’étude technique" data-en="View technical breakdown">Voir l’étude technique</summary><div class="case-study-body"><h4 data-fr="Périmètre du site" data-en="Website scope">Périmètre du site</h4><ul><li data-fr="Interface responsive pour mobile et ordinateur" data-en="Responsive layouts for mobile and desktop">Interface responsive pour mobile et ordinateur</li><li data-fr="Navigation et contenu multilingues" data-en="Multilingual navigation and content">Navigation et contenu multilingues</li><li data-fr="Sections services, présentation et contact" data-en="Services, company overview and contact sections">Sections services, présentation et contact</li><li data-fr="Structure statique HTML, CSS et JavaScript" data-en="Static HTML, CSS and JavaScript implementation">Structure statique HTML, CSS et JavaScript</li></ul><p><strong data-fr="Contexte :" data-en="Context:">Contexte :</strong> <span data-fr="marque fictive ; formulaire à configurer avant toute utilisation réelle." data-en="fictional brand; contact form requires configuration before real use.">marque fictive ; formulaire à configurer avant toute utilisation réelle.</span></p><p><strong data-fr="Technologies :" data-en="Technologies:">Technologies :</strong> HTML5 · CSS3 · JavaScript</p></div></details>
-              <div class="project-links"><a href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener" data-fr="Voir le site ↗" data-en="View website ↗">Voir le site ↗</a><a href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener" data-fr="Code source ↗" data-en="Source code ↗">Code source ↗</a></div>
+              <h3 data-fr="Northstar IT — site vitrine" data-en="Northstar IT — Business Website">Northstar IT — site vitrine</h3>
+              <p data-fr="Site web responsive et multilingue conçu pour présenter les services d'une entreprise informatique fictive." data-en="Responsive multilingual website showcasing the services of a fictional IT company.">Site web responsive et multilingue conçu pour présenter les services d'une entreprise informatique fictive.</p>
+              <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+              <div class="project-links"><a href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener">GitHub ↗</a><a href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener" data-fr="Voir le site ↗" data-en="Visit website ↗">Voir le site ↗</a></div>
             </div>
           </article>
         </div>
@@ -540,7 +559,7 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="pratique">
+<section class="section section-soft" id="pratique">
       <div class="container">
         <div class="section-head reveal">
           <div><div class="section-kicker" data-fr="03 / RÉALISATIONS PRATIQUES" data-en="03 / HANDS-ON EXPERIENCE">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title" data-fr="Des compétences<br><em>mises en pratique.</em>" data-en="Skills<br><em>put into practice.</em>">Des compétences<br><em>mises en pratique.</em></h2></div>
