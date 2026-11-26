@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7fb">
+  <meta name="theme-color" content="#18212b">
   <meta name="description" content="Portfolio de Mohamed Ali Tijani, orienté administration systèmes et réseaux : infrastructure, dépannage, environnements Windows et projets techniques.">
   <title>Mohamed Ali Tijani — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -699,9 +699,102 @@
     .project-detail-item p{margin:0;color:var(--muted);font-size:.68rem;line-height:1.7}
     @media(max-width:700px){.project-details{border-radius:8px}.project-details summary{min-height:64px;padding:10px 12px 10px 14px}.project-detail-grid{grid-template-columns:1fr;gap:9px;padding:2px 14px 14px}.project-detail-item{padding-top:11px}}
     @media(prefers-reduced-motion:reduce){.project-details,.project-details-plus,.project-details-plus svg{transition:none}.project-details:hover{transform:none}}
+
+/* Final responsive, accessibility and visual-consistency pass */
+:root{--navy:#18212b;--navy-2:#344252;--blue:#52677d;--blue-2:#e9edf1;--ink:#202a34;--muted:#697582;--soft:#f3f5f7;--line:#e2e6ea;--white:#fff;--green:#718b79;--shadow:0 18px 48px rgba(24,33,43,.08)}
+body{background:var(--white);color:var(--ink)}
+.skip-link{position:fixed;z-index:200;top:10px;left:10px;padding:11px 15px;transform:translateY(-160%);border-radius:5px;background:var(--navy);color:#fff;font-size:.8rem;font-weight:800;box-shadow:0 8px 24px rgba(24,33,43,.18);transition:transform .2s}
+.skip-link:focus{transform:translateY(0);outline:3px solid #9bb5cf;outline-offset:3px}
+.progress{background:var(--blue)}
+.header{background:rgba(255,255,255,.96);border-color:var(--line)}
+.brand{color:var(--navy)}.brand-mark{background:var(--navy);color:#fff;border-radius:8px;box-shadow:none}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links .nav-cta{background:var(--navy);color:#fff}.nav-links .nav-cta:hover{background:var(--blue);color:#fff}
+.language{border-color:var(--line);background:#fff}.language button[aria-pressed=true]{background:var(--navy);color:#fff}
+.menu-toggle{border-color:var(--line);background:#fff;color:var(--navy)}
+.hero{background:linear-gradient(115deg,#f5f7f8 0%,#fff 72%);border-bottom:1px solid var(--line)}
+.hero:before{border-color:#e3e8ec;box-shadow:0 0 0 55px #edf0f350,0 0 0 110px #edf0f330}
+.eyebrow,.section-kicker,.edu small,.project-meta,.practice-num,.skill-index{color:var(--blue)}
+.eyebrow:before{background:var(--blue)}.hero h1,.section-title,.about-statement,.project h3,.practice-card h3,.skill h3{color:var(--navy)}
+.hero h1 span,.section-title em,.about-statement span{color:var(--blue)}
+.hero-role{color:var(--navy-2);background:var(--blue-2);border-radius:5px}
+.hero-copy,.about-copy p,.project p,.practice-card p,.skill li,.section-desc{color:var(--muted)}
+.btn{border-color:#d6dde3;border-radius:6px;background:#fff;color:var(--navy)}
+.btn:hover{border-color:#9aabba;box-shadow:0 8px 20px rgba(24,33,43,.08)}
+.btn-primary{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:none}
+.btn-primary:hover{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 10px 22px rgba(82,103,125,.18)}
+.availability i{background:var(--green);box-shadow:0 0 0 4px rgba(113,139,121,.13)}
+.portrait-frame{background:#fff;border-color:var(--line);box-shadow:14px 14px 0 var(--blue-2)}
+.portrait-frame img{filter:none}
+.portrait-note{background:var(--navy);color:#fff;border-radius:5px;box-shadow:8px 8px 0 var(--blue-2)}
+.trustbar{background:var(--navy);border-color:var(--navy)}.trust-item{border-color:#3a4653}.trust-item strong{color:#dce5ed}.trust-item span{color:#c2ccd6}
+.section-soft{background:var(--soft);border-color:var(--line)}
+.edu{background:#fff;border-color:var(--line);border-radius:7px}.edu-symbol{background:var(--blue-2);color:var(--blue)}
+.filter{border-color:var(--line);background:#fff;color:var(--muted)}.filter:hover{border-color:#9aabba;color:var(--navy)}.filter[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.project{border-color:var(--line);border-radius:9px;background:#fff;box-shadow:0 6px 22px rgba(24,33,43,.045)}
+.project:hover{border-color:#c6d0d9;box-shadow:var(--shadow)}
+.project-visual{background:linear-gradient(145deg,#edf1f4,#f8fafb);border-color:var(--line)}
+.project-symbol--helpdesk,.project-symbol--network,.project-symbol--wireshark,.project-symbol--northstar{color:var(--blue)}
+.symbol-caption{color:var(--muted)}
+.project-meta{color:var(--blue)}.tags span{background:#f3f5f7;border:1px solid #e5e9ed;color:#526171}
+.project-links{border-color:var(--line)}.project-links a{color:var(--blue)}.project-links a:after{background:var(--blue)}
+.project:before{background:radial-gradient(360px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(82,103,125,.08),transparent 68%)}
+.project-details{border-color:#d9e2e9;background:var(--blue-2)}
+.project-details summary{color:var(--navy)}.detail-trigger-kicker,.project-detail-item strong{color:var(--blue)}
+.detail-trigger-title{color:var(--navy)}.project-details-plus{border-color:#cbd6df;color:var(--blue)}
+.project-details:hover .project-details-plus{background:var(--blue);border-color:var(--blue);color:#fff}
+.project-detail-grid{border-color:#d9e2e9;background:#fff}.project-detail-item p{color:var(--muted)}
+.practice-card{border-color:var(--line);border-radius:8px;background:#fff}.practice-card:hover{border-color:#bdcbd7}
+.practice-index{background:var(--blue-2);color:var(--blue)}
+.skill-symbol{border-color:#dfe5ea;background:var(--blue-2);color:var(--blue)}
+.skill-symbol--2,.skill-symbol--3,.skill-symbol--4{color:var(--blue)}
+.skill:hover .skill-symbol{background:#dce5ed}.skill li:hover{color:var(--blue)}
+.skills-grid,.skill+.skill{border-color:var(--line)}
+.github-panel{border-color:var(--line);border-radius:8px;background:linear-gradient(110deg,#f3f5f7,#fff)}
+.github-icon{background:var(--navy);color:#fff;border-radius:9px}
+.contact{background:var(--navy);color:#fff}.contact .section-kicker{color:#c7d4df}
+.contact .section-title{color:#fff}.contact .section-title em{color:#c7d4df}.contact .section-desc{color:#d0d8df}
+.contact-actions .btn{border-color:#536170;background:#263442;color:#fff}
+.contact-actions .btn-primary{border-color:var(--blue);background:var(--blue);color:#fff}
+.contact-actions .btn:hover{border-color:#aab9c7;background:#34485b;color:#fff}
+.action-feedback{color:#dce5ed}
+footer{background:#111a23;color:#c2ccd6}.footer-links a:hover{color:#fff}
+.back-to-top{border-color:#536170;background:var(--navy);color:#fff;box-shadow:0 10px 28px rgba(24,33,43,.18)}
+.back-to-top:hover{background:var(--blue);color:#fff}
+a:focus-visible,button:focus-visible,.project-details summary:focus-visible{outline:3px solid #7892aa;outline-offset:3px}
+#main-content{scroll-margin-top:84px}section[id]{scroll-margin-top:90px}
+@media(max-width:920px){.hero-grid{gap:34px}.about-grid{gap:38px}.section-head{gap:20px}}
+@media(max-width:760px){
+.container{width:calc(100% - 36px)}.nav{height:66px}.nav-links{top:66px;padding:12px 18px 18px}
+.nav-links a{min-height:46px;display:flex;align-items:center}.nav-links .nav-cta{justify-content:center}
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:16px;padding:52px 0 48px}
+.hero h1{font-size:clamp(3.15rem,14.2vw,4.7rem);line-height:.98;overflow-wrap:normal}
+.hero-role{font-size:.78rem;line-height:1.6}.hero-copy{font-size:.88rem;line-height:1.8}
+.actions{gap:9px}.actions .btn{min-height:46px}.portrait-wrap{min-height:330px;margin-top:2px}
+.portrait-frame{width:238px;height:300px}.portrait-note{left:calc(50% - 142px);bottom:12px}
+.trust-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.trust-item{padding:0 8px}.trust-item:nth-child(odd){padding-left:0}
+section.section{padding:64px 0}.section-head{margin-bottom:25px}.section-title{font-size:clamp(2.45rem,10vw,3.5rem)}
+.about-grid{grid-template-columns:minmax(0,1fr);gap:18px}.education{grid-template-columns:1fr}
+.project-grid{grid-template-columns:minmax(0,1fr);gap:15px}.project-visual{height:158px}.project-content{padding:18px}
+.project h3{font-size:1.15rem}.project-detail-grid{grid-template-columns:1fr}
+.practice-grid{grid-template-columns:1fr}.practice-card{padding:17px}
+.skills-grid{grid-template-columns:1fr}.skill,.skill+.skill,.skill:nth-child(4){padding:18px 0;border-left:0;border-bottom:1px solid var(--line)}
+.github-panel{padding:20px;gap:18px}.github-stats{gap:18px}.contact-grid{align-items:stretch;flex-direction:column;gap:24px}
+.contact-actions{width:100%;min-width:0;display:grid;grid-template-columns:1fr 1fr}.contact-actions .btn{width:100%;min-width:0;flex:auto;padding:11px 10px}
+.footer-inner{flex-direction:column;gap:10px}.footer-links{gap:20px}
+}
+@media(max-width:420px){
+.container{width:calc(100% - 30px)}.nav-right{gap:7px}.language button{padding:5px 7px}
+.hero h1{font-size:clamp(3rem,13.5vw,3.65rem)}.actions .btn{width:100%;flex:1 1 100%}
+.contact-actions{grid-template-columns:1fr}.contact-actions .btn{min-height:46px}
+.github-copy{align-items:flex-start}.github-copy span{display:block}.github-stats{width:100%;justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){.skip-link{transition:none}.project:hover,.practice-card:hover,.project-details:hover{transform:none}}
+
 </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
   <div class="progress" id="scroll-progress" aria-hidden="true"></div>
   <header class="header">
     <div class="container nav">
@@ -724,7 +817,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero" id="accueil">
       <div class="container hero-grid">
         <div class="reveal">
@@ -895,7 +988,11 @@
         const nav = document.querySelector(".nav-links");
         nav.setAttribute("aria-label", lang === "en" ? "Main navigation" : "Navigation principale");
         document.querySelector(".language").setAttribute("aria-label", lang === "en" ? "Choose language" : "Choisir la langue");
-        document.querySelector("#menu-toggle").setAttribute("aria-label", lang === "en" ? "Open menu" : "Ouvrir le menu");
+        const menuControl = document.querySelector("#menu-toggle");
+        const menuExpanded = menuControl.getAttribute("aria-expanded") === "true";
+        menuControl.setAttribute("aria-label", lang === "en" ? (menuExpanded ? "Close menu" : "Open menu") : (menuExpanded ? "Fermer le menu" : "Ouvrir le menu"));
+        document.querySelector(".filters").setAttribute("aria-label", lang === "en" ? "Filter projects" : "Filtrer les projets");
+        document.querySelector("#back-to-top").setAttribute("aria-label", lang === "en" ? "Back to top" : "Retour en haut");
         document.querySelector('meta[name="description"]').content = lang === "en"
           ? "Portfolio of Mohamed Ali Tijani: IT support, networking, systems administration, automation and web development."
           : "Portfolio de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.";
@@ -909,11 +1006,17 @@
 
       const menuButton = document.querySelector("#menu-toggle");
       const nav = document.querySelector("#main-navigation");
-      const closeMenu = () => { nav.classList.remove("open"); menuButton.setAttribute("aria-expanded","false"); document.body.classList.remove("menu-open"); };
+      const closeMenu = () => {
+        nav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded","false");
+        menuButton.setAttribute("aria-label", root.lang === "en" ? "Open menu" : "Ouvrir le menu");
+        document.body.classList.remove("menu-open");
+      };
       menuButton.addEventListener("click", () => {
         const open = !nav.classList.contains("open");
         nav.classList.toggle("open", open);
         menuButton.setAttribute("aria-expanded", String(open));
+        menuButton.setAttribute("aria-label", root.lang === "en" ? (open ? "Close menu" : "Open menu") : (open ? "Fermer le menu" : "Ouvrir le menu"));
         document.body.classList.toggle("menu-open", open);
       });
       nav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
