@@ -765,7 +765,10 @@ a:focus-visible,button:focus-visible,.project-details summary:focus-visible{outl
 #main-content{scroll-margin-top:84px}section[id]{scroll-margin-top:90px}
 @media(max-width:920px){.hero-grid{gap:34px}.about-grid{gap:38px}.section-head{gap:20px}}
 @media(max-width:760px){
-.container{width:calc(100% - 36px)}.nav{height:66px}.nav-links{top:66px;padding:12px 18px 18px}
+.container{width:calc(100% - 36px)}.nav{height:66px}.nav-right{gap:10px}
+.menu-toggle{display:grid;place-items:center}
+.nav-links{display:none;position:absolute;top:66px;left:0;right:0;padding:12px 18px 18px;border-bottom:1px solid var(--line);background:#fff;box-shadow:0 18px 25px rgba(24,33,43,.08);align-items:stretch;flex-direction:column;gap:0}
+.nav-links.open{display:flex}
 .nav-links a{min-height:46px;display:flex;align-items:center}.nav-links .nav-cta{justify-content:center}
 .hero-grid{grid-template-columns:minmax(0,1fr);gap:16px;padding:52px 0 48px}
 .hero h1{font-size:clamp(3.15rem,14.2vw,4.7rem);line-height:.98;overflow-wrap:normal}
