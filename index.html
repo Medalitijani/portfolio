@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f7fb">
-  <meta name="description" content="Portfolio de Mohamed Ali Tijani : support informatique, réseaux, systèmes, automatisation et développement web.">
+  <meta name="description" content="Portfolio de Mohamed Ali Tijani, orienté administration systèmes et réseaux : infrastructure, dépannage, environnements Windows et projets techniques.">
   <title>Mohamed Ali Tijani — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -496,6 +496,32 @@
     @media(max-width:760px){#pratique.section{padding:56px 0}.practice-compact{grid-template-columns:1fr;gap:10px}.practice-compact .practice-card{padding:16px}}
     @media(prefers-reduced-motion:reduce){.practice-compact .practice-card,.practice-compact .practice-card:before,.practice-index,.practice-arrow{transition:none}}
 
+  
+    /* Portfolio-wide interaction and motion refinement */
+    html{scroll-padding-top:88px}
+    .nav-links a{position:relative}
+    .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:#ff5a36;transition:right .28s ease}
+    .nav-links a:not(.nav-cta):hover::after,.nav-links a.active::after{right:0}
+    .hero .portrait-frame{animation:portrait-drift 7s ease-in-out infinite}
+    @keyframes portrait-drift{0%,100%{transform:rotate(2deg) translateY(0)}50%{transform:rotate(1deg) translateY(-8px)}}
+    .project-visual img{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .35s}
+    .project:hover .project-visual img{transform:scale(1.035)}
+    .project,.practice-card,.edu,.skill{will-change:transform}
+    .practice-card{position:relative;overflow:hidden}
+    .practice-card::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:#ff5a36;transition:width .35s ease}
+    .practice-card:hover::after{width:100%}
+    .skill{transition:transform .25s ease,background .25s ease}
+    .skill:hover{transform:translateY(-4px)}
+    .skill li{transition:padding-left .2s ease,color .2s ease}
+    .skill li:hover{padding-left:7px;color:#3948d8}
+    .edu{transition:transform .25s ease,border-color .25s ease}
+    .edu:hover{transform:translateY(-4px);border-color:#ff9a80}
+    .section-kicker{display:inline-flex;align-items:center;gap:9px}
+    .section-kicker::before{content:"";width:18px;height:1px;background:currentColor;opacity:.7}
+    .contact-actions .btn{transition:transform .22s ease,background .22s ease,border-color .22s ease}
+    .contact-actions .btn:hover{transform:translateX(4px)}
+    @media(prefers-reduced-motion:reduce){.hero .portrait-frame{animation:none}.project-visual img,.skill,.edu,.practice-card::after{transition:none}}
+
   </style>
 </head>
 <body>
@@ -530,14 +556,14 @@
           <p class="hero-role" data-fr="Support informatique · Réseaux · Systèmes · Développement web" data-en="IT Support · Networks · Systems · Web Development">Support informatique · Réseaux · Systèmes · Développement web</p>
 
           <p class="hero-typed" aria-live="polite"><span id="typed-title">System &amp; Network Administrator</span><span class="typed-caret" aria-hidden="true"></span></p>
-          <p class="hero-copy" data-fr="Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre." data-en="I hold a Higher Technician Certificate (BTS) in Management Information Technology from IPSET, with a particular interest in systems and network administration. Through my projects, I practise infrastructure configuration, network troubleshooting, Windows environment administration, and web tool development. I document each project and explain the technical solutions implemented.">Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.</p>
+          <p class="hero-copy" data-fr="Titulaire d’un BTS en Informatique de Gestion de l’IPSET, je construis mon parcours autour de l’administration systèmes et réseaux. Mes projets couvrent la conception d’infrastructures, la segmentation VLAN, le dépannage TCP/IP, les environnements Windows et la création d’outils IT. Chaque réalisation est documentée avec ses choix techniques, ses tests et son périmètre réel." data-en="I hold a BTS in Management Information Technology from IPSET and am building my career around systems and network administration. My projects cover infrastructure design, VLAN segmentation, TCP/IP troubleshooting, Windows environments and IT tools. Each project documents its technical decisions, tests and actual scope.">Titulaire d’un BTS en Informatique de Gestion obtenu à l’IPSET, je m’intéresse particulièrement à l’administration des systèmes et des réseaux. À travers mes projets, je mets en pratique la configuration d’infrastructures, le dépannage réseau, l’administration des environnements Windows et le développement d’outils web. Je veille à documenter chaque réalisation et à présenter les solutions techniques mises en œuvre.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#projets" data-fr="Découvrir mes projets ↗" data-en="Explore my projects ↗">Découvrir mes projets ↗</a>
             <a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a>
             <a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a>
             <a class="btn" href="./cv.html" target="_blank" rel="noopener" data-fr="Consulter mon CV ↗" data-en="View my CV ↗">Consulter mon CV ↗</a>
           </div>
-          <p class="availability"><i></i><span data-fr="Ouvert aux opportunités en support IT, réseaux, systèmes et développement web" data-en="Open to opportunities in IT support, networking, systems and web development">Ouvert aux opportunités en support IT, réseaux, systèmes et développement web</span></p>
+          <p class="availability"><i></i><span data-fr="Ouvert aux opportunités en administration systèmes et réseaux, support IT et exploitation informatique" data-en="Open to opportunities in systems and network administration, IT support and IT operations">Ouvert aux opportunités en support IT, réseaux, systèmes et développement web</span></p>
         </div>
         <div class="portrait-wrap reveal">
           <div class="portrait-frame"><img src="./photo-profil.jpg" alt="Portrait professionnel de Mohamed Ali Tijani" fetchpriority="high"></div>
@@ -551,11 +577,11 @@
       <div class="container about-grid">
         <div class="reveal">
           <div class="section-kicker" data-fr="01 / À PROPOS" data-en="01 / ABOUT">01 / À PROPOS</div>
-          <p class="about-statement" data-fr="Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span>" data-en="Connecting users, systems and applications to <span>keep everyday IT running.</span>">Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span></p>
+          <p class="about-statement" data-fr="Concevoir, maintenir et dépanner des environnements IT pour <span>assurer la disponibilité des services.</span>" data-en="Designing, maintaining and troubleshooting IT environments to <span>keep services available.</span>">Relier les utilisateurs, les systèmes et les applications pour <span>faire fonctionner l’informatique au quotidien.</span></p>
         </div>
         <div class="about-copy reveal">
-          <p data-fr="Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web." data-en="I hold BTS and BTP qualifications in Management Information Technology and am focusing on IT support, network administration and website development.">Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.</p>
-          <p data-fr="Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement." data-en="I take a structured, methodical approach to building personal projects and hands-on labs. I document configurations, test results and the limitations of each environment.">Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.</p>
+          <p data-fr="Mon objectif professionnel est d’évoluer vers un poste d’administrateur systèmes et réseaux. Je m’intéresse à l’exploitation des infrastructures, à la gestion des environnements Windows, à la connectivité réseau et à la résolution méthodique des incidents." data-en="My career goal is to grow into a systems and network administrator role. I am interested in infrastructure operations, Windows environments, network connectivity and structured incident resolution.">Jeune diplômé d'un BTS et d'un BTP en Informatique de Gestion, je m'oriente vers l'assistance informatique, l'administration des réseaux et le développement de sites web.</p>
+          <p data-fr="J’aborde les problèmes avec une démarche structurée : comprendre le besoin, établir un diagnostic, appliquer une configuration, vérifier le résultat et documenter l’intervention. Mes laboratoires et prototypes me permettent de pratiquer cette méthode dans des contextes concrets ou simulés." data-en="I approach technical problems methodically: understand the requirement, diagnose the issue, apply a configuration, verify the result and document the work. My labs and prototypes let me practise this process in real or simulated environments.">Rigoureux et méthodique, je construis des projets personnels et des laboratoires pratiques. Je documente les configurations, les tests réalisés et les limites de chaque environnement.</p>
           <p data-fr="Langues : arabe (langue maternelle), anglais (excellent), français (bon)." data-en="Languages: Arabic (native), English (excellent), French (good).">Langues : arabe (langue maternelle), anglais (excellent), français (bon).</p>
           <div class="education">
             <div class="edu"><small data-fr="FORMATION / 01" data-en="EDUCATION / 01">FORMATION / 01</small><strong>BTS — Informatique de Gestion</strong><span>IPSET · 2022 – 2024</span></div>
@@ -569,7 +595,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div><div class="section-kicker" data-fr="02 / PROJETS SÉLECTIONNÉS" data-en="02 / SELECTED PROJECTS">02 / PROJETS SÉLECTIONNÉS</div><h2 class="section-title" data-fr="Une sélection de<br><em>projets concrets.</em>" data-en="A selection of<br><em>real projects.</em>">Une sélection de<br><em>projets concrets.</em></h2></div>
-          <p class="section-desc" data-fr="Des projets personnels qui illustrent mes compétences en support informatique, réseaux, systèmes et développement web." data-en="Personal projects demonstrating my skills in IT support, networking, systems and web development.">Des projets personnels qui illustrent mes compétences en support informatique, réseaux, systèmes et développement web.</p>
+          <p class="section-desc" data-fr="Des réalisations documentées autour du support IT, de l’infrastructure réseau, du diagnostic et des outils numériques." data-en="Documented work covering IT support, network infrastructure, troubleshooting and digital tools.">Des projets personnels qui illustrent mes compétences en support informatique, réseaux, systèmes et développement web.</p>
         </div>
         <div class="filters reveal" role="group" aria-label="Filtrer les projets">
           <button class="filter" type="button" data-filter="all" aria-pressed="true" data-fr="Tous" data-en="All">Tous</button>
@@ -584,7 +610,7 @@
             </a>
             <div class="project-content">
               <h3 data-fr="Application Helpdesk" data-en="IT Helpdesk Application">Application Helpdesk</h3>
-              <p data-fr="Prototype de gestion des demandes IT avec authentification, rôles, suivi des tickets et tableau de bord." data-en="IT support ticketing prototype with authentication, user roles, ticket tracking and a dashboard.">Prototype de gestion des demandes IT avec authentification, rôles, suivi des tickets et tableau de bord.</p>
+              <p data-fr="Application de support IT avec authentification, rôles utilisateur/technicien/administrateur, affectation des tickets, commentaires, suivi des statuts et indicateurs de traitement." data-en="IT support application with user, technician and administrator roles, ticket assignment, comments, status tracking and service dashboard metrics.">Prototype de gestion des demandes IT avec authentification, rôles, suivi des tickets et tableau de bord.</p>
               <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>Node.js</span><span>Express</span><span>SQLite</span><span>JavaScript</span></div>
               <div class="project-links"><a href="https://github.com/Medalitijani/helpdesk-app" target="_blank" rel="noopener">GitHub ↗</a><a href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener" data-fr="Démo ↗" data-en="Live demo ↗">Démo ↗</a></div>
             </div>
@@ -595,7 +621,7 @@
             </a>
             <div class="project-content">
               <h3 data-fr="Small Business IT Infrastructure" data-en="Small Business IT Infrastructure">Small Business IT Infrastructure</h3>
-              <p data-fr="Architecture réseau d'une entreprise de 20 personnes : VLAN, routage inter-VLAN, DHCP, ACL et concepts Windows Server." data-en="Network design for a 20-person business: VLANs, inter-VLAN routing, DHCP, ACLs and Windows Server concepts.">Architecture réseau d'une entreprise de 20 personnes : VLAN, routage inter-VLAN, DHCP, ACL et concepts Windows Server.</p>
+              <p data-fr="Conception d’une infrastructure pour une entreprise de 20 utilisateurs : segmentation en VLAN, routage inter-VLAN, pools DHCP, filtrage ACL et documentation des services réseau." data-en="Infrastructure design for a 20-user business: VLAN segmentation, inter-VLAN routing, DHCP scopes, ACL filtering and network-service documentation.">Architecture réseau d'une entreprise de 20 personnes : VLAN, routage inter-VLAN, DHCP, ACL et concepts Windows Server.</p>
               <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>Packet Tracer</span><span>VLAN</span><span>DHCP</span><span>PowerShell</span></div>
               <div class="project-links"><a href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener">GitHub ↗</a></div>
             </div>
@@ -606,7 +632,7 @@
             </a>
             <div class="project-content">
               <h3 data-fr="Wireshark Troubleshooting Casebook" data-en="Wireshark Troubleshooting Casebook">Wireshark Troubleshooting Casebook</h3>
-              <p data-fr="Études pratiques de diagnostic réseau à travers l'analyse des échanges DHCP, DNS, ARP, ICMP et TCP." data-en="Practical network troubleshooting cases analysing DHCP, DNS, ARP, ICMP and TCP traffic.">Études pratiques de diagnostic réseau à travers l'analyse des échanges DHCP, DNS, ARP, ICMP et TCP.</p>
+              <p data-fr="Dossiers de dépannage basés sur l’observation des échanges DHCP, DNS, ARP, ICMP et TCP : filtres d’affichage, lecture des paquets et interprétation du comportement réseau." data-en="Troubleshooting case studies based on DHCP, DNS, ARP, ICMP and TCP traffic: display filters, packet inspection and interpretation of network behaviour.">Études pratiques de diagnostic réseau à travers l'analyse des échanges DHCP, DNS, ARP, ICMP et TCP.</p>
               <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>Wireshark</span><span>TCP/IP</span><span>DHCP</span><span>DNS</span></div>
               <div class="project-links"><a href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener">GitHub ↗</a></div>
             </div>
@@ -617,7 +643,7 @@
             </a>
             <div class="project-content">
               <h3 data-fr="Northstar IT — site vitrine" data-en="Northstar IT — Business Website">Northstar IT — site vitrine</h3>
-              <p data-fr="Site web responsive et multilingue conçu pour présenter les services d'une entreprise informatique fictive." data-en="Responsive multilingual website showcasing the services of a fictional IT company.">Site web responsive et multilingue conçu pour présenter les services d'une entreprise informatique fictive.</p>
+              <p data-fr="Site vitrine responsive et bilingue, structuré pour présenter des services IT avec une interface claire, une navigation adaptée au mobile et des contenus en deux langues." data-en="Responsive bilingual business website presenting IT services through a clear interface, mobile-friendly navigation and two-language content.">Site web responsive et multilingue conçu pour présenter les services d'une entreprise informatique fictive.</p>
               <div class="project-stack"><strong data-fr="Tech Stack :" data-en="Tech Stack:">Tech Stack :</strong><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
               <div class="project-links"><a href="https://github.com/Medalitijani/northstar-it-business-website" target="_blank" rel="noopener">GitHub ↗</a><a href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener" data-fr="Voir le site ↗" data-en="Visit website ↗">Voir le site ↗</a></div>
             </div>
@@ -631,7 +657,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div><div class="section-kicker" data-fr="03 / RÉALISATIONS PRATIQUES" data-en="03 / HANDS-ON EXPERIENCE">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title" data-fr="Des compétences<br><em>mises en pratique.</em>" data-en="Skills<br><em>put into practice.</em>">Des compétences<br><em>mises en pratique.</em></h2></div>
-          <p class="section-desc" data-fr="Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation." data-en="Practical examples from my projects. Simulated environments and prototypes are clearly identified as such in their documentation.">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
+          <p class="section-desc" data-fr="Une approche orientée résultats : configuration, vérification et documentation. Les prototypes et environnements simulés sont clairement présentés comme tels." data-en="A results-oriented approach: configure, verify and document. Prototypes and simulated environments are clearly identified as such.">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
         </div>
         <div class="practice-grid practice-compact">
           <article class="practice-card reveal"><span class="practice-index">01</span><div class="practice-body"><span class="practice-num" data-fr="SUPPORT INFORMATIQUE" data-en="IT SUPPORT">SUPPORT INFORMATIQUE</span><h3 data-fr="Gestion des demandes" data-en="Ticket management">Gestion des demandes</h3><p data-fr="Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord." data-en="Built a ticketing prototype with user roles, assignment, request tracking, comments and a dashboard.">Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.</p></div><span class="practice-arrow" aria-hidden="true">↗</span></article>
@@ -646,7 +672,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div><div class="section-kicker" data-fr="04 / COMPÉTENCES TECHNIQUES" data-en="04 / TECHNICAL SKILLS">04 / COMPÉTENCES TECHNIQUES</div><h2 class="section-title" data-fr="Les outils derrière<br><em>le travail.</em>" data-en="The tools behind<br><em>the work.</em>">Les outils derrière<br><em>le travail.</em></h2></div>
-          <p class="section-desc" data-fr="Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués." data-en="Skills developed through education and hands-on projects. Proficiency varies depending on the technology and the environments practised.">Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.</p>
+          <p class="section-desc" data-fr="Compétences travaillées en formation et dans mes projets. Je distingue les bases théoriques, les manipulations en laboratoire et les réalisations effectivement testées." data-en="Skills developed through education and projects. I distinguish between theoretical foundations, lab practice and work that has been directly tested.">Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.</p>
         </div>
         <div class="skills-grid">
           <article class="skill reveal"><div class="skill-index" data-fr="01 — SUPPORT" data-en="01 — SUPPORT">01 — SUPPORT</div><h3 data-fr="Support informatique" data-en="IT Support">Support informatique</h3><ul><li data-fr="Diagnostic Windows 10/11" data-en="Windows 10/11 troubleshooting">Diagnostic Windows 10/11</li><li data-fr="Assistance aux utilisateurs" data-en="User assistance">Assistance aux utilisateurs</li><li data-fr="Gestion des tickets et des accès" data-en="Ticket and access management">Gestion des tickets et des accès</li><li data-fr="Suivi et documentation" data-en="Follow-up and documentation">Suivi et documentation</li></ul></article>
@@ -669,7 +695,7 @@
 
     <section class="section contact" id="contact">
       <div class="container contact-grid">
-        <div class="reveal"><div class="section-kicker" data-fr="05 / CONTACT" data-en="05 / CONTACT">05 / CONTACT</div><h2 class="section-title" data-fr="Un projet ou une opportunité ?<br><em>Parlons-en.</em>" data-en="A project or an opportunity?<br><em>Let’s talk.</em>">Un projet ou une opportunité ?<br><em>Parlons-en.</em></h2><p class="section-desc" data-fr="Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub." data-en="I am looking for an opportunity in a versatile IT environment, covering user support, networking, systems or web development. You can contact me by email or explore my projects on GitHub.">Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
+        <div class="reveal"><div class="section-kicker" data-fr="05 / CONTACT" data-en="05 / CONTACT">05 / CONTACT</div><h2 class="section-title" data-fr="Un projet ou une opportunité ?<br><em>Parlons-en.</em>" data-en="A project or an opportunity?<br><em>Let’s talk.</em>">Un projet ou une opportunité ?<br><em>Parlons-en.</em></h2><p class="section-desc" data-fr="Je recherche une opportunité en administration systèmes et réseaux, support informatique ou exploitation IT. Je suis disponible pour échanger sur mes projets, mon parcours et la manière dont je peux contribuer à une équipe technique." data-en="I am looking for an opportunity in systems and network administration, IT support or IT operations. Feel free to contact me to discuss my projects, background and how I could contribute to a technical team.">Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
         <div class="contact-actions reveal"><a class="btn btn-primary" href="mailto:mohamedalitijanii@gmail.com">✉ <span data-fr="Écrire un e-mail ↗" data-en="Send an email ↗">Écrire un e-mail ↗</span></a><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
       </div>
     </section>
