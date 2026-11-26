@@ -607,7 +607,26 @@
 .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{background:#ff5a36;color:#171622;transform:translateY(-3px)}.copy-email{cursor:pointer}.action-feedback{min-height:20px;margin:2px 0 0;color:#d7f36a;font-size:.7rem;font-weight:700}.project.filter-enter{animation:filter-card-in .42s both}@keyframes filter-card-in{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:700px){.back-to-top{right:16px;bottom:16px;width:44px;height:44px}}@media(prefers-reduced-motion:reduce){.project.filter-enter{animation:none}.back-to-top{transition:none}}
 
-</style>
+
+    /* Project identity visuals — replace thumbnail screenshots with a coherent icon system */
+    .project-visual{height:178px;padding:0;background:radial-gradient(circle at 50% 42%,#fff 0,#f5f3ed 72%);transition:background .3s ease}
+    .project-visual:hover{background:radial-gradient(circle at 50% 42%,#fff 0,#eeece4 76%)}
+    .project-symbol{position:relative;display:flex;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:9px;overflow:hidden}
+    .project-symbol:before,.project-symbol:after{content:"";position:absolute;border:1px solid currentColor;border-radius:50%;opacity:.09}
+    .project-symbol:before{width:190px;height:190px}
+    .project-symbol:after{width:245px;height:245px}
+    .project-symbol svg{position:relative;z-index:1;width:108px;height:88px;overflow:visible;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+    .project-visual:hover .project-symbol svg{transform:translateY(-4px) scale(1.055)}
+    .project-symbol--helpdesk{color:#c56b36}
+    .project-symbol--network{color:#526f9d}
+    .project-symbol--wireshark{color:#647d65}
+    .project-symbol--northstar{color:#7770a8}
+    .symbol-caption{position:relative;z-index:1;color:#77766f;font:700 .55rem/1 var(--sans);letter-spacing:.19em}
+    .symbol-caption i{color:currentColor;font-style:normal;padding:0 3px}
+    @media(max-width:640px){.project-visual{height:150px}.project-symbol svg{width:96px;height:78px}}
+    @media(prefers-reduced-motion:reduce){.project-symbol svg{transition:none}.project-visual:hover .project-symbol svg{transform:none}}
+
+  </style>
 </head>
 <body>
   <div class="progress" id="scroll-progress" aria-hidden="true"></div>
@@ -691,7 +710,7 @@
         <div class="project-grid project-gallery" id="project-grid">
           <article class="project reveal" data-category="support">
             <a class="project-visual" href="https://helpdesk-app-9y13.onrender.com/" target="_blank" rel="noopener" aria-label="Ouvrir la démonstration Helpdesk">
-              <img src="./helpdesk-dashboard.png" alt="Tableau de bord de l'application Helpdesk" loading="lazy">
+              <span class="project-symbol project-symbol--helpdesk" aria-hidden="true"><svg viewBox="0 0 120 100" fill="none"><rect x="20" y="12" width="80" height="72" rx="10"/><path d="M20 30h80M34 22h.5M43 22h.5M52 22h.5"/><path d="M36 46h28M36 56h48M36 66h36"/><circle cx="82" cy="47" r="8"/><path d="m78 47 3 3 5-6"/></svg><span class="symbol-caption">TICKETS <i>●</i> WORKFLOW</span></span>
             </a>
             <div class="project-content">
               <h3 data-fr="Application Helpdesk" data-en="IT Helpdesk Application">Application Helpdesk</h3>
@@ -702,7 +721,7 @@
           </article>
           <article class="project reveal" data-category="network">
             <a class="project-visual" href="https://github.com/Medalitijani/small-business-it-infrastructure" target="_blank" rel="noopener" aria-label="Voir le projet Small Business IT Infrastructure sur GitHub">
-              <img src="https://raw.githubusercontent.com/Medalitijani/small-business-it-infrastructure/main/01-network/Topology.png" alt="Topologie réseau de l'infrastructure petite entreprise" loading="lazy">
+              <span class="project-symbol project-symbol--network" aria-hidden="true"><svg viewBox="0 0 120 100" fill="none"><rect x="43" y="8" width="34" height="22" rx="5"/><rect x="8" y="68" width="30" height="20" rx="5"/><rect x="45" y="68" width="30" height="20" rx="5"/><rect x="82" y="68" width="30" height="20" rx="5"/><path d="M60 30v18M23 68V48h74v20M60 48v20"/><circle cx="60" cy="48" r="4"/></svg><span class="symbol-caption">VLAN <i>●</i> DHCP <i>●</i> ACL</span></span>
             </a>
             <div class="project-content">
               <h3 data-fr="Small Business IT Infrastructure" data-en="Small Business IT Infrastructure">Small Business IT Infrastructure</h3>
@@ -713,7 +732,7 @@
           </article>
           <article class="project reveal" data-category="network">
             <a class="project-visual" href="https://github.com/Medalitijani/wireshark-troubleshooting-casebook" target="_blank" rel="noopener" aria-label="Voir le Wireshark Troubleshooting Casebook sur GitHub">
-              <img src="https://raw.githubusercontent.com/Medalitijani/wireshark-troubleshooting-casebook/main/screenshots/dns-packets.png" alt="Analyse de paquets DNS dans Wireshark" loading="lazy">
+              <span class="project-symbol project-symbol--wireshark" aria-hidden="true"><svg viewBox="0 0 120 100" fill="none"><path d="M14 50h18l9-20 14 40 13-30 10 10h28"/><path d="M18 18h84v64H18z" opacity=".32"/><path d="M28 29h22M28 37h13M28 73h64"/></svg><span class="symbol-caption">PACKET <i>●</i> ANALYSIS</span></span>
             </a>
             <div class="project-content">
               <h3 data-fr="Wireshark Troubleshooting Casebook" data-en="Wireshark Troubleshooting Casebook">Wireshark Troubleshooting Casebook</h3>
@@ -724,7 +743,7 @@
           </article>
           <article class="project reveal" data-category="web">
             <a class="project-visual" href="https://medalitijani.github.io/northstar-it-business-website/" target="_blank" rel="noopener" aria-label="Voir le site Northstar IT">
-              <img src="./northstar-homepage.png" alt="Page d'accueil du site Northstar IT" loading="lazy">
+              <span class="project-symbol project-symbol--northstar" aria-hidden="true"><svg viewBox="0 0 120 100" fill="none"><rect x="13" y="13" width="94" height="70" rx="7"/><path d="M13 29h94M25 21h.5M34 21h.5M43 21h.5"/><path d="M38 61V42l22-10 22 10v19M48 61V49h24v12M33 70h54"/></svg><span class="symbol-caption">DIGITAL <i>●</i> PRESENCE</span></span>
             </a>
             <div class="project-content">
               <h3 data-fr="Northstar IT — site vitrine" data-en="Northstar IT — Business Website">Northstar IT — site vitrine</h3>
