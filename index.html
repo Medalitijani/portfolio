@@ -645,6 +645,15 @@
     @media(prefers-reduced-motion:reduce){.practice-card:hover .practice-index svg,.skill-symbol{transition:none}}
 
 
+    /* Remove the animated orange underline from the contact heading only */
+    .contact .section-title em,
+    .contact .reveal.visible .section-title em{
+      background-image:none!important;
+      background-size:0 0!important;
+      animation:none!important;
+      text-decoration:none!important;
+    }
+
     /* Contact and education alignment refinements */
     .progress,.typed-caret{display:none!important}
     .eyebrow::before,.section-kicker::before{display:none!important;content:none!important}
