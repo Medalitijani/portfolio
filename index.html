@@ -601,7 +601,13 @@
       .hero .eyebrow,.hero h1,.hero .hero-role,.hero .hero-typed,.hero .hero-copy,.hero .actions,.hero .availability{opacity:1;transform:none}
     }
 
-  </style>
+  
+/* INTERACTION UPDATE — quick actions and polished navigation */
+.back-to-top{position:fixed;z-index:60;right:26px;bottom:26px;width:48px;height:48px;display:grid;place-items:center;border:1px solid #514b5d;border-radius:50%;background:#171622;color:#d7f36a;font-size:1.2rem;box-shadow:0 10px 28px #17162226;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s,transform .25s,visibility .25s,background .2s}
+.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{background:#ff5a36;color:#171622;transform:translateY(-3px)}.copy-email{cursor:pointer}.action-feedback{min-height:20px;margin:2px 0 0;color:#d7f36a;font-size:.7rem;font-weight:700}.project.filter-enter{animation:filter-card-in .42s both}@keyframes filter-card-in{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:700px){.back-to-top{right:16px;bottom:16px;width:44px;height:44px}}@media(prefers-reduced-motion:reduce){.project.filter-enter{animation:none}.back-to-top{transition:none}}
+
+</style>
 </head>
 <body>
   <div class="progress" id="scroll-progress" aria-hidden="true"></div>
@@ -775,12 +781,13 @@
     <section class="section contact" id="contact">
       <div class="container contact-grid">
         <div class="reveal"><div class="section-kicker" data-fr="05 / CONTACT" data-en="05 / CONTACT">05 / CONTACT</div><h2 class="section-title" data-fr="Un projet ou une opportunité ?<br><em>Parlons-en.</em>" data-en="A project or an opportunity?<br><em>Let’s talk.</em>">Un projet ou une opportunité ?<br><em>Parlons-en.</em></h2><p class="section-desc" data-fr="Je recherche une opportunité en administration systèmes et réseaux, support informatique ou exploitation IT. Je suis disponible pour échanger sur mes projets, mon parcours et la manière dont je peux contribuer à une équipe technique." data-en="I am looking for an opportunity in systems and network administration, IT support or IT operations. Feel free to contact me to discuss my projects, background and how I could contribute to a technical team.">Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
-        <div class="contact-actions reveal"><a class="btn btn-primary" href="mailto:mohamedalitijanii@gmail.com">✉ <span data-fr="Écrire un e-mail ↗" data-en="Send an email ↗">Écrire un e-mail ↗</span></a><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        <div class="contact-actions reveal"><a class="btn btn-primary" href="mailto:mohamedalitijanii@gmail.com">✉ <span data-fr="Écrire un e-mail ↗" data-en="Send an email ↗">Écrire un e-mail ↗</span></a><button class="btn copy-email" id="copy-email" type="button">⧉ <span data-fr="Copier l’adresse e-mail" data-en="Copy email address">Copier l’adresse e-mail</span></button><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a><p class="action-feedback" id="action-feedback" role="status" aria-live="polite"></p></div>
       </div>
     </section>
   </main>
 
   <footer><div class="container footer-inner"><span>© 2026 Mohamed Ali Tijani · Tunis</span><div class="footer-links"><a href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn</a><a href="./cv.html" data-fr="CV" data-en="Resume">CV</a></div><span data-fr="Réalisé avec curiosité et persévérance." data-en="Built with curiosity and persistence.">Réalisé avec curiosité et persévérance.</span></div></footer>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut" title="Retour en haut">↑</button>
 
   <script>
     (() => {
@@ -828,7 +835,7 @@
         projects.forEach(project => {
           const show = filter === "all" || project.dataset.category === filter;
           project.hidden = !show;
-          if (show) visible++;
+          if (show) { visible++; project.classList.remove("filter-enter"); void project.offsetWidth; project.classList.add("filter-enter"); }
         });
         filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === filter)));
         const lang = root.lang;
@@ -963,6 +970,28 @@
         });
         hero.addEventListener("pointerleave", () => portrait.style.transform = "");
       }
+    })();
+  </script>
+
+
+  <script>
+    (() => {
+      const topButton = document.getElementById("back-to-top");
+      const emailButton = document.getElementById("copy-email");
+      const feedback = document.getElementById("action-feedback");
+      const email = "mohamedalitijanii@gmail.com";
+      const updateTopButton = () => topButton.classList.toggle("visible", window.scrollY > 520);
+      updateTopButton();
+      window.addEventListener("scroll", updateTopButton, { passive: true });
+      topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+      emailButton.addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(email); feedback.textContent = document.documentElement.lang === "en" ? "Email address copied." : "Adresse e-mail copiée."; }
+        catch (_) {
+          const helper = document.createElement("textarea"); helper.value = email; helper.setAttribute("readonly", ""); helper.style.position = "absolute"; helper.style.left = "-9999px"; document.body.appendChild(helper); helper.select();
+          const copied = document.execCommand("copy"); helper.remove();
+          feedback.textContent = copied ? (document.documentElement.lang === "en" ? "Email address copied." : "Adresse e-mail copiée.") : email;
+        }
+      });
     })();
   </script>
 
