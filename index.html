@@ -468,6 +468,34 @@
     }
     @media(prefers-reduced-motion:reduce){.project-gallery .project,.project-gallery .project-visual img,.project-gallery .project-links a:after{transition:none}}
 
+  
+    /* Hands-on experience: compact editorial tiles with restrained motion. */
+    #pratique.section{padding:70px 0}
+    #pratique .section-head{margin-bottom:25px}
+    .practice-compact{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .practice-compact .practice-card{
+      position:relative;display:grid;grid-template-columns:42px minmax(0,1fr) 18px;
+      align-items:start;gap:14px;min-height:0;padding:19px 18px;
+      border:1px solid #dedede;border-radius:3px;background:#fff;
+      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease
+    }
+    .practice-compact .practice-card:before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+      background:#171717;transform:scaleY(0);transform-origin:bottom;transition:transform .25s ease
+    }
+    .practice-compact .practice-card:hover{transform:translateY(-3px);border-color:#aaa;box-shadow:0 12px 26px #0000000a}
+    .practice-compact .practice-card:hover:before{transform:scaleY(1)}
+    .practice-index{display:grid;place-items:center;width:38px;height:38px;border:1px solid #e4e4e4;border-radius:50%;color:#555;font:700 .7rem var(--display);transition:background .25s,color .25s,border-color .25s}
+    .practice-compact .practice-card:hover .practice-index{background:#171717;border-color:#171717;color:#fff}
+    .practice-body{min-width:0}
+    .practice-compact .practice-num{display:block;margin:1px 0 7px;color:#777;font-size:.58rem;letter-spacing:.13em}
+    .practice-compact .practice-card h3{margin:0 0 6px;color:#171717;font-size:1.02rem;line-height:1.3}
+    .practice-compact .practice-card p{margin:0;color:#6d6d6d;font-size:.72rem;line-height:1.65}
+    .practice-arrow{padding-top:3px;color:#aaa;font-size:.9rem;transition:transform .25s,color .25s}
+    .practice-compact .practice-card:hover .practice-arrow{transform:translate(2px,-2px);color:#171717}
+    @media(max-width:760px){#pratique.section{padding:56px 0}.practice-compact{grid-template-columns:1fr;gap:10px}.practice-compact .practice-card{padding:16px}}
+    @media(prefers-reduced-motion:reduce){.practice-compact .practice-card,.practice-compact .practice-card:before,.practice-index,.practice-arrow{transition:none}}
+
   </style>
 </head>
 <body>
@@ -605,11 +633,11 @@
           <div><div class="section-kicker" data-fr="03 / RÉALISATIONS PRATIQUES" data-en="03 / HANDS-ON EXPERIENCE">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title" data-fr="Des compétences<br><em>mises en pratique.</em>" data-en="Skills<br><em>put into practice.</em>">Des compétences<br><em>mises en pratique.</em></h2></div>
           <p class="section-desc" data-fr="Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation." data-en="Practical examples from my projects. Simulated environments and prototypes are clearly identified as such in their documentation.">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
         </div>
-        <div class="practice-grid">
-          <article class="practice-card reveal"><span class="practice-num" data-fr="01 / SUPPORT INFORMATIQUE" data-en="01 / IT SUPPORT">01 / SUPPORT INFORMATIQUE</span><h3 data-fr="Gestion des demandes" data-en="Ticket management">Gestion des demandes</h3><p data-fr="Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord." data-en="Built a ticketing prototype with user roles, assignment, request tracking, comments and a dashboard.">Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.</p></article>
-          <article class="practice-card reveal"><span class="practice-num" data-fr="02 / RÉSEAUX" data-en="02 / NETWORKING">02 / RÉSEAUX</span><h3 data-fr="Segmentation et connectivité" data-en="Segmentation & connectivity">Segmentation et connectivité</h3><p data-fr="Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité." data-en="Configured a lab with VLANs, inter-VLAN routing, DHCP and access controls to isolate the guest network.">Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.</p></article>
-          <article class="practice-card reveal"><span class="practice-num" data-fr="03 / DIAGNOSTIC" data-en="03 / TROUBLESHOOTING">03 / DIAGNOSTIC</span><h3 data-fr="Analyse de trafic" data-en="Traffic analysis">Analyse de trafic</h3><p data-fr="Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges." data-en="Analysed DHCP, DNS, ARP, ICMP and TCP captures with Wireshark, display filters and packet interpretation.">Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.</p></article>
-          <article class="practice-card reveal"><span class="practice-num" data-fr="04 / DÉVELOPPEMENT &amp; AUTOMATISATION" data-en="04 / DEVELOPMENT &amp; AUTOMATION">04 / DÉVELOPPEMENT &amp; AUTOMATISATION</span><h3 data-fr="Outils et applications" data-en="Tools & applications">Outils et applications</h3><p data-fr="Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire." data-en="Developed websites and a Node.js/SQLite prototype, alongside documented PowerShell scripts and simulated validation where appropriate.">Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.</p></article>
+        <div class="practice-grid practice-compact">
+          <article class="practice-card reveal"><span class="practice-index">01</span><div class="practice-body"><span class="practice-num" data-fr="SUPPORT INFORMATIQUE" data-en="IT SUPPORT">SUPPORT INFORMATIQUE</span><h3 data-fr="Gestion des demandes" data-en="Ticket management">Gestion des demandes</h3><p data-fr="Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord." data-en="Built a ticketing prototype with user roles, assignment, request tracking, comments and a dashboard.">Conception d’un prototype de ticketing avec rôles, affectation, suivi des demandes, commentaires et tableau de bord.</p></div><span class="practice-arrow" aria-hidden="true">↗</span></article>
+          <article class="practice-card reveal"><span class="practice-index">02</span><div class="practice-body"><span class="practice-num" data-fr="RÉSEAUX" data-en="NETWORKING">RÉSEAUX</span><h3 data-fr="Segmentation et connectivité" data-en="Segmentation & connectivity">Segmentation et connectivité</h3><p data-fr="Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité." data-en="Configured a lab with VLANs, inter-VLAN routing, DHCP and access controls to isolate the guest network.">Configuration d’un laboratoire avec VLAN, routage inter-VLAN, DHCP et contrôle d’accès pour isoler le réseau invité.</p></div><span class="practice-arrow" aria-hidden="true">↗</span></article>
+          <article class="practice-card reveal"><span class="practice-index">03</span><div class="practice-body"><span class="practice-num" data-fr="DIAGNOSTIC" data-en="TROUBLESHOOTING">DIAGNOSTIC</span><h3 data-fr="Analyse de trafic" data-en="Traffic analysis">Analyse de trafic</h3><p data-fr="Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges." data-en="Analysed DHCP, DNS, ARP, ICMP and TCP captures with Wireshark, display filters and packet interpretation.">Étude de captures DHCP, DNS, ARP, ICMP et TCP avec Wireshark, filtres d’affichage et interprétation des échanges.</p></div><span class="practice-arrow" aria-hidden="true">↗</span></article>
+          <article class="practice-card reveal"><span class="practice-index">04</span><div class="practice-body"><span class="practice-num" data-fr="DÉVELOPPEMENT &amp; AUTOMATISATION" data-en="DEVELOPMENT &amp; AUTOMATION">DÉVELOPPEMENT &amp; AUTOMATISATION</span><h3 data-fr="Outils et applications" data-en="Tools & applications">Outils et applications</h3><p data-fr="Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire." data-en="Developed websites and a Node.js/SQLite prototype, alongside documented PowerShell scripts and simulated validation where appropriate.">Développement de sites web et d’un prototype Node.js/SQLite, avec scripts PowerShell documentés et validation en mode simulation lorsque nécessaire.</p></div><span class="practice-arrow" aria-hidden="true">↗</span></article>
         </div>
       </div>
     </section>
