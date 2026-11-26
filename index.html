@@ -510,6 +510,13 @@
     .practice-card{position:relative;overflow:hidden}
     .practice-card::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:#ff5a36;transition:width .35s ease}
     .practice-card:hover::after{width:100%}
+    /* Match the hands-on card hover treatment in the project gallery */
+    .project-gallery .project{position:relative}
+    .project-gallery .project::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:#ff5a36;transition:width .35s ease;z-index:2}
+    .project-gallery .project:hover::after{width:100%}
+    .project-gallery .project:hover .project-content{transform:translateY(-2px)}
+    .project-gallery .project-content{transition:transform .3s ease}
+    @media(prefers-reduced-motion:reduce){.project-gallery .project::after,.project-gallery .project-content{transition:none}}
     .skill{transition:transform .25s ease,background .25s ease}
     .skill:hover{transform:translateY(-4px)}
     .skill li{transition:padding-left .2s ease,color .2s ease}
