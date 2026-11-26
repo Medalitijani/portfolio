@@ -394,6 +394,21 @@
     }
     @media(prefers-reduced-motion:reduce){.portrait-frame{animation:none!important}.project-visual img{transition:none!important}}
 
+  
+    /* Keep the editorial monochrome UI, never desaturate portfolio photography. */
+    .portrait-frame,.portrait-frame img,.project-visual img{
+      filter:none !important;
+      -webkit-filter:none !important;
+    }
+    .project-visual img{transition:transform .5s ease !important;}
+    .project:hover .project-visual img{
+      filter:none !important;
+      -webkit-filter:none !important;
+      transform:scale(1.035);
+    }
+    .portrait-frame img{filter:none !important; -webkit-filter:none !important;}
+    .portrait-frame{filter:none !important; -webkit-filter:none !important;}
+
   </style>
 </head>
 <body>
