@@ -16,7 +16,6 @@ The projects below are personal labs, prototypes, and demonstrations. Their envi
 
 | Area | Project | Practical evidence | Technologies |
 |---|---|---|---|
-| Network engineering | [NetArchitect AI — live application](https://network-config-generator-a5zu.onrender.com/) · [API reference](https://network-config-generator-a5zu.onrender.com/docs) | Converts a business network brief into a structured architecture, IPv4 plan, Cisco IOS configuration draft, and deterministic validation report | Network design, IPv4, VLAN planning, Cisco IOS, API |
 | Networking & infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | VLAN 10/20/30 design, inter-VLAN routing, DHCP, guest ACL isolation, simulated AD DS/GPO, and Windows 11 PowerShell script tests | Cisco Packet Tracer, WinLab simulator, PowerShell |
 | Network troubleshooting | [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Six investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and a refused TCP connection | Wireshark, TCP/IP, Windows networking tools |
 | IT support & service operations | [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) · [Live demo](https://helpdesk-app-9y13.onrender.com/) | Educational ticketing prototype with authentication, role-based permissions, ticket lifecycle, assignment, comments, dashboard, CSV export, and optional email notifications | Node.js, Express 5, SQLite, JavaScript, Jest |
@@ -35,7 +34,6 @@ The projects below are personal labs, prototypes, and demonstrations. Their envi
 - [Small Business Infrastructure — architecture, verification matrix and test boundaries](https://github.com/Medalitijani/small-business-it-infrastructure)
 - [Wireshark Casebook — six packet-level investigations](https://github.com/Medalitijani/wireshark-troubleshooting-casebook)
 - [IT Helpdesk — architecture, security controls, tests and known limitations](https://github.com/Medalitijani/helpdesk-app)
-- [NetArchitect AI — live application](https://network-config-generator-a5zu.onrender.com/) · [API documentation](https://network-config-generator-a5zu.onrender.com/docs)
 
 ## Project scope and transparency
 
@@ -44,7 +42,6 @@ The projects below are personal labs, prototypes, and demonstrations. Their envi
 - PowerShell inventory and disk-space scripts were tested on a Windows 11 PC; the Active Directory user-creation script is documented as a dry run and has not been run against a live domain.
 - The Helpdesk application is an educational prototype. Its README documents deployment constraints, session persistence, and other production limitations.
 - Northstar IT is a fictional sample brand, not a real client engagement.
-- NetArchitect AI is presented as a live engineering demonstration; its generated configurations are drafts that require review and validation before use on real equipment.
 
 ## Contact
 
