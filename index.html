@@ -794,50 +794,7 @@ section.section{padding:64px 0}.section-head{margin-bottom:25px}.section-title{f
 }
 @media(prefers-reduced-motion:reduce){.skip-link{transition:none}.project:hover,.practice-card:hover,.project-details:hover{transform:none}}
 
-
-/* Interactive engineering lab */
-.lab-section{background:#eef2f5;border-block:1px solid #dfe5ea}
-.lab-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:20px}
-.lab-panel{min-width:0;overflow:hidden;border:1px solid #d9e1e8;border-radius:12px;background:#fff;box-shadow:0 12px 34px rgba(24,33,43,.055)}
-.lab-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 19px;border-bottom:1px solid #e7ebef}
-.lab-panel-head strong{display:block;color:#18212b;font:800 .9rem var(--display)}.lab-panel-head span{color:#73808c;font-size:.65rem}
-.lab-live{padding:6px 9px;border:1px solid #dce8df;border-radius:99px;background:#f3f8f4;color:#54745f!important;font-size:.6rem!important;font-weight:800;white-space:nowrap}
-.lab-live:before{content:"";display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;background:#718b79}
-.topology{padding:22px 18px 12px;background:linear-gradient(180deg,#fbfcfd,#f4f7f9)}
-.topology-row{display:flex;justify-content:center}
-.topology-node{position:relative;z-index:1;display:flex;align-items:center;gap:10px;min-width:150px;padding:11px 14px;border:1px solid #d9e2e9;border-radius:8px;background:#fff;color:#18212b;text-align:left;cursor:pointer;transition:all .2s}
-.topology-node:hover,.topology-vlan:hover{transform:translateY(-2px);border-color:#9aabba;box-shadow:0 8px 18px rgba(24,33,43,.08)}
-.topology-node[aria-pressed=true],.topology-vlan[aria-pressed=true]{border-color:#52677d;background:#edf1f4;box-shadow:inset 0 0 0 1px #52677d}
-.topology-node-icon{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border-radius:7px;background:#e9edf1;color:#52677d;font-size:.65rem;font-weight:900}
-.topology-node strong,.topology-vlan strong{display:block;font-size:.72rem;font-weight:800}.topology-node small,.topology-vlan small{display:block;margin-top:3px;color:#74808b;font-size:.6rem}
-.topology-stem{width:1px;height:22px;margin:auto;background:#aab8c5}
-.topology-branches{position:relative;height:29px;margin:0 16.66%}.topology-branches:before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:1px;background:#aab8c5}.topology-branches:after{content:"";position:absolute;top:0;left:50%;height:15px;border-left:1px solid #aab8c5}.topology-branches i{position:absolute;top:0;height:15px;border-left:1px solid #aab8c5}.topology-branches i:first-child{left:16.66%}.topology-branches i:last-child{right:16.66%}
-.topology-vlans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-.topology-vlan{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:12px 10px;border:1px solid #dce3e9;border-radius:8px;background:#fff;color:#18212b;text-align:left;cursor:pointer;transition:all .2s}
-.vlan-id{color:#52677d;font:800 .65rem var(--display);letter-spacing:.05em}.topology-vlan strong{margin-top:5px}.topology-note{padding:0 18px 17px;color:#7a8590;font-size:.62rem;line-height:1.6}
-.node-inspector{display:flex;gap:12px;margin:0 18px 18px;padding:14px;border:1px solid #e0e6eb;border-radius:8px;background:#f8fafb}
-.node-inspector-mark{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:7px;background:#18212b;color:#fff;font-size:.65rem;font-weight:900}
-.node-inspector strong{display:block;margin-bottom:3px;color:#18212b;font-size:.74rem}.node-inspector p{margin:0;color:#687582;font-size:.68rem;line-height:1.65}
-.terminal-panel{display:flex;flex-direction:column;background:#151d26;border-color:#151d26;color:#e4eaf0}.terminal-panel .lab-panel-head{border-color:#303b47}.terminal-panel .lab-panel-head strong{color:#f3f6f8}.terminal-panel .lab-panel-head span{color:#a7b3bf}
-.terminal-lights{display:flex;gap:5px}.terminal-lights i{width:7px;height:7px;border-radius:50%;background:#667584}
-.terminal-body{display:flex;flex:1;flex-direction:column;min-height:330px;padding:19px}.terminal-welcome{margin-bottom:15px;color:#aebbc7;font-size:.7rem;line-height:1.8}.terminal-welcome strong{color:#fff}
-.terminal-output{flex:1;min-height:130px;max-height:190px;overflow:auto;color:#c6d1dc;font:.69rem/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap}
-.terminal-form{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:13px;border-top:1px solid #303b47}.terminal-prompt{color:#9eb5c9;font:700 .72rem ui-monospace,monospace}
-.terminal-form input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#fff;font:.72rem ui-monospace,monospace}.terminal-form input::placeholder{color:#8795a3}
-.terminal-form button,.terminal-hints button{padding:7px 10px;border:1px solid #52677d;border-radius:5px;background:#263442;color:#e8eef4;font-size:.63rem;font-weight:800;cursor:pointer}
-.terminal-hints{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.terminal-hints button{padding:5px 8px;border-color:#3b4855;background:#202b36;color:#b8c5d1;font-size:.6rem}
-.palette-backdrop{position:fixed;z-index:120;inset:0;display:none;align-items:flex-start;justify-content:center;padding:14vh 18px 24px;background:rgba(13,21,30,.55);backdrop-filter:blur(5px)}.palette-backdrop.open{display:flex}
-.command-palette{width:min(560px,100%);overflow:hidden;border:1px solid #d9e1e8;border-radius:12px;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.25)}
-.palette-top{display:flex;align-items:center;gap:11px;padding:15px;border-bottom:1px solid #e6ebef}.palette-top input{width:100%;border:0;outline:0;color:#18212b;font:500 .88rem var(--sans)}
-.palette-top kbd,.palette-trigger kbd{padding:4px 6px;border:1px solid #dfe5ea;border-radius:4px;color:#71808d;font-size:.6rem;white-space:nowrap}
-.palette-list{display:grid;gap:3px;padding:8px;max-height:330px;overflow:auto}.palette-item{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border:0;border-radius:6px;background:#fff;color:#263442;text-align:left;font-size:.77rem;text-decoration:none;cursor:pointer}
-.palette-item:hover,.palette-item:focus-visible{background:#edf1f4;outline:0}.palette-item span:last-child{color:#82909c;font-size:.62rem}.palette-foot{padding:10px 14px;border-top:1px solid #e6ebef;color:#7c8994;font-size:.62rem}
-.palette-trigger{position:fixed;z-index:45;right:22px;bottom:76px;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #d6dde3;border-radius:7px;background:#fff;color:#344252;box-shadow:0 8px 25px rgba(24,33,43,.12);font-size:.66rem;font-weight:800;cursor:pointer}
-@media(max-width:900px){.lab-layout{grid-template-columns:1fr}.terminal-body{min-height:290px}}
-@media(max-width:520px){.topology{padding:18px 10px 10px}.topology-node{min-width:130px;padding:10px}.topology-vlans{gap:5px}.topology-vlan{padding:10px 7px}.topology-vlan strong{font-size:.61rem}.topology-vlan small{font-size:.53rem}.lab-panel-head{padding:14px}.node-inspector{margin:0 10px 12px}.palette-backdrop{padding-top:9vh}.palette-trigger{right:12px;bottom:68px}}
-@media(prefers-reduced-motion:reduce){.topology-node,.topology-vlan,.palette-trigger{transition:none}}
-
-  </style>
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
@@ -849,7 +806,6 @@ section.section{padding:64px 0}.section-head{margin-bottom:25px}.section-title{f
         <nav class="nav-links" id="main-navigation" aria-label="Navigation principale">
           <a href="#apropos" data-fr="À propos" data-en="About">À propos</a>
           <a href="#projets" data-fr="Projets" data-en="Projects">Projets</a>
-          <a href="#interactive-lab" data-fr="Lab interactif" data-en="Interactive lab">Lab interactif</a>
           <a href="#pratique" data-fr="Réalisations" data-en="Practice">Réalisations</a>
           <a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a>
           <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
@@ -970,48 +926,10 @@ section.section{padding:64px 0}.section-head{margin-bottom:25px}.section-title{f
       </div>
     </section>
 
-
-    <section class="section lab-section" id="interactive-lab">
+<section class="section section-soft" id="pratique">
       <div class="container">
         <div class="section-head reveal">
-          <div><div class="section-kicker" data-fr="03 / LABORATOIRE INTERACTIF" data-en="03 / INTERACTIVE LAB">03 / LABORATOIRE INTERACTIF</div><h2 class="section-title" data-fr="Explorer. Tester.<br><em>Comprendre.</em>" data-en="Explore. Test.<br><em>Understand.</em>">Explorer. Tester.<br><em>Comprendre.</em></h2></div>
-          <p class="section-desc" data-fr="Un aperçu interactif de ma démarche technique : explorer une architecture réseau et utiliser quelques commandes pour naviguer dans mon portfolio." data-en="An interactive snapshot of my technical approach: explore a network architecture and use a few commands to navigate my portfolio.">Un aperçu interactif de ma démarche technique : explorer une architecture réseau et utiliser quelques commandes pour naviguer dans mon portfolio.</p>
-        </div>
-        <div class="lab-layout">
-          <article class="lab-panel reveal" aria-labelledby="topology-title">
-            <div class="lab-panel-head"><div><strong id="topology-title" data-fr="Explorateur de topologie" data-en="Topology explorer">Explorateur de topologie</strong><span data-fr="Maquette réseau · entreprise de 20 utilisateurs" data-en="Network model · 20-user business">Maquette réseau · entreprise de 20 utilisateurs</span></div><span class="lab-live" data-fr="DÉMO INTERACTIVE" data-en="INTERACTIVE DEMO">DÉMO INTERACTIVE</span></div>
-            <div class="topology">
-              <div class="topology-row"><button class="topology-node" type="button" data-node="router" aria-pressed="false"><span class="topology-node-icon">R1</span><span><strong>Router</strong><small>Inter-VLAN routing</small></span></button></div>
-              <div class="topology-stem"></div>
-              <div class="topology-row"><button class="topology-node" type="button" data-node="switch" aria-pressed="true"><span class="topology-node-icon">SW1</span><span><strong>Core switch</strong><small>802.1Q · Access ports</small></span></button></div>
-              <div class="topology-branches" aria-hidden="true"><i></i><i></i></div>
-              <div class="topology-vlans">
-                <button class="topology-vlan" type="button" data-node="staff" aria-pressed="false"><span class="vlan-id">VLAN 10</span><strong>Staff</strong><small>10.10.10.0/24</small></button>
-                <button class="topology-vlan" type="button" data-node="management" aria-pressed="false"><span class="vlan-id">VLAN 20</span><strong>Management</strong><small>10.10.20.0/24</small></button>
-                <button class="topology-vlan" type="button" data-node="guests" aria-pressed="false"><span class="vlan-id">VLAN 30</span><strong>Guests</strong><small>10.10.30.0/24</small></button>
-              </div>
-            </div>
-            <p class="topology-note" data-fr="Schéma conceptuel inspiré du projet Small Business IT Infrastructure. Les adresses affichées illustrent le plan de démonstration." data-en="Conceptual diagram inspired by the Small Business IT Infrastructure project. The displayed addresses illustrate the demo addressing plan.">Schéma conceptuel inspiré du projet Small Business IT Infrastructure. Les adresses affichées illustrent le plan de démonstration.</p>
-            <div class="node-inspector" aria-live="polite"><span class="node-inspector-mark" id="node-mark">SW1</span><div><strong id="node-title">Commutateur central</strong><p id="node-description">Le commutateur distribue les VLAN et transporte les réseaux via un trunk 802.1Q vers le routeur.</p></div></div>
-          </article>
-          <article class="lab-panel terminal-panel reveal" aria-labelledby="terminal-title">
-            <div class="lab-panel-head"><div><strong id="terminal-title">MAT / portfolio shell</strong><span data-fr="Terminal de démonstration · commandes locales" data-en="Demo terminal · local commands">Terminal de démonstration · commandes locales</span></div><span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <div class="terminal-body">
-              <div class="terminal-welcome"><strong data-fr="Bienvenue dans mon espace technique." data-en="Welcome to my technical workspace.">Bienvenue dans mon espace technique.</strong><br><span data-fr="Tapez " data-en="Type ">Tapez </span><code>help</code><span data-fr=" pour afficher les commandes disponibles." data-en=" to list available commands."> pour afficher les commandes disponibles.</span></div>
-              <div class="terminal-output" id="terminal-output" role="log" aria-live="polite">MAT shell v1.0
-Type "help" to see available commands.</div>
-              <form class="terminal-form" id="terminal-form"><label class="terminal-prompt" for="terminal-input">visitor@mat:~$</label><input id="terminal-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="Enter a command…" maxlength="40"><button type="submit" data-fr="Exécuter" data-en="Run">Exécuter</button></form>
-              <div class="terminal-hints" aria-label="Quick commands"><button type="button" data-command="help">help</button><button type="button" data-command="projects">projects</button><button type="button" data-command="skills">skills</button><button type="button" data-command="contact">contact</button></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="pratique">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="section-kicker" data-fr="04 / RÉALISATIONS PRATIQUES" data-en="04 / HANDS-ON EXPERIENCE">04 / RÉALISATIONS PRATIQUES</div><h2 class="section-title" data-fr="Des compétences<br><em>mises en pratique.</em>" data-en="Skills<br><em>put into practice.</em>">Des compétences<br><em>mises en pratique.</em></h2></div>
+          <div><div class="section-kicker" data-fr="03 / RÉALISATIONS PRATIQUES" data-en="03 / HANDS-ON EXPERIENCE">03 / RÉALISATIONS PRATIQUES</div><h2 class="section-title" data-fr="Des compétences<br><em>mises en pratique.</em>" data-en="Skills<br><em>put into practice.</em>">Des compétences<br><em>mises en pratique.</em></h2></div>
           <p class="section-desc" data-fr="Une approche orientée résultats : configuration, vérification et documentation. Les prototypes et environnements simulés sont clairement présentés comme tels." data-en="A results-oriented approach: configure, verify and document. Prototypes and simulated environments are clearly identified as such.">Exemples concrets issus de mes projets. Les environnements simulés et les prototypes sont identifiés comme tels dans leur documentation.</p>
         </div>
         <div class="practice-grid practice-compact">
@@ -1026,7 +944,7 @@ Type "help" to see available commands.</div>
     <section class="section" id="competences">
       <div class="container">
         <div class="section-head reveal">
-          <div><div class="section-kicker" data-fr="05 / COMPÉTENCES TECHNIQUES" data-en="05 / TECHNICAL SKILLS">05 / COMPÉTENCES TECHNIQUES</div><h2 class="section-title" data-fr="Les outils derrière<br><em>le travail.</em>" data-en="The tools behind<br><em>the work.</em>">Les outils derrière<br><em>le travail.</em></h2></div>
+          <div><div class="section-kicker" data-fr="04 / COMPÉTENCES TECHNIQUES" data-en="04 / TECHNICAL SKILLS">04 / COMPÉTENCES TECHNIQUES</div><h2 class="section-title" data-fr="Les outils derrière<br><em>le travail.</em>" data-en="The tools behind<br><em>the work.</em>">Les outils derrière<br><em>le travail.</em></h2></div>
           <p class="section-desc" data-fr="Compétences travaillées en formation et dans mes projets. Je distingue les bases théoriques, les manipulations en laboratoire et les réalisations effectivement testées." data-en="Skills developed through education and projects. I distinguish between theoretical foundations, lab practice and work that has been directly tested.">Compétences développées en formation et à travers les projets. Le niveau de maîtrise varie selon les technologies et les environnements pratiqués.</p>
         </div>
         <div class="skills-grid">
@@ -1050,31 +968,13 @@ Type "help" to see available commands.</div>
 
     <section class="section contact" id="contact">
       <div class="container contact-grid">
-        <div class="reveal"><div class="section-kicker" data-fr="06 / CONTACT" data-en="06 / CONTACT">06 / CONTACT</div><h2 class="section-title" data-fr="Un projet ou une opportunité ?<br><em>Parlons-en.</em>" data-en="A project or an opportunity?<br><em>Let’s talk.</em>">Un projet ou une opportunité ?<br><em>Parlons-en.</em></h2><p class="section-desc" data-fr="Je recherche une opportunité en administration systèmes et réseaux, support informatique ou exploitation IT. Je suis disponible pour échanger sur mes projets, mon parcours et la manière dont je peux contribuer à une équipe technique." data-en="I am looking for an opportunity in systems and network administration, IT support or IT operations. Feel free to contact me to discuss my projects, background and how I could contribute to a technical team.">Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
+        <div class="reveal"><div class="section-kicker" data-fr="05 / CONTACT" data-en="05 / CONTACT">05 / CONTACT</div><h2 class="section-title" data-fr="Un projet ou une opportunité ?<br><em>Parlons-en.</em>" data-en="A project or an opportunity?<br><em>Let’s talk.</em>">Un projet ou une opportunité ?<br><em>Parlons-en.</em></h2><p class="section-desc" data-fr="Je recherche une opportunité en administration systèmes et réseaux, support informatique ou exploitation IT. Je suis disponible pour échanger sur mes projets, mon parcours et la manière dont je peux contribuer à une équipe technique." data-en="I am looking for an opportunity in systems and network administration, IT support or IT operations. Feel free to contact me to discuss my projects, background and how I could contribute to a technical team.">Je recherche une opportunité dans un environnement informatique polyvalent : support utilisateurs, réseaux, systèmes ou développement web. Vous pouvez me contacter par e-mail ou consulter mes projets sur GitHub.</p></div>
         <div class="contact-actions reveal"><a class="btn btn-primary" href="mailto:mohamedalitijanii@gmail.com">✉ <span data-fr="Écrire un e-mail ↗" data-en="Send an email ↗">Écrire un e-mail ↗</span></a><button class="btn copy-email" id="copy-email" type="button">⧉ <span data-fr="Copier l’adresse e-mail" data-en="Copy email address">Copier l’adresse e-mail</span></button><a class="btn" href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn ↗</a><p class="action-feedback" id="action-feedback" role="status" aria-live="polite"></p></div>
       </div>
     </section>
   </main>
 
   <footer><div class="container footer-inner"><span>© 2026 Mohamed Ali Tijani · Tunis</span><div class="footer-links"><a href="https://github.com/Medalitijani" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/" target="_blank" rel="noopener">LinkedIn</a><a href="./cv.html" data-fr="CV" data-en="Resume">CV</a></div><span data-fr="Réalisé avec curiosité et persévérance." data-en="Built with curiosity and persistence.">Réalisé avec curiosité et persévérance.</span></div></footer>
-
-  <button class="palette-trigger" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette"><span data-fr="Navigation rapide" data-en="Quick navigation">Navigation rapide</span><kbd>Ctrl K</kbd></button>
-  <div class="palette-backdrop" id="palette-backdrop" hidden>
-    <div class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-label="Navigation rapide">
-      <div class="palette-top"><span aria-hidden="true">⌕</span><input id="palette-search" type="search" autocomplete="off" placeholder="Rechercher une section…" aria-label="Rechercher une section"><kbd>ESC</kbd></div>
-      <div class="palette-list" id="palette-list">
-        <button class="palette-item" type="button" data-target="#accueil"><span data-fr="Accueil" data-en="Home">Accueil</span><span>↵</span></button>
-        <button class="palette-item" type="button" data-target="#apropos"><span data-fr="À propos" data-en="About">À propos</span><span>↵</span></button>
-        <button class="palette-item" type="button" data-target="#projets"><span data-fr="Projets" data-en="Projects">Projets</span><span>↵</span></button>
-        <button class="palette-item" type="button" data-target="#interactive-lab"><span data-fr="Lab interactif" data-en="Interactive lab">Lab interactif</span><span>↵</span></button>
-        <button class="palette-item" type="button" data-target="#pratique"><span data-fr="Réalisations" data-en="Practice">Réalisations</span><span>↵</span></button>
-        <button class="palette-item" type="button" data-target="#competences"><span data-fr="Compétences" data-en="Skills">Compétences</span><span>↵</span></button>
-        <button class="palette-item" type="button" data-target="#contact"><span data-fr="Contact" data-en="Contact">Contact</span><span>↵</span></button>
-        <a class="palette-item" href="./cv.html"><span data-fr="Consulter le CV" data-en="View CV">Consulter le CV</span><span>↗</span></a>
-      </div>
-      <div class="palette-foot" data-fr="Utilisez ↑ ↓ pour parcourir · Échap pour fermer" data-en="Use ↑ ↓ to navigate · Esc to close">Utilisez ↑ ↓ pour parcourir · Échap pour fermer</div>
-    </div>
-  </div>
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut" title="Retour en haut">↑</button>
 
   <script>
@@ -1293,72 +1193,5 @@ Type "help" to see available commands.</div>
     })();
   </script>
 
-
-  <script>
-    (() => {
-      const language = () => document.documentElement.lang === "en" ? "en" : "fr";
-      const descriptions = {
-        router:{mark:"R1",fr:["Routeur de bordure","Le routeur assure le routage inter-VLAN via une liaison trunk 802.1Q et sert de passerelle aux sous-réseaux."],en:["Edge router","The router provides inter-VLAN routing over an 802.1Q trunk and acts as the default gateway for the subnets."]},
-        switch:{mark:"SW1",fr:["Commutateur central","Le commutateur distribue les VLAN et transporte les réseaux via un trunk 802.1Q vers le routeur."],en:["Core switch","The switch separates VLANs and carries the networks over an 802.1Q trunk to the router."]},
-        staff:{mark:"10",fr:["VLAN 10 · Staff","Réseau des collaborateurs : 10.10.10.0/24. Les postes reçoivent leur configuration IP via DHCP."],en:["VLAN 10 · Staff","Employee network: 10.10.10.0/24. Workstations receive their IP configuration through DHCP."]},
-        management:{mark:"20",fr:["VLAN 20 · Management","Réseau dédié à l'équipe de management : 10.10.20.0/24, isolé logiquement des autres segments."],en:["VLAN 20 · Management","Dedicated management network: 10.10.20.0/24, logically separated from the other segments."]},
-        guests:{mark:"30",fr:["VLAN 30 · Guests","Réseau invité : 10.10.30.0/24. Une ACL limite l'accès aux ressources internes, notamment au serveur."],en:["VLAN 30 · Guests","Guest network: 10.10.30.0/24. An ACL restricts access to internal resources, including the server."]}
-      };
-      const nodeButtons = document.querySelectorAll("[data-node]");
-      const selectNode = key => {
-        const item = descriptions[key]; if (!item) return;
-        nodeButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.node === key)));
-        document.getElementById("node-mark").textContent = item.mark;
-        document.getElementById("node-title").textContent = item[language()][0];
-        document.getElementById("node-description").textContent = item[language()][1];
-      };
-      nodeButtons.forEach(button => button.addEventListener("click", () => selectNode(button.dataset.node)));
-      document.querySelectorAll("[data-language]").forEach(button => button.addEventListener("click", () => {
-        const selected = document.querySelector('[data-node][aria-pressed="true"]'); if (selected) selectNode(selected.dataset.node);
-      }));
-
-      const output = document.getElementById("terminal-output"), input = document.getElementById("terminal-input");
-      const motion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-      const runCommand = raw => {
-        const command = raw.trim().toLowerCase(); if (!command) return;
-        const en = language() === "en";
-        const replies = {
-          help:en ? 'Available: help, about, projects, skills, lab, contact, clear' : 'Disponibles : help, about, projects, skills, lab, contact, clear',
-          about:en ? 'Mohamed Ali Tijani | IT support, networking and systems administration.' : 'Mohamed Ali Tijani | Support informatique, réseaux et administration systèmes.',
-          projects:en ? 'Opening selected technical projects…' : 'Ouverture des projets techniques sélectionnés…',
-          skills:en ? 'Windows support · TCP/IP · VLAN · DHCP/DNS · Wireshark · PowerShell · Node.js' : 'Support Windows · TCP/IP · VLAN · DHCP/DNS · Wireshark · PowerShell · Node.js',
-          lab:en ? 'Select a device in the topology explorer to inspect it.' : 'Sélectionnez un équipement dans l’explorateur de topologie pour l’inspecter.',
-          contact:en ? 'Opening contact details…' : 'Ouverture des coordonnées…'
-        };
-        if (command === "clear") { output.textContent = "MAT shell v1.0"; return; }
-        output.textContent += "\nvisitor@mat:~$ " + command + "\n" + (replies[command] || (en ? 'Unknown command. Type "help".' : 'Commande inconnue. Tapez "help".'));
-        output.scrollTop = output.scrollHeight;
-        const destinations = {about:"apropos",projects:"projets",skills:"competences",lab:"interactive-lab",contact:"contact"};
-        if (destinations[command]) document.getElementById(destinations[command]).scrollIntoView({behavior:motion(),block:"start"});
-      };
-      document.getElementById("terminal-form").addEventListener("submit", event => { event.preventDefault(); runCommand(input.value); input.value = ""; });
-      document.querySelectorAll("[data-command]").forEach(button => button.addEventListener("click", () => { runCommand(button.dataset.command); input.value = ""; }));
-
-      const backdrop = document.getElementById("palette-backdrop"), trigger = document.getElementById("palette-trigger");
-      const search = document.getElementById("palette-search"), items = [...document.querySelectorAll(".palette-item")];
-      let previousFocus = null;
-      const close = () => { backdrop.classList.remove("open"); backdrop.hidden = true; if (previousFocus) previousFocus.focus(); };
-      const open = () => { previousFocus = document.activeElement; backdrop.hidden = false; backdrop.classList.add("open"); search.value = ""; items.forEach(item => item.hidden = false); search.focus(); };
-      trigger.addEventListener("click", open);
-      document.addEventListener("keydown", event => {
-        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") { event.preventDefault(); backdrop.hidden ? open() : close(); }
-        if (event.key === "Escape" && !backdrop.hidden) close();
-        if (!backdrop.hidden && (event.key === "ArrowDown" || event.key === "ArrowUp")) {
-          const visible = items.filter(item => !item.hidden), index = visible.indexOf(document.activeElement);
-          const next = event.key === "ArrowDown" ? (index + 1) % visible.length : (index <= 0 ? visible.length - 1 : index - 1);
-          if (visible[next]) { event.preventDefault(); visible[next].focus(); }
-        }
-      });
-      search.addEventListener("input", () => { const q = search.value.toLowerCase().trim(); items.forEach(item => item.hidden = !item.textContent.toLowerCase().includes(q)); });
-      items.forEach(item => item.addEventListener("click", () => { if (item.dataset.target) { document.querySelector(item.dataset.target).scrollIntoView({behavior:motion(),block:"start"}); close(); } }));
-      backdrop.addEventListener("click", event => { if (event.target === backdrop) close(); });
-      document.querySelectorAll("[data-language]").forEach(button => button.addEventListener("click", () => { search.placeholder = button.dataset.language === "en" ? "Search sections…" : "Rechercher une section…"; search.setAttribute("aria-label", button.dataset.language === "en" ? "Search sections" : "Rechercher une section"); }));
-    })();
-  </script>
 </body>
 </html>
