@@ -2,7 +2,7 @@
 
 A technical portfolio presenting my practical work across **IT support, networking, systems administration, automation, and web development**.
 
-🌐 **Live portfolio:** https://portfolio-cyan-nine-hp174pl8ts.vercel.app
+🌐 **Live portfolio:** https://mohamed-ali-tijani.vercel.app
 
 ## Professional focus
 
@@ -46,8 +46,8 @@ These are personal projects, learning labs, and demonstrations—not client depl
 
 ## Explore
 
-- **Portfolio:** https://portfolio-cyan-nine-hp174pl8ts.vercel.app
-- **Online CV:** https://portfolio-cyan-nine-hp174pl8ts.vercel.app/cv.html
+- **Portfolio:** https://mohamed-ali-tijani.vercel.app
+- **Online CV:** https://mohamed-ali-tijani.vercel.app/cv.html
 - **GitHub profile:** https://github.com/Medalitijani
 - **LinkedIn:** https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/
 - **Contact:** mohamed.alitijanii@gmail.com
