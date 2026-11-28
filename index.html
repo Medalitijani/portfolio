@@ -841,6 +841,12 @@ footer{background:#0b1b30}
 @media(max-width:920px){.hero-grid{gap:32px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project,.project-featured,.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){grid-column:span 1;grid-row:auto}.project-featured .project-visual{height:220px}}
 @media(max-width:700px){.hero-grid{grid-template-columns:1fr;padding:55px 0 52px;gap:14px}.hero h1{font-size:clamp(3.5rem,15vw,5rem)}.portrait-wrap{min-height:340px}.portrait-frame{width:245px;height:310px}.portrait-note{left:2%;bottom:20px}.project-grid{grid-template-columns:1fr;gap:15px}.project,.project-featured,.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){grid-column:1;grid-row:auto}.project-visual,.project-featured .project-visual{height:195px}section.section{padding:68px 0}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.filter-enter{animation:none}.project-visual img,.project-symbol{transition:none}}
+
+/* Uniform project card sizing */
+.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project,.project-featured,.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){grid-column:span 1;grid-row:auto}
+.project-visual,.project-featured .project-visual{height:220px}
+@media(max-width:700px){.project-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
