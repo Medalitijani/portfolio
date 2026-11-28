@@ -17,6 +17,7 @@ The projects below are personal labs, prototypes, and demonstrations. Their envi
 | Area | Project | Practical evidence | Technologies |
 |---|---|---|---|
 | Networking & infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | VLAN 10/20/30 design, inter-VLAN routing, DHCP, guest ACL isolation, simulated AD DS/GPO, and Windows 11 PowerShell script tests | Cisco Packet Tracer, WinLab simulator, PowerShell |
+| Web development | [Northstar IT](https://github.com/Medalitijani/northstar-it-business-website) | Responsive multilingual website prototype for a fictional IT services brand | HTML5, CSS3, JavaScript, Netlify Functions |
 | Network troubleshooting | [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Six investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and a refused TCP connection | Wireshark, TCP/IP, Windows networking tools |
 | IT support & service operations | [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) · [Live demo](https://helpdesk-app-9y13.onrender.com/) | Educational ticketing prototype with authentication, role-based permissions, ticket lifecycle, assignment, comments, dashboard, CSV export, and optional email notifications | Node.js, Express 5, SQLite, JavaScript, Jest |
 
