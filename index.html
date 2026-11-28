@@ -832,9 +832,9 @@ section.section{padding:64px 0}.section-head{margin-bottom:25px}.section-title{f
 .palette-top kbd,.palette-trigger kbd{padding:4px 6px;border:1px solid #dfe5ea;border-radius:4px;color:#71808d;font-size:.6rem;white-space:nowrap}
 .palette-list{display:grid;gap:3px;padding:8px;max-height:330px;overflow:auto}.palette-item{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border:0;border-radius:6px;background:#fff;color:#263442;text-align:left;font-size:.77rem;text-decoration:none;cursor:pointer}
 .palette-item:hover,.palette-item:focus-visible{background:#edf1f4;outline:0}.palette-item span:last-child{color:#82909c;font-size:.62rem}.palette-foot{padding:10px 14px;border-top:1px solid #e6ebef;color:#7c8994;font-size:.62rem}
-.palette-trigger{position:fixed;z-index:45;right:22px;bottom:22px;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #d6dde3;border-radius:7px;background:#fff;color:#344252;box-shadow:0 8px 25px rgba(24,33,43,.12);font-size:.66rem;font-weight:800;cursor:pointer}
+.palette-trigger{position:fixed;z-index:45;right:22px;bottom:76px;display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #d6dde3;border-radius:7px;background:#fff;color:#344252;box-shadow:0 8px 25px rgba(24,33,43,.12);font-size:.66rem;font-weight:800;cursor:pointer}
 @media(max-width:900px){.lab-layout{grid-template-columns:1fr}.terminal-body{min-height:290px}}
-@media(max-width:520px){.topology{padding:18px 10px 10px}.topology-node{min-width:130px;padding:10px}.topology-vlans{gap:5px}.topology-vlan{padding:10px 7px}.topology-vlan strong{font-size:.61rem}.topology-vlan small{font-size:.53rem}.lab-panel-head{padding:14px}.node-inspector{margin:0 10px 12px}.palette-backdrop{padding-top:9vh}.palette-trigger{right:12px;bottom:12px}}
+@media(max-width:520px){.topology{padding:18px 10px 10px}.topology-node{min-width:130px;padding:10px}.topology-vlans{gap:5px}.topology-vlan{padding:10px 7px}.topology-vlan strong{font-size:.61rem}.topology-vlan small{font-size:.53rem}.lab-panel-head{padding:14px}.node-inspector{margin:0 10px 12px}.palette-backdrop{padding-top:9vh}.palette-trigger{right:12px;bottom:68px}}
 @media(prefers-reduced-motion:reduce){.topology-node,.topology-vlan,.palette-trigger{transition:none}}
 
   </style>
@@ -1060,7 +1060,7 @@ Type "help" to see available commands.</div>
 
   <button class="palette-trigger" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette"><span data-fr="Navigation rapide" data-en="Quick navigation">Navigation rapide</span><kbd>Ctrl K</kbd></button>
   <div class="palette-backdrop" id="palette-backdrop" hidden>
-    <div class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+    <div class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-label="Navigation rapide">
       <div class="palette-top"><span aria-hidden="true">⌕</span><input id="palette-search" type="search" autocomplete="off" placeholder="Rechercher une section…" aria-label="Rechercher une section"><kbd>ESC</kbd></div>
       <div class="palette-list" id="palette-list">
         <button class="palette-item" type="button" data-target="#accueil"><span data-fr="Accueil" data-en="Home">Accueil</span><span>↵</span></button>
@@ -1357,7 +1357,7 @@ Type "help" to see available commands.</div>
       search.addEventListener("input", () => { const q = search.value.toLowerCase().trim(); items.forEach(item => item.hidden = !item.textContent.toLowerCase().includes(q)); });
       items.forEach(item => item.addEventListener("click", () => { if (item.dataset.target) { document.querySelector(item.dataset.target).scrollIntoView({behavior:motion(),block:"start"}); close(); } }));
       backdrop.addEventListener("click", event => { if (event.target === backdrop) close(); });
-      document.querySelectorAll("[data-language]").forEach(button => button.addEventListener("click", () => { search.placeholder = button.dataset.language === "en" ? "Search sections…" : "Rechercher une section…"; }));
+      document.querySelectorAll("[data-language]").forEach(button => button.addEventListener("click", () => { search.placeholder = button.dataset.language === "en" ? "Search sections…" : "Rechercher une section…"; search.setAttribute("aria-label", button.dataset.language === "en" ? "Search sections" : "Rechercher une section"); }));
     })();
   </script>
 </body>
