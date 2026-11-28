@@ -1,54 +1,58 @@
-# Mohamed Ali Tijani — IT Support, Networks & Systems
+# Mohamed Ali Tijani — System & Network Administration Portfolio
 
-A technical portfolio presenting my practical work across **IT support, networking, systems administration, automation, and web development**.
+A technical portfolio documenting practical work in **network infrastructure, Windows administration concepts, IT support operations, troubleshooting, automation, and network engineering tools**.
 
-🌐 **Live portfolio:** https://mohamed-ali-tijani.vercel.app
+🌐 **Live portfolio:** https://mohamed-ali-tijani.vercel.app  
+📄 **CV — Systems & Networks:** [Open the targeted CV](cv-systemes-reseaux.html)  
+📄 **General CV:** https://mohamed-ali-tijani.vercel.app/cv.html
 
-## Professional focus
+## Professional direction
 
-I am a Higher Technician graduate in Management Computing (IPSET, Tunisia), building a hybrid IT profile that connects user support, network troubleshooting, systems concepts, scripting, and web application development.
+Higher Technician graduate in Management Computing (BTS, IPSET, Tunisia), targeting roles in **System & Network Administration, IT Support, and Network Technician**.
 
-My portfolio focuses on documented practical work: the objective, tools, implementation, test evidence, and known limitations of each project. Personal labs and prototypes are not presented as client or production deployments.
+The projects below are personal labs, prototypes, and demonstrations. Their environments and testing boundaries are stated explicitly; they are not represented as client deployments or production operations.
 
-## Featured projects
+## Featured technical projects
 
-| Domain | Project | Practical work | Technologies / tools |
+| Area | Project | Practical evidence | Technologies |
 |---|---|---|---|
-| IT Support & Service Operations | [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) | Educational ticketing prototype with authentication, role-based access, ticket lifecycle, assignment, comments, dashboard, and email integration | Node.js, Express 5, SQLite, JavaScript, Jest |
-| Networking & Infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | Small-company lab with VLAN segmentation, routing, DHCP, guest isolation, Active Directory/GPO concepts, PowerShell scripts, and support documentation | Cisco Packet Tracer, Windows lab concepts, PowerShell |
-| Network Troubleshooting | [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Packet-analysis investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and failed TCP connections | Wireshark, TCP/IP, Windows networking tools |
-| Web Development | [Northstar IT — Business Website](https://github.com/Medalitijani/northstar-it-business-website) | Responsive multilingual website prototype for a fictional IT services brand, with a contact-form frontend and Netlify Function integration in the source | HTML5, CSS3, JavaScript, Netlify Functions, Resend |
+| Network engineering | [NetArchitect AI — live application](https://network-config-generator-a5zu.onrender.com/) · [API reference](https://network-config-generator-a5zu.onrender.com/docs) | Converts a business network brief into a structured architecture, IPv4 plan, Cisco IOS configuration draft, and deterministic validation report | Network design, IPv4, VLAN planning, Cisco IOS, API |
+| Networking & infrastructure | [Small Business IT Infrastructure](https://github.com/Medalitijani/small-business-it-infrastructure) | VLAN 10/20/30 design, inter-VLAN routing, DHCP, guest ACL isolation, simulated AD DS/GPO, and Windows 11 PowerShell script tests | Cisco Packet Tracer, WinLab simulator, PowerShell |
+| Network troubleshooting | [Wireshark Troubleshooting Casebook](https://github.com/Medalitijani/wireshark-troubleshooting-casebook) | Six investigations covering DHCP, DNS, ARP, ICMP, TCP handshake, and a refused TCP connection | Wireshark, TCP/IP, Windows networking tools |
+| IT support & service operations | [IT Helpdesk](https://github.com/Medalitijani/helpdesk-app) · [Live demo](https://helpdesk-app-9y13.onrender.com/) | Educational ticketing prototype with authentication, role-based permissions, ticket lifecycle, assignment, comments, dashboard, CSV export, and optional email notifications | Node.js, Express 5, SQLite, JavaScript, Jest |
+| Web development | [Northstar IT — Business Website](https://github.com/Medalitijani/northstar-it-business-website) | Responsive multilingual website prototype for a fictional IT services brand | HTML5, CSS3, JavaScript, Netlify Functions |
 
-## Technical skills
+## Technical capabilities practiced
 
-- **IT support:** Windows troubleshooting, user assistance, account/access concepts, ticket workflows, and technical documentation.
-- **Networking:** LAN, Wi-Fi, TCP/IP, VLANs, routing, IP addressing, DHCP, DNS, ARP, and packet analysis.
-- **Systems administration:** Windows administration concepts, Windows Server fundamentals, Active Directory and Group Policy concepts.
-- **Automation:** PowerShell fundamentals, CSV-based scripting, validation, and dry-run workflows.
-- **Web development:** HTML, CSS, JavaScript, Node.js, Express, REST API concepts, SQL, and SQLite.
-- **Tools and workflow:** Wireshark, Cisco Packet Tracer, Git, GitHub, and project documentation.
+- **Networking:** LAN/Wi-Fi, TCP/IP, IPv4 addressing, subnetting, VLANs, 802.1Q, inter-VLAN routing, DHCP, DNS, ARP, ICMP, ACLs and packet analysis.
+- **Windows and identity:** Windows 10/11 troubleshooting, Windows Server fundamentals, Active Directory concepts, OUs, security groups and Group Policy.
+- **IT operations:** ticket workflows, incident documentation, user onboarding, backup planning and support procedures.
+- **Automation:** PowerShell system inventory, disk-space checks, CSV validation and dry-run workflows.
+- **Engineering tools:** Cisco Packet Tracer, Wireshark, Git, GitHub, Node.js, Express and SQLite.
 
-## Practical approach
+## Technical evidence and project documentation
 
-Across these projects, I practice how to:
-1. Understand a support or infrastructure requirement.
-2. Plan a solution and identify the relevant technologies.
-3. Configure, develop, or simulate the solution.
-4. Test expected behavior and investigate failures.
-5. Document results, assumptions, and limitations.
+- [Small Business Infrastructure — architecture, verification matrix and test boundaries](https://github.com/Medalitijani/small-business-it-infrastructure)
+- [Wireshark Casebook — six packet-level investigations](https://github.com/Medalitijani/wireshark-troubleshooting-casebook)
+- [IT Helpdesk — architecture, security controls, tests and known limitations](https://github.com/Medalitijani/helpdesk-app)
+- [NetArchitect AI — live application](https://network-config-generator-a5zu.onrender.com/) · [API documentation](https://network-config-generator-a5zu.onrender.com/docs)
 
 ## Project scope and transparency
 
-These are personal projects, learning labs, and demonstrations—not client deployments. Network and Windows infrastructure work is performed in simulated or learning environments. The Helpdesk application is an educational prototype, not an operational service for a real organization. Some scripts are documented for review or dry-run use and have not been validated against a live production Active Directory domain. The Northstar website represents a fictional brand; its contact workflow requires the appropriate Netlify deployment configuration.
+- Network topology and connectivity tests are performed in Cisco Packet Tracer.
+- Active Directory and Group Policy work is completed in a browser-based Windows Server simulator, not on a physical production server.
+- PowerShell inventory and disk-space scripts were tested on a Windows 11 PC; the Active Directory user-creation script is documented as a dry run and has not been run against a live domain.
+- The Helpdesk application is an educational prototype. Its README documents deployment constraints, session persistence, and other production limitations.
+- Northstar IT is a fictional sample brand, not a real client engagement.
+- NetArchitect AI is presented as a live engineering demonstration; its generated configurations are drafts that require review and validation before use on real equipment.
 
-## Explore
+## Contact
 
-- **Portfolio:** https://mohamed-ali-tijani.vercel.app
-- **Online CV:** https://mohamed-ali-tijani.vercel.app/cv.html
-- **GitHub profile:** https://github.com/Medalitijani
+- **GitHub:** https://github.com/Medalitijani
 - **LinkedIn:** https://www.linkedin.com/in/mohamed-ali-tijani-0ab3a236b/
-- **Contact:** mohamed.alitijanii@gmail.com
+- **Email:** mohamed.alitijanii@gmail.com
+- **Portfolio:** https://mohamed-ali-tijani.vercel.app
 
 ---
 
-*This repository contains the source code for my personal portfolio website. Project-specific implementation details and evidence are maintained in each linked repository.*
+*Repository for the personal portfolio website. Project implementation details and supporting evidence are maintained in the linked project repositories.*
